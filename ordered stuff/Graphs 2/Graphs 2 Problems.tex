@@ -1,0 +1,153 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Graphs 2 - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Traffic in Emirate]}
+An Emirate has 8 cities. Sultan wants to build such a road system\footnote{here and elsewhere we usually mean that road connects two cities and they do not intersect otherwise}, that for any two cities it is possible to travel from one to another passing through no more than one other city. Also he wishes that no more than $k$ roads leave each city. For what values of $k$ this is possible?
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Returning to cliques]}
+Prove that between $6$ random people there always exist at least $2$ cliques (groups of three that either all know each other, or all do not know each other)!
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Eulers formula for planar graphs]}
+Prove that, for any connected planar (planar graph is a graph which can be drawn on a paper so that edges do not intersect) graph $V+F-E=2$, where $V$ - number of vertices, $E$ - number of edges and $F$ - number of faces (areas of plane bounded by edges of the graph, including the infinite area around the graph)!
+\end{problem}
+
+
+
+
+
+%4
+\begin{problem}
+\textit{[City of Labirinth]}
+In the city of Labirinth exactly three streets meet at every crossroads. Besides that, all streets are paved in one of the three colors so that streets of every color meet at every crossroad.
+ 
+Only three streets leave the city. Prove, that the streets leaving the city all have different colors! 
+\end{problem}
+%
+
+%5
+\begin{problem}
+\textit{[Mapping the Empire]}
+Empire consists of many countries. It is known that no country borders with more than $k$ others (that includes possible enclaves). Emperor has ordered such a map of Empire to be produced that no two bordering countries are of the same color (and enclaves are of the same color as countries they belong to). Prove that $k+1$ color is enough for this!
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Nightmare Hydra]}
+Hydra consists of only heads and necks (each neck connect exactly two heads). One mighty sword strike can sever all necks that connect any head $A$. Unfortunately, if this is done, new necks immediately grow from $A$ to all heads that $A$ was not previously connected to.
+
+Hydra is considered defeated, if it is divided into two disconnected parts. What is the minimal number of mighty sword swings to defeat Hydra with a hundread necks?
+\end{problem}
+%
+
+%7
+\begin{problem}
+\textit{[Roads of Otherland]}
+Otherland has $2014$ castles. Castles are connected with roads so that if any castle $A$ is besiedged (and one can not travel through it), it is still possible to travel between any two castles (except $A$, of course), possibly travelling through other castles. 
+
+The King of Otherland does not like cyclic routes. Each year he chooses some cyclic route in his kingdom and builds a new castle, connecting it with direct roads to the castles of the cyclic route. After that roads of that cyclic route are all closed as redundant.
+
+After a number of such years there are no cyclic routes left in Otherland. Prove that at that time Otherland has at least $2014$ castles with only $1$ road leaving them!
+\end{problem}
+%
+
+%%8
+%\begin{problem}
+%\textit{[Paradise travel]}
+%Jane and Theodor travel across the archipelago that cosists of 2015 islands, some of which are connected by ferry routes. 
+%
+%They have decided to play a follwing game: first Jane chooses an island that they fly to. Then they travel by ferries alternatingly choosing next island (Theo starts), but they can not go back to the island that they have visited. One who can not choose next valid island, loses. 
+%
+%Who can win this game?
+%\end{problem}
+%%
+%
+%%9
+%\begin{problem}
+%\textit{[Can't escape the City of Labirinth]}
+%In the city of Labirinth exactly three streets meet at every crossroads. Besides that, all streets are paved in one of the three colors (red, yellow and green) so that streets of every color meet at every crossroad.
+% 
+%Lets call crossroad \textit{positive} if the colors of roads, looking clockwise are \textit{red, yellow, green} and \textit{negative} if the order of colors is inversed.
+%
+%Prove that difference of numbers of positive and negative crossroads is divisible by $4$!
+%\end{problem}
+%%
+
+\end{document}

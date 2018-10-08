@@ -1,0 +1,15 @@
+materials for Ghana 2018 camp
+
+strategies/tactics
+amount of information
+pidgeonhole 1
+graphs 1
+methods of counting 
+induction (including graphs 1.5)
+pascals triangle
+pidgeonhole 2
+graphs 2
+recurrences 
+graphs 3
+combinatorial geometry
+miscellaneous interesting problems

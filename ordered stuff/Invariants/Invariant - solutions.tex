@@ -1,0 +1,170 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+
+\usepackage{hyperref}
+
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Invariant solutions}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+\DeclarePairedDelimiter\set\{\}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\?}{\stackrel{?}{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+%1
+\begin{problem}
+\textit{[Blackboard game - \url{http://problems.ru/view_problem_details_new.php?id=60630}]}
+
+\textbf{Invariant value:} the result of multiplication of all numbers on the blackboard does not change with any valid move. 
+
+Since initial result of multiuplication was $-1$, the last number on the blackboard will be $-1$
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Coin game \url{http://problems.ru/view_problem_details_new.php?id=30767}]}
+
+Since the machine takes one coin and gives out $5$, the number of coins Luize has changes in increments of $4$.
+
+\textbf{Invariant value} in this case is number of coins modulo $4$ - throughout the process, amount of counts divided by $4$ always gives the same reminder.
+
+Since initia amount is congruent $1$ modulo $4$, but required end state $2018$ is congruent $2$ modulo $4$, then it is clearly unreachable.
+
+ 
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Knight chess game - \url{http://problems.ru/view_problem_details_new.php?id=102984}]}
+
+No it is not.
+
+Notice, that a knight always moves from white to black and from black to white fields.
+
+\textbf{Invariant value} - after each odd numbered move, knight will be on a white field, and after each even-numbered move, it will be on the black field.
+
+There are $64$ fields on a chess board, but since the knight is already on one of the fields, it should make $63$ moves to have visited all of them once. $63$ is an odd number, so it will land on a white field, but $h8$ is a black field, so it is impossible.
+\end{problem}
+%
+%4
+\begin{problem}
+\textit{[Stones game]}
+
+In each move we are decreasing the total amount of stones on the table by $1$ and increasing the number of stone piles by $1$. Therefore...
+
+\textbf{Invariant value} is a sum of stones and piles. 
+\end{problem}
+%
+
+%5
+\begin{problem}
+\textit{[Circle game - \url{http://problems.ru/view_problem_details_new.php?id=88309}]}
+
+If you color the numbers in two colors - $A$ and $B$, the coloring in uninterrupted, meaning that any two neighboring numbers will contain one of each color.
+
+\textbf{Invariant value} in this case is un/equality of sums of numbers in each color. 
+
+Since we are always adding $1$ to two numbers, one of each color, if we start out out with unequal sums, then they will stay unequal no matter what moves we make. However the required end position has equal sums, so it is unreachable.
+\end{problem}
+%
+
+
+
+
+%6
+\begin{problem}
+\textit{[PAMO2018PL6]}
+
+\textbf{Answer:} all $n=3k+1$ and $n=3k+2$
+
+\textbf{Proof that it works for $n=3k+1$ and $n=3k+2$}
+
+An algorithm how to do it in following steps:
+\begin{enumerate}
+\item One move takes us from $(1,1,\dots,1,0,1,1,\dots)$ to $(1,1,\dots,0,1,0,1,\dots,1)$  
+\item One move allow us to increase string of $0$'s like this: $(\underbrace{0,\dots,0,0}_m,\overbrace{1,0,1}^\text{move},1,1,\dots)  \rightarrow 
+(\lefteqn{\underbrace{\phantom{0,\dots,0,0,0}}_{m+1}}0,\dots,0,0,\overbrace{0,1,0},1,1,\dots) $  
+\item Using two first rules (first - once, second - $3k$ times), we can get to $(0,\dots,0,1,0,\dots,0)$. For $n=3k+1$ goto last step.
+\item In case of $n=3k+2$ we apply move once like this $(0,\dots,0,0,\overbrace{1,0,0}^\text{move},0,0,\dots)  \rightarrow (0,\dots,0,0,\overbrace{0,1,1},0,0,\dots)$
+\item At this moment we have left with a cluster of one or two $1$'s and a string of $3k$ zeros, which we can convert to all $1$ with $k$ moves: $(\dots,\overbrace{0,0,0},\dots) \rightarrow (\dots,\overbrace{1,1,1},\dots)$ 
+
+\textbf{Proof that it can not be done for $3k$}
+
+We color the numbers in three colors - $A$, $B$ and $C$ cyclically. Since $n=3k$ coloring cycle is uninterrupted.
+
+Notice that any move swaps exactly one number of each color. 
+
+\textbf{Invariant value:} Equality of parity of sums of numbers in each color. I.e. if the parity sum of all $A$ numbers was the same/opposite as those of color $B$, it will stay the same/opposite during any valid move(s). 
+
+Now simply note that in beginning position parity of one color is different from other two, but required end configuration has equal parities in all colors, so it is impossible to reach it.
+ 
+\end{enumerate}
+\end{problem}
+%
+
+
+\end{document}

@@ -1,0 +1,110 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Combinatorial Geometry problems}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%5
+\begin{problem}
+\textit{[Splitting a square]}
+Each of $9$ lines divide a square into two quadrilaterals, whose areas have a proportion of $2:3$ to each other. Prove that there exists a point, where at least three of these lines meet!
+\end{problem}
+%
+
+%1
+\begin{problem}
+$[Eulers formula for polyhedron]$
+Prove that, for any convex polyhedron $V+F-E=2$, where $V$ - number of vertices, $E$ - number of edges and $F$ - number of faces of the polyhedron!
+\end{problem}
+
+%2
+\begin{problem}
+$[BW1999PL10]$
+May the points of a disc of radius $1$ (including its circumference) be partitioned into three subsets in such a way that no subset contains two points separated by a distance $1$?
+\end{problem}
+
+%4
+\begin{problem}
+$[IMO2013PL2]$
+A configuration of $4027$ points in the plane is called Colombian if it consists of $2013$ red points and $2014$ blue points, and no three of the points of the configuration are collinear. By drawing some lines, the plane is divided into several regions. An arrangement of lines is good for a Colombian configuration if the following two conditions are satisfied:
+\begin{itemize}
+\item no line passes through any point of the configuration;
+\item no region contains points of both colours.
+\end{itemize}
+Find the least value of $k$ such that for any Colombian configuration of $4027$ points, there is a good arrangement of $k$ lines!
+
+\end{problem}
+
+%6
+\begin{problem}
+$[IMO2017PL3]$
+A hunter and an invisible rabbit play a game in the Euclidean plane. The rabbit's starting point, $A_0$, and the hunter's starting point, $B_0$, are the same. After $n-1$ rounds of the game, the rabbit is at point $A_{n-1}$ and the hunter is at point $B_{n-1}$. In the $n$th round of the game, three things occur in order.
+\begin{enumerate}
+\item The rabbit moves invisibly to a point $A_n$ such that the distance between $A_{n-1}$ and $A_n$ is exactly 1.
+\item A tracking device reports a point $P_n$ to the hunter. The only guarantee provided by the tracking device is that the distance between $P_n$ and $A_n$ is at most 1.
+\item The hunter moves visibly to a point $B_n$ such that the distance between $B_{n-1}$ and $B_n$ is exactly 1.
+\end{enumerate}
+Is it always possible, no matter how the rabbit moves, and no matter what points are reported by the tracking device, for the hunter to choose her moves so that after $10^9$ rounds she can ensure that the distance between her and the rabbit is at most $100$?
+
+\end{problem}
+\end{document}

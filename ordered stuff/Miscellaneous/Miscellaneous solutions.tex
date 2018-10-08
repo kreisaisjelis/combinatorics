@@ -1,0 +1,169 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Bruteforce uzdevumu risinājumi}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+\DeclarePairedDelimiter\set\{\}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+
+%1
+\begin{problem}
+$[IMO2014PL2]$
+We claim the answer is $k = \lceil \sqrt{n}\rceil  - 1$, where $\lceil n\rceil$ is the ceiling function of $n$; i.e., the least integer greater than or equal to $n$. Notice that $\lceil n\rceil  < n + 1$.
+
+First, we shall show that each $n \times n$ chessboard with a peaceful configuration of $n$ rooks contains a valid $k \times k$ square. Consider firstly the rook $R$ on the top row of the board. Because $k < n$, there exists a set $C$ of $k$ consecutive columns, one of which contains rook $R$. Consider the $n - k + 1$ $k \times k$ squares in $C$. Of them, only one contains the rook $R$ on one of its squares. Furthermore, each of the other $k - 1$ rooks in $C$ can only make up to $k$ of the $k \times k$ squares have it on one of its squares. Therefore, because \[n - k + 1 = n - \lceil \sqrt{n}\rceil  + 2 > n - \sqrt{n} + 1 = \sqrt{n} (\sqrt{n} - 1) + 1 > (\lceil \sqrt{n}\rceil  - 1) (\lceil \sqrt{n}\rceil  - 2) + 1 = k(k - 1) + 1,\] by the Pigeonhole Principle there exists a $k \times k$ square in $C$ not covered by any rook in $C$. Clearly, that square cannot be covered by any rook outside of $C$, and so it is a valid choice.
+
+It remains to show that there exists a chessboard without a $(k+1) \times (k+1)$ square. Indeed, such a board exists. First, place a rook at the upper-left corner of the board. Next, place a rook 1 space to the right and $(k+1)$ spaces down of the first rook. Then, place a rook 1 space to the right and $(k+1)$ spaces down of the second rook, and so on, until the placement of a new rook will be under the lower boundary of the board. In that case, place a rook in the same unoccupied column and in the first unoccupied row, and continue placement of subsequent rooks. This arrangement of rooks is clearly peaceful, and because $(k+1)^2 > n$ it has the property that any $(k+1) \times (k+1)$ square in the board will be occupied by at least one rook, completing the proof.
+\end{problem}
+
+
+%2
+\begin{problem}
+$[IMO2014SLN3]$
+We will show that for every positive integer $N$ any collection of Cape Town coins
+of total value at most $N -\frac{1}{2}$ can be split into $N$ groups each of total value at most $1$. The
+problem statement is a particular case for $N = 100$.
+
+We start with some preparations. 
+
+Clearly, each coin of value $1$ should form a single group; if there are $d$ such coins then
+we may remove them from the collection and replace $N$ by $N - d$. So from now on we may
+assume that there are no coins of value $1$.
+
+If several given coins together have a total value also of the form $\frac{1}{k}$ for a positive integer $k$, then we may merge them into one new coin. Clearly, if the
+resulting collection can be split in the required way then the initial collection can also be split.
+
+After each such merging, the total number of coins decreases, thus at some moment we
+come to a situation when no more merging is possible. At this moment, for every even $k$ there
+is at most one coin of value $\frac{1}{k}$ (otherwise two such coins may be merged), and for every odd $k>1$ there are at most $k - 1$ coins of value $\frac{1}{k}$
+(otherwise k such coins may also be merged).
+
+Finally, we may split all the coins in the following way. For each $k = 1, 2, . . . , N$ we put all the coins of values $\frac{1}{2k-1}$ and $\frac{1}{2k}$
+into a group $G_k$; the total value of $G_k$ does not exceed
+$$
+(2k-2) \cdot  \frac{1}{2k-1}+\frac{1}{2k}<1
+$$
+It remains to distribute the “small” coins of values which are less than $\frac{1}{2N}$; we will add them one
+by one. In each step, take any remaining small coin. The total value of coins in the groups at
+this moment is at most $N - \frac{1}{2}$, so there exists a group of total value at most $\frac{1}{N}(N-\frac{1}{2})=1-\frac{1}{2N}$;
+thus it is possible to put our small coin into this group. Acting so, we will finally distribute all
+the coins.
+
+\end{problem}
+
+%3
+\begin{problem}
+$[IMO2017SLN5]$
+Split the soccer players into $N$ groups of $N+1$ consecutive people. Give the players a bandanna one by one, starting with the tallest player, then the second tallest, etc. Take the first moment when we have two players in the same group with a bandanna. Make them the first pair, and delete their group and also everyone who got a bandanna so far. We are left with $N-1$ groups of at least $N$ people. Repeat. Done.
+
+\textit{Comment}
+
+A number of contestants used the following incorrect approach to Problem 5: first show that there exists 2 players such that the sum of their absolute difference in heights and distance in position (both relative positions) is at most $2N$ (this could be improved to $2N-1$), and then erroneously use (weak) induction by taking these $2$ players and then ignoring everyone who is between these $2$ players in terms of either position or height.
+
+The error here is that it is possible, in the resulting configuration (after taking the $2$ players) to inductively take two consecutive players (which would be compared by one of the conditions) on both sides of the $2$ chosen players, so the induction does not hold.
+
+\end{problem}
+
+%4
+\begin{problem}
+$[IMO2000PL4]$
+Consider $1$, $2$ and $3$. If they are in different boxes, then $4$ must be in the same box as $1$, $5$ in the same box as $2$ and so on. This leads to the solution where all numbers congruent to each other mod $3$ are in the same box.
+
+Suppose $1$ and $2$ are in box $A$ and $3$ in box $B$. Then $4$ must be in box $A$ or $B$. In general, if $k\ge 4$ is in either box $A$ or $B$, then $k + 1$ also must be in box $A$ or $B$. Thus box $C$ is empty which is impossible.
+
+Similarly, it is impossible for $1$ and $3$ to be in box $A$ and $2$ in box $B$.
+
+Thus we are left with the case where $1$ is in box $A$ and $2$ and $3$ in box $B$. Suppose box $B$ contains $2, . . . k$, where $k \ge 3$, but does not contain $k + 1$ and $m$ is the smallest number in box $C$. Then $m > k$.
+
+If $m > k + 1$, then $k + 1$ must be box $A$ and we see that no box can contain $m-1$.
+
+Thus $m = k + 1$. If $k < 99$, we see that no box can contain $k + 2$. Thus $k = 99$. It is easy to see that this distribution works. Thus there altogether $12$ ways - $2$ options times permutation of $3$ colors for each of $3$ boxes.
+\end{problem}
+%5
+\begin{problem}
+$[BW2002]$
+Let the three chosen numbers be $(x_1, x_2, x_3)$. At least one of the sets $\set{1,2,...,24}$, $\set{25,26,...,48}$, $\set{49,50,...,72}$ and $\set{73,74,...,96}$ should contain none of $x_1, x_2$ and $x_3$; let $S$ be this set.
+
+We split $S$ into six parts $S=S_1 \cup S_2 \cup ... \cup S_6$ so that the first four elements of $S$ are in $S_1$, the next four in $S_2$, etc. 
+
+Now we choose $i \in \set{1,2,...,6}$ corresponding to the order of numbers $x_1, x_2$ and $x_3$ (if $x_1 < x_2 < x_3$ then $i=1$, if $x_1 < x_3 < x_2$ then  $i=2$, ..., if $x_3 < x_2 < x_1$ then  $i=6$).
+
+Lastly, let $j$ be the number of elements in $\set{x_1, x_2, x_3}$ that are greater than the elements of $S$ (note that any any $x_k$ is either greater or smaller than all elements of $S$)
+
+Now we choose $x_4 \in S_i$ so that $x_1+x_2+x_3+x_4 \equiv j$ mod $4$ and add the card number $x_4$ to those three cards.
+
+Decoding of $\set{a,b,c,d}$ is straightforward. We first put the numbers into increasing order and then calculate $a+b+c+d$ mod $4$ showing the added card. The added card belongs to some $S_i$ for some $S$ and $i$ shows us the initial ordering of cards.
+
+\end{problem}
+%6
+\begin{problem}
+$[Bonus]$
+tbd
+\end{problem}
+
+
+\end{document}

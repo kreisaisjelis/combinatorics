@@ -1,0 +1,123 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Miscellaneous problems}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+
+%1
+\begin{problem}
+$[IMO2014PL2]$
+Let $n\ge2$ be an integer. Consider an $n\times n$ chessboard consisting of $n^2$ unit squares. A configuration of $n$ rooks on this board is $\textit{peaceful}$ if every row and every column contains exactly one rook. Find the greatest positive integer $k$ such that, for each peaceful configuration of $n$ rooks, there is a $k\times k$ square which does not contain a rook on any of its $k^2$ squares.
+\end{problem}
+
+
+%2
+\begin{problem}
+$[IMO2014SLN3]$
+A coin is called a Cape Town coin if its value is $1/n$ for some positive integer $n$. Given a collection of Cape Town coins of total value at most $99,5$, prove that it is possible to split
+this collection into at most $100$ groups each of total value at most $1$!
+\end{problem}
+
+%3
+\begin{problem}
+$[IMO2017PL5]$
+An integer $N \geqslant 2$ is given. A collection of $N(N+1)$ soccer players, no two of whom are of the same height, stand in a row. Sir Alex wants to remove $N(N-1)$ players from this row leaving a new row of $2N$ players in which the following $N$ conditions hold:
+\begin{itemize}
+\item[(1)]
+no one stands between the two tallest players,
+\item[(2)]
+no one stands between the third and fourth tallest players,
+\item[$\vdots$]
+\item[($N$)]
+no one stands between the two shortest players.
+\end{itemize}
+Show that this is always possible!
+\end{problem}
+
+%4
+\begin{problem}
+$[IMO2000PL4]$
+A magician has one hundred cards numbered $1$ to $100$. He puts them into three boxes, a red one, a white one and a blue one, so that each box contains at least one card.
+
+A member of the audience selects two of the three boxes, chooses one card from each and announces the sum of the numbers on the chosen cards. Given this sum, the magician identifies the box from which no card has been chosen.
+
+How many ways are there to put all the cards into the boxes so that this trick always works? (Two ways are considered different if at least one card is put into a different box.)
+\end{problem}
+
+%5
+\begin{problem}
+$[BW2002PL9]$
+Two magicians show the following trick. The first magician goes out of the room. The second magician takes a deck of $100$ cards labelled by numbers $1, 2, \dots , 100$ and asks three spectators to choose in turn one card each. The second magician sees what card each spectator has taken. Then he adds one more card from the rest of the deck. Spectators shuffle these 4 cards, call the first magician and give him these $4$ cards. The first magician looks at the $4$ cards and "guesses" what card was chosen by the first spectator, what card by the second and what card by the third. Prove that the magicians can perform this trick!
+\end{problem}
+
+%6
+\begin{problem}
+$[MoarMagic]$
+Situation is similar to previous problem, but this time audience chooses $5$ cards. Second magician selects one of these cards and gives it to the most beautiful lady in the audience with instructions not to show it to anyone. Then second magician places remaining $4$ cards on a table in a certain order and places the remainig deck next to them. 
+
+First magician comes in and "guesses" what card does the most beautiful lady have. How can they do that?
+\end{problem}
+
+
+\end{document}

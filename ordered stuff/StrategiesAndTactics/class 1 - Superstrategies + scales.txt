@@ -1,0 +1,49 @@
+Intro to combinatorics (From Superstrategies)
+Strategy = "an OOC hint to solving a problem"
+"Expanding" a problem
+	Bridge problem (hint - think of the slowest men)
+
+Thinking outside the box
+	3x3=4 dots (hint - lines can leave the grid; lines can be diagonal)
+Reduction
+	5x5=8 dots (hint - use reduction) 
+	4x4=6, (hint - does painting 3x3 in different color help?)
+	3x4=5
+Thinking inside the box (aka, just trying)
+	4x5=7 (thinking inside the box :) )
+
+Simetrija
+	Sultāna likums (hint - draw an x; consider the total amount of child births)
+	Cik ir vidējais ģimenes izmērs arābijā (hint - joprojām simetrija)
+Head and tails (assymetry disguised as symmetry)
+	A: hhh pret hht - fair
+	B: tth pret hhh - unfair
+	C: hht pret tth - fair
+
+Amount of information
+	Goldsmith rumor problem (100 goldsmitsh year round, registered scale) 
+		(hint: consider 1 artisan. Now 2 artisans...
+		hint: how many results can an experiment have?
+			)
+	12 balls and balance scale. 1 oddball either lighter or heavier. Find it and say if its light or heavy		
+		idea: set min cap (information theory) and guesstimate answer
+		idea: elimination of branches (like not good to weigh 1vs1 on first)
+		idea: (playing) gather info on smaller sets
+		idea: groups can not stay independent (?)
+		idea: you have to use all 3 results of experiment (count how many you need, if not)
+		solution:
+			4vs4 
+				= weigh 3 suspect vs 3 normal
+					= weigh last suspect with normal
+					> weight 1 suspect vs 1 suspect (as you know the weight)
+				> hhl vs hhl
+					= remaining l vs l - easy
+					> suspects - (hhl) weigh h vs h (uses all 3 results)
+Extra: 
+	line and shops model
+	circle and shops model
+Mājas darbs:
+	7x7=12
+	Atrast un atsūtīt man kādu labu "atjautības" uzdevumu 
+		ar atrisinājumu un (galvenais) domāšanas stratēģiju, 
+		kas palīdz to atrisināt

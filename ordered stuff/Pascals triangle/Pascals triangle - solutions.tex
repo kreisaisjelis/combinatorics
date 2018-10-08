@@ -1,0 +1,155 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+
+\usepackage{hyperref}
+
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Pascals triangle - solutions}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+\DeclarePairedDelimiter\set\{\}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\?}{\stackrel{?}{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+
+%1
+\begin{problem}
+\textit{[Formula of a triangle]}
+
+For combinatorial proof consider a followig problem: how many ways are there to choose $r+1$ people out of $n+1$?
+
+Solution: there are two possibilities. Either the group contains Jane - there are $\binom{n}{r}$, since one is already fixed - or that the group does not contain Jane - there are $\binom{n}{r+1}$, since you still need to pick $r+1$ but only $n$ are available (Jane is not).
+
+Try algebraic proof as well! (todo?)
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Construct of a triangle]} 
+Lets call this number $P(column,row)$, and start numbering rows and columns from $0$.
+The top pin - P(0,0) -  is $1$. 
+Every pin in beginning - $P(0,n)$ - and end of each row - P(n,n), can only be reached in one way - ball always falls left (or always right). 
+Number of ways to reach any other pin below first row can be counted as a sum of ways to reach each of the two pins just above it - $P(r,n) = P(r-1,n-1)+P(r, n-1)$
+
+By now it should be obvious that we have reached $\binom{n}{r} = P(r,n)$, because the recurrent equations that define both are the same.
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Any number]} 
+
+It contains all natural numbers in its second "slope" - its also easy to prove by induction.
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[Powers of mystery]} 
+
+The sum of elements of $n$-th row is always $2$ times greater than sum of elements of $n-1$-st row because each element of $n-1$-st row is used twice as a part of sum to calculate element of $n$-th.
+
+An important corollary of this is that sum of elements of $n$-th row is $2^n$, therefore we have proven that $\sum_{i=0}^n{\binom{n}{i}}=2^n$ (which can also be proven by noticing that this sum is number of all subsets, and all subsets can be counted easily via binary notation).
+\end{problem}
+%
+
+%5
+\begin{problem}
+\textit{[Combinatorial proofs]} 
+Prove combinatorically:
+\begin{enumerate}
+\item $\binom{2n}{2}=2\binom{n}{2} + n^2$  - Imagine ne need to choose a pair of people out of group of $n$. We could split the group in half, and then either pair is in one side, or in other, or one of the pair is in one, and other - in other.
+\item $\binom{2n+2}{n+1}=\binom{2n}{n+1} + 2\binom{2n}{n} + \binom{2n}{n-1}$ Imagine we need to choose half of the people in the group. Look at two people in group - Jim and Jane. Now, either the selected half will include none of them, or it will include just Jim, or it will include just Jane or it will include both Jim and Jane. 
+\end{enumerate}
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Binomial theorem]} 
+Combinatorial proof\footnote{\textit{\url{https://en.wikipedia.org/wiki/Binomial_theorem}} also has a nice inductive proof}:
+$$
+(x+y)^n = \underbrace{(x+y)(x+y)+\dots+(x+y)}_\text{n}
+$$
+Element $x^iy^{n-i}$ can be obtained, by picking $x$ from $i$ braces and $y$ from rest of them. How many ways are there to do that? Well, its $\binom{n}{i}$
+\end{problem}
+%
+
+%7
+\begin{problem}
+\textit{[Some help in sums]} 
+
+It helps a lot if you imagine these as result of polinomials\footnote{i think this is a good intro example of a generating functions}:
+\begin{enumerate}
+\item $\binom{5}{0}+2\binom{5}{1}+2^2\binom{5}{2}+\dots+2^5\binom{5}{5} = (1+2)^5$
+\item $\binom{n}{0}-\binom{n}{1}+\binom{n}{2}-\dots+(-1)^n\binom{n}{n} = (1-1)^n$
+\item $\binom{n}{0}+\binom{n}{1}+\binom{n}{2}+\dots+\binom{n}{n} = (1+1)^n$
+\end{enumerate}
+\end{problem}
+%
+
+\end{document}

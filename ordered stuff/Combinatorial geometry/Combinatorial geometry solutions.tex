@@ -1,0 +1,192 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Combinatorial geometry - Solutions}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+\DeclarePairedDelimiter\set\{\}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%5
+\begin{problem}
+\textit{[Splitting a square]}
+
+\textbf{Problem}
+
+Each of $9$ lines divide a square into two quadrilaterals, whose areas have a proportion of $2:3$ to each other. Prove that there exists a point, where at least three of these lines meet!
+
+\textbf{Solution - Pidgeonhole}
+
+First note that the lines cannot intersect neighbouring sides of a square $ABCD$, because that would result in a triangle and a pentagon. Therefore they intersect the opposite lines.
+Let the line $l$ intersect sides $BC$ and $AD$ in points $M$ and $N$, respectively. Trapezia $ABMN$ and $CDNM$ have the same height ($AB = CD$, because $ABCD$ is a square), therefore their surface areas have the same proportion as their median lines (because trapezium surface area = median line $\times$ height). 
+Therefore $MN$ intersects the line segment $k$ that connects the midpoints of $BC$ and $AD$ at a point such that divides $k$ in proportions $2:3$
+
+But in a square there are only $4$ points like that, and we have $9$ lines, so one of the points will have at least $3$ lines by PP.
+\end{problem}
+%
+
+%1
+\begin{problem}
+$[Eulers formula for polyhedron]$
+
+\textbf{Problem}
+
+Prove that, for any convex polyhedron $V+F-E=2$, where $V$ - number of vertices, $E$ - number of edges and $F$ - number of faces of the polyhedron!
+
+\textbf{Solution}
+
+The stereogeometrical part consists of saying that convex polyhedron is equivalent to a planar graph - you demonstrate this by \textit{pulling} one face of the polyhedron so that it expands and becomes exterior part of the graph.
+
+For Eulers Graph formula (same thing) see Graphs 2.
+\end{problem}
+
+%2
+\begin{problem}
+$[BW1999]$
+Answer:No
+
+Let $O$ denote the centre of the disc, and $P_1, ... , P_6$ the vertices of an inscribed regular hexagon in the natural order (see Figure 1).
+
+If the required partitioning exists, then $\set{O}, \set{P_1, P_3, P_5}$  and $\set{P_2,P_4, P_6}$ are conained in different subsets. Now consider the circles of radius $1$ centered in $P_1, P_3,$ and $P_5$. The circle of radius $1/\sqrt{3}$ centered in $O$ intersects these three circles in the vertices $A_1, A_2, A_3$ of an equilateral triangle of side length $1$. The vertices of this triangle belong to different subsets, but none of them can belong to the same subset as $P_1$ - a contradiction. Hence the required partitioning does not exist.
+\begin{center}
+\includegraphics[width=5cm]{Fig1.jpg}
+\captionof{figure}{ }
+\label{fig:Figure1}
+\end{center}
+\end{problem}
+
+
+
+%3
+\begin{problem}
+$[IMO2013PL2]$
+We can start off by imagining the points in their worst configuration. With some trials, we find $2013$ lines to be the answer to the worst cases. We can assume the answer is $2013$. We will now prove it.
+
+
+We will \textbf{first} prove that the sufficient number of lines required for a \textit{good} arrangement for a configuration consisting of $u$ red points and $v$ blue points, where $u$ is even and $v$ is odd and $u - v = 1$, is $v$.
+
+Notice that the condition "no three points are co-linear" implies the following: No blue point will get in the way of the line between two red points and vice versa. What this means, is that for any two points $A$ and $B$ of the same color, we can draw two lines parallel to, and on different sides of the line $AB$, to form a region with only the points $A$ and $B$ in it.
+
+Now consider a configuration consisting of u red points and v blue ones ($u$ is even, $v$ is odd, $u>v$). Let the set of points $S = \{A_1, A_2, ... A_k\}$ be the out-most points of the configuration, such that you could form a convex k-gon, $A_1 A_2 A_3 ... A_k$, that has all of the other points within it.
+
+If the set S has at least one blue point, there can be a line that separates the plane into two regions: one only consisting of only a blue point, and one consisting of the rest. For the rest of the blue points, we can draw parallel lines as mentioned before to split them from the red points. We end up with $v$ lines.
+
+If the set $S$ has no blue points, there can be a line that divides the plane into two regions: one consisting of two red points, and one consisting of the rest. For the rest of the red points, we can draw parallel lines as mentioned before to split them from the blue points. We end up with $u-1 = v$ lines.
+
+\textbf{Now} we will show that there are configurations that can not be partitioned with less than $v$ lines.
+
+Consider the arrangement of these points on a circle so that between every two blue points there are at least one red point (on the circle).
+
+There are no less than $2v$ arcs of this circle, that has one end blue and other red (and no other colored points inside the arc) - one such arc on each side of each blue point. For a line partitioning to be good, each of these arcs have to be crossed by at least one line, but one line can not cross more than $2$ arcs on a circle - therefore, this configuration can not be partitioned with less than $v$ lines!
+
+Our proof is done, and we have our final answer: $2013$.
+
+\end{problem}
+
+
+%4
+\begin{problem}
+$[IMO2017PL3]$
+
+
+There is no such strategy for the hunter.
+
+If there were, that would mean that hunter's strategy would work, no matter how the rabbit moved or where the radar pings $R^\prime_n$ appeared.We will show the opposite - with bad luck from radar pings, there is no strategy for the hunter that guarantees that the distance stays below $100$ in $10^9$ rounds.
+
+So, let $d_n$ be the distance between the hunter and the rabit after $n$ rounds. Of course, if $d_n \ge 100$ for any $n < 10^9$, we are done (rabbit just keeps moving straight away from the hunter), so we assume $d_n <100$. 
+
+We will show that, while $d_n < 100$, no matter the strategy hunter follows, rabbit has a way of increasing $d_n ^2$ by at least $\frac{1}{2}$ every $200$ rounds (as long as radar pings favor the rabbit). This way $d_n^2$ will reach $10^4$ in less than $2 \cdot 10^4 \cdot 200 = 4 \cdot 10^6 < 10^9$ rounds and the rabbit wins. 
+
+Suppose the hunter is at $H_n$ and the rabit is at $R_n$. Suppose even that the rabbit \textit{reveals} its position at this moment to the hunter (this allows us to ignore information from all previous pings). Let $r$ be the line $H_n R_n$ and $Y_1$ and $Y_2$ be points which are $1$ unit away from $r$ and $200$ units away from $R_n$ as in Figure 2:
+\begin{center}
+\includegraphics[width=10cm]{Fig2.jpg}
+\captionof{figure}{ }
+\end{center}
+
+Rabbits plan is to simply choose one of the points $Y_1$ and $Y_2$ and hop $200$ rounds straight toward it. Since all the hops stays within $1$ unit distance of $r$, it is possible that all radar pings stay on $r$. In particular, in this case the hunter has no way of knowing whether the rabit chose $Y_1$ or $Y_2$.
+
+Looking at such pings (all on $r$), hunter has no better strategy than to move straight along line $r$ to $H^\prime$. No matter what he does, after $200$ moves he will be located on or left of $H^\prime$. If he would end up above $r$, he would be even further from $Y_2$, and similarly, if he would venture below $r$, he would be farther from $Y_1$. In other words, no matter what strategy the hunter follows, he can never be sure his distance to the rabbit will be less than $y \myeq H^\prime Y_1= H^\prime Y_2$ after these $200$ rounds. 
+
+To estimate $y^2$ we take $Z$ as the midpoint of segment $Y_1 Y_2$, we take $R^\prime$ as a point $200$ units to the right of $R_n$ and we define $\varepsilon = ZR^\prime$ (note that $H^\prime R^\prime= d_n$). Then 
+\begin{equation}
+y^2= 1+(H^\prime Z)^2=1+(d_n-\varepsilon)^2 = d_n ^2-2\varepsilon d_n +\varepsilon^2 +1
+\end{equation}
+where 
+$$
+\varepsilon = 200-R_nZ = 200 -\sqrt{200^2-1}=\frac{1}{200+\sqrt{200^2-1}}>\frac{1}{400}
+$$
+Squaring both sides of $\varepsilon = 200 -\sqrt{200^2-1}$ we can get $\varepsilon^2 +1 = 400\varepsilon$, so from $(1)$ we get
+\begin{equation}
+y^2=d_n ^2-2\varepsilon d_n +\varepsilon^2 +1=d_n^2 + \varepsilon(400-2d_n)
+\end{equation}
+Since $\varepsilon > \frac{1}{400}$ and $d_n <100$ , then from $(2)$ follows $y^2 > d_n^2+\frac{1}{2}$.
+So, as we claimed, with this list of radar pings, no matter what the hunter does, the rabbit might achieve $d_{n+200}^2 > d_n ^2 + \frac{1}{2}$.
+
+The wabbit wins.
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,216 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{space}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Methods of Counting - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+%\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+\DeclarePairedDelimiter\set\{\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Christmas problems]}
+For this Christmas Valery has decided to build $5$ distinct cardboard trees and decorate them.
+\begin{enumerate}
+\item In how many ways can Valery paint the trees (one tree in one color), if she has three different colors available?
+\item Valery has procured $5$ different decorations. In how many ways can she decorate the trees, if she decorates each tree with one decoration?
+\item How many possibilities are there for end result (color+decoration) for these 5 trees?
+\item What if Valery can put several decorations on one tree and wants to use all of the decorations? What if she is ok with not using all of them?
+\end{enumerate}
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Bad diet]}
+Schools cantina has a constant menu that features $6$ dishes. Romuald has decided to keep following diet: each day eat some of the dishes (maybe none) so that in no two days his selection repeats.
+What is the longest period that Romuald can keep up this diet? What would be the average number of dishes he consumes per day?
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Good diet]}
+A cannibal has captured $25$ juicy prisoners.
+\begin{enumerate}
+\item How many possible daily menus ($1$ prisoner for each of three meals, order matters) can cannibal come up with for tomorrow's feast?
+\item In how many ways he can decide to be kind and release three prisoners? (here order does not matter)
+\end{enumerate}
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[Problems on the dance floor]}
+If there are $N$ guys and $N$ girls, then in how many ways they can all devide into guy-girl pairs for a dance? What if there is different number of guys and girls? What if we allow people not to dance (if they dont want to)?
+\end{problem}
+%
+
+
+%5
+\begin{problem}
+\textit{[Square coloring]}
+In how many ways can following figures be colored if each cell has to be painted in one of the two available colors?
+\begin{enumerate}
+\item square $2 \times 2$
+\item square $3 \times 3$
+\item square $2 \times 2$, with extra condition that one coloring can not be obtained from another via rotation
+\item square $3 \times 3$, with extra condition that one coloring can not be obtained from another via rotation\footnote{This is actually a rather hard problem}
+\end{enumerate}
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Phone numbers]}
+How many $8$ digit phone numbers are there if the only limit is that number can not start with $0$?
+\end{problem}
+%
+
+%7
+\begin{problem}
+\textit{[Limited ordering]}
+In how many way can integers $\set{1..100}$ be ordered so that any two numbers next each other have a difference of $1$ or $-1$?
+\end{problem}
+%
+
+%8
+\begin{problem}
+\textit{[Even-y numbers]}
+How many $8$ digit numbers are there, the digits\footnote{Here and elsewhere, unless stated otherwise, assume decimal digits} of which all have the same parity?
+\end{problem}
+%
+
+%9
+\begin{problem}
+\textit{[Uneven numbers]}
+How many integers are there in the interval $(0..999999)$, which have no two repeated digits side-by-side in them?
+\end{problem}
+%
+
+%10
+\begin{problem}
+\textit{[Descending numbers]}
+How many $6$ digit integers are there, in which the digits are in strictly descending order?
+\end{problem}
+%
+
+%11
+\begin{problem}
+\textit{[Date confusion]}
+Erika tried to give Jonathan her ($8$ digit) phone number, but she accidentally left out one digit when she wrote it down on a napkin. Next day Jonathan was determined to fix this by trying out all the possible phone numbers she could have. How much time would it take him, assuming $1$ minute per phone number?
+\end{problem}
+%
+
+%12
+\begin{problem}
+\textit{[Date confusion 2]}
+In United States, dates are written in format MM-DD-YYYY. In Europe - DD-MM-YYYY. How many days are in a year for which you have to know which format is used in order to determine them correctly?
+\end{problem}
+
+%13
+\begin{problem}
+\textit{[Step walk]}
+Lets call \textit{step walk} any route in a square grid between points $A$ and $B$ that goes along gridlines and whose lenght is equal to shortest such route. How many distinct step walks exist between:
+\begin{enumerate}
+\item Points $(0,0)$ and $(N,N)$?
+\item Points $(0,0)$ and $(N,M)$?
+\item Points $(0,0,0)$ and $(N,M,K)$, if we generalize into 3D?
+\end{enumerate}
+\end{problem}
+
+%14
+\begin{problem}
+\textit{[Meeting on a step walk]}
+What is the probability to meet for two travellers, who travel between two points in opposite direction and each choose randomly between all possible step walks?
+\begin{enumerate}
+\item Points $(0,0)$ and $(N,N)$
+\item Points $(0,0)$ and $(N,M)$
+\item Points $(0,0,0)$ and $(N,M,K)$
+\end{enumerate}
+\end{problem}
+
+%15
+\begin{problem}
+\textit{[Global problem]}
+Globe is divided by $17$ parallels and $24$ meridians. Into how many parts is the globes surface divided by these lines? 
+\end{problem}
+%
+
+%16
+\begin{problem}
+\textit{[Problem of belonging]}
+On a square grid of $m \times n$ a cell $(p,q)$ is selected. How many rectagons (with vertices on cells) contain the selected cell?
+\end{problem}
+%
+
+%17
+\begin{problem}
+\textit{[Kvadratenfrei]}
+\textit{Squarefree} number is a number that is not divisible by any integer square, except $1$. How many squarefree numbers are there in interval $(1..100)$?
+\end{problem}
+%
+\end{document}

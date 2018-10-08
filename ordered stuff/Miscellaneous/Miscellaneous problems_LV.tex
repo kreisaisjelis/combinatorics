@@ -1,0 +1,117 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Bruteforce uzdevumi}\\ \date}
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+
+%1
+\begin{problem}
+$[IMO2014PL2]$
+Dots $n \times n$ šaha lauciņš. $n$ torņu izvietojumu uz šī lauciņa sauc par \textit{mierīgu}, ja katra rinda un katra kolonna satur tieši vienu torni. Atrodiet lielāko $k$ tādu, ka jebkuram $n$ torņu mierīgam izkārtojumam uz laukuma ir atrodams  $k \times k$  kvadrāts, kurā nav neviena torņa!
+\end{problem}
+
+
+%2
+\begin{problem}
+$[IMO2014SLN3]$
+Par Keiptaunas monētu sauc monētu, kuras vērtība ir $1/n$ kādam pozitīvam veselam $n$. Zumam bija daudz šādu monētu – kopējā vērtībā gandrīz sasniedzot $99,5$. Zums gribēja šīs monētas sadalīt un paslēpt dažādos slēpņos tā, ka katrā slēpnī esošo monētu kopējā vērtība nepārsniegtu $1$. Pierādiet, ka Zumam pietiktu ar $100$ slēpņiem!
+\end{problem}
+
+%3
+\begin{problem}
+$[IMO2017PL5]$
+Dots vesels skaitlis $N \geqslant 2$. $N(N+1)$ dažāda auguma futbolisti stāv ierindā. Marians Pahars grib no ierindas padzīt $N(N-1)$ futbolistus tā, ka paliek jauna ierinda no $2N$  futbolistiem un tajā izpildās sekojoši $N$ nosacījumi:
+\begin{itemize}
+\item[(1)]
+starp diviem garākajiem futbolistiem nestāv neviens cits futbolists,
+\item[(2)]
+starp pēc auguma trešo un ceturto futbolistu nestāv neviens cits futbolists,
+\item[$\vdots$]
+\item[($N$)]
+starp diviem īsākajiem futbolistiem nestāv neviens cits futbolists.
+\end{itemize}
+Pierādiet, ka tas vienmēr ir iespējams!
+\end{problem}
+%4
+\begin{problem}
+$[IMO2000PL4]$
+Burvis-matemātiķis Alefs rāda sekojošu burvju triku – viņam ir kārtis ar skaitļiem no $1$ līdz $100$. Tās ir sadalītas starp $3$ kastītēm (zaļas, zilas un sarkanas) tā, ka katrā ir vismaz viena kārts. 
+
+Skatītāji, Alefam neredzot, no divām kastītēm paņem pa vienai kārtij, sasummē uz tām rakstītos skaitļus un nosauc Alefam šo summu. Alefs no šīs summas vien uzmin no kurām kastītēm paņemti skaitļi! Cik veidos Alefs var sadalīt kārtis pa kastītēm, gatavojot šo triku?
+\end{problem}
+
+%5
+\begin{problem}
+$[BW2002]$
+Divi matemātiķi-burvji Alefs un Betošs rāda sekojošu triku. Alefs iziet no istabas. Betošs paņem kārtis ar skaitļiem no $1$ līdz $100$ un lūdz auditorijai secīgi izvēlēties $3$ kārtis. Tad, Betošs izvēlas vēl vienu kārti un pievieno to trim izvēlētajām. Brīvprātīgais skatītājs sajauc šīs $4$ kārtis un tad istabā atgriežas Alefs. Viņš apskata $4$ kārtis un pareizi uzmin, kuras kārtis kādā secībā izvēlējusies auditorija! Kā viņi to var izdarīt?
+\end{problem}
+
+%6
+\begin{problem}
+$[MoarMagic]$
+Situācija ir līdzīga, kā iepriekšējā uzdevumā, bet šoreiz auditorija izvēlas $5$ kārtis. Betošs izvēlas vienu no šīm $5$ un lūdz skaistākajai auditorijas dāmai to paslēpt un nevienam nerādīt. Atlikušās $4$ kārtis Betošs izliek uz žurnālgaldiņa un atlikušo kavu noliek blakus, bet aizklātu. Ienāk Alefs, apskata žurnālgaldiņu un uzmin kāds skaitlis rakstīts uz skaistās dāmas apslēptās kārts! Kā viņi to var izdarīt?
+\end{problem}
+
+
+\end{document}

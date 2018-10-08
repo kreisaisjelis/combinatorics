@@ -1,0 +1,148 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Graphs 3 - Solutions}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[BW1994PL19]}
+
+
+\textbf{Problem}
+
+The Wonder Island Intelligence Service has $16$ spies in Tartu. Each of them watches on some of his colleagues. It is known that if spy $A$ watches on spy $B$, then $B$ does not watch on $A$. Moreover, any $10$ spies can numbered in such a way that the first spy watches on the second, the second watches on the third, $ \dots $, the tenth watches on the first. 
+
+Prove that any $11$ spies can also be numbered is a similar manner!
+
+
+\textbf{Solution}
+
+We call spies $A$ and $B$ \textit{neutral} to each other if neither $A$ watches $B$ nor $B$ watches $A$. For each spy $A_1$ denote $a_1$, $b_1$ and $c_1$ the number of spies that watches on $A_i$, the number of spies $A_i$ watches and the number of spies neutral to $A_i$. Clearly we have
+$$
+a_i+b_i+c_i = 15
+$$
+And, we have 
+$$
+a_i+c_i \le 8
+$$
+$$
+b_i+c_i \le 8
+$$
+because if any of the these two inequalities did not hold, we could select $10$ spies that could not be cyclically watching each other. Adding together these inequalities and equality we get that $c_i \le 1$, that means that for any $A_i$ number of spies neutral to $A_i$ is $0$ or $1$
+
+Now suppose the opposite, that there is a a group of $11$ spies that cannot be numbered as required. Let $B$ be an arbitrary spy in this group. Name other $10$ spies in this group $C_1, C_2, \dots, C_{10}$ so that $C_1$ watches $C_2, \dots, C_{10}$ watches $C_1$. Suppose, that none of these $C_1, \dots, C_{10}$ is neutral to $B$. Some of the spies from $C$ group must watch $B$ (because $b_B \le 8$), and as it is cyclical, say $C_1$ watches $B$. 
+
+Can $B$ watch $C_2$? No, because then we could insert $B$ into the cycle, between $C_1$ and $C_2$ and get a cycle with $11$ spies, which we assumed does not exist. So $C_2$ must also watch $B$. But by the same argument, $C_3$ must watch $B$, $C_4$ must watch $B$, $\dots$, $C_{10}$ must watch $B$. Which is impossible, since $a_B \le 8$. 
+
+Therefore one of our assumptions must be false. First assume, that assumption of not having neutrals among $C_i$ is false, but that is equivalent to saying that between any $11$ spies each must have exactly one neutral, which is impossible by parity of vertice powers.
+
+Therefore our second assumption - that there are such $11$ spies that cannot be ordered in a cycle, exist - is false, and any $11$ can be ordered in a cycle.
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[BW2010PL7]}
+There are some cities in a country; one of them is the capital. For any two cities $A$ and $B$ there is a direct flight from $A$ to $B$ and a direct flight from $B$ to $A$, both having the
+same price. Suppose that all round trips with exactly one landing in every city have the same total cost. 
+
+Prove that all round trips that miss the capital and with exactly one landing in every remaining city cost the same!
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[IMO2007PL3]}
+In a mathematical competition some competitors are friends. Friendship is always mutual. Call a group of competitors a \textit{clique} if each two of them are friends. (In particular, any group of fewer than two competitors is a clique.) The number of members of a clique is called its size. 
+
+Given that, in this competition, the largest size of a clique is even, prove that the competitors can be arranged in two rooms such that the largest size of a clique contained in one room is the same as the largest size of a clique contained in the other room!
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[IMO2013SLC3]}
+A crazy physicist discovered a new kind of particle which he called an \textit{imon}, after some of them mysteriously appeared in his lab. Some pairs of imons in the lab can be entangled, and each imon can participate in many entanglement relations. The physicist has found a way to perform the following two kinds of operations with these particles, one operation at a time.
+\begin{enumerate}
+\item If some imon is entangled with an odd number of other imons in the lab, then the physicist
+can destroy it.
+\item At any moment, he may double the whole family of imons in his lab by creating a copy $I^\prime$ of each imon $I$. During this procedure, the two copies $I^\prime$ and $J^\prime$ become entangled if and only if the original imons $I$ and $J$ are entangled, and each copy $I^\prime$ becomes entangled with its original imon $I$; no other entanglements occur or disappear at this moment.
+\end{enumerate}
+Prove that the physicist may apply a sequence of such operations resulting in a family of imons, no two of which are entangled!
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[IMO2015SLC7]}
+In a company of people some pairs are enemies. A group of people is called \textit{unsociable} if the number of members in the group is odd and at least $3$, and it is possible to arrange all its members around a round table so that every two neighbors are enemies. 
+
+Given that there are at most $2015$ unsociable groups, prove that it is possible to partition the company into $11$ parts so that no two enemies are in the same part!
+\end{problem}
+%
+\end{document}

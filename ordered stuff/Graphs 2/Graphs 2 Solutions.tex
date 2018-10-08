@@ -1,0 +1,261 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Graphs 2 - Solutions}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+%\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Traffic in Emirate]}
+
+\textbf{Problem}
+
+An Emirate has 8 cities. Sultan wants to build such a road system, that for any two cities it is possible to travel from one to another passing through no more than one other city. Also he wishes that no more than $k$ roads leave each city. For what values of $k$ this is possible?
+
+\textbf{Solution}
+
+If $k=2$ then, consider some city $A$. One can travel directly to no more than $2$ other cities, call them $B_1, B_2$. From those one can travel further, but to no more than $4$ cities - $C_1,C_2,C_3,C_4$. So we have accounted for $7$ of the $8$ cities and the last city is not reachable from $A$ wiith no more than two edges.
+
+If $k=3$ it is doable by drawing an octogon with all long diagonals.
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Returning to cliques]}
+
+\textbf{Problem}
+
+Prove that between $6$ random people there always exist at least $2$ cliques (groups of three that either all know each other, or all do not know each other)!
+
+\textbf{Solution - double counting, counting of ends}
+
+Consider it as a full two-colored graph.
+We call a \textit{corner} any unordered pair of edges that belong to one vertex. There are $5*4/2=10$ corners on each vertex, so, $6*10=60$ corners in all graph.
+
+Call a corner $monocolored$ if its two edges are of the same color, and $polycolored$ otherwise.
+
+A monocolored triangle has $3$ monocolored corners, while policolored triangle has $2$ polycolored and $1$ monocolored corner. There are a total of $6*5*4/6=20$ different triangles in a full $6$-graph (either count combintations of vertices or divide number of corners by $3$).
+
+Each vertex has at least $4$ monocolored corners - if there are $4$ or more same color edges on one vertex, then there is at least $6$ monocolored corners, and if there are $3$ and $2$ same colored edges, then its exactly $4$. 
+
+Therefore there are at least $6*4=24$ monocolored corners in the graph. We know that there is one monocolored triangle, so that uses $3$ monocolored corners. We are left with $21$ monocolored corners to distribute between $19$ remaining trinagles - by Pidgeonhole Principle, there will one more triangle $T$ that has more than $1$ monocolored edge, but that means that that $T$ has to be monocolored. QED.
+\end{problem}
+%
+
+
+%3
+\begin{problem}
+\textit{[Eulers formula for planar graphs]}
+
+\textbf{Problem}
+
+Prove that, for any planar (planar graph is a graph which can be drawn on a paper so that edges do not intersect) connected graph $V+F-E=2$, where $V$ - number of vertices, $E$ - number of edges and $F$ - number of faces (areas of plane bounded by edges of the graph, including the infinite area around the graph)!
+
+\textbf{Solution - induction, invariant, algorithm}
+
+Prove by induction. 
+
+\textbf{Induction base}
+
+There is only one kind of connected graph with $V=2$ and it has one edge and only the external face - formula holds.
+
+\textbf{Induction hypothesis}
+
+Eulers formula holds for graphs of size $k-1$ (number of vertices) and smaller.
+
+\textbf{Induction step}
+
+We will show several transformations that has Eulers formula as invariant:
+\begin{enumerate}
+\item If a graph has a leaf, we can remove that leaf and the edge, decreasing both number of edges and number of vertices by $1$; formula holds.
+\item If a graph has an internal face that is a polygon with more than $3$ vertices, we can add one \textit{diagonal} - an edge between some pair of non-connected vertices on this cycle. We are increasing $E$ and $F$ by exactly $1$, so formula holds.
+\item If a graph has a triangular face $f$ that shares a border $e$ with exterior face, we can remove $e$, thus merging $f$ and exterior face. We are decreasing both $E$ and $F$ by $1$ by doing so, therefore, formula still holds. Note, that if there were no leaves in a graph, the result will not be disconnected, but may contain leaves.
+\end{enumerate}
+
+Now, to our algorithm: we check, if there is a leaf in the graph. If yes, remove it (by $a$.), and we have reduced graph to size $k-1$ where formula holds by our inductive assumption.
+If there is no leaves, the graph must have some cycles. If any faces larger than $3$ vertices exist, we reduce those by applying $b$. 
+Lastly we continuously apply $c$. until a leaf appears in a graph. Once a leaf appears, we remove it by $a.$ and we are done (we have reduced the graph to size $k-1$ while holding Eulers formula invariant.
+\end{problem}
+
+
+
+%4
+\begin{problem}
+\textit{[City of Labirinth]}
+
+\textbf{Problem}
+
+In the city of Labirinth exactly three streets meet at every crossroads. Besides that, all streets are paved in one of the three colors so that streets of every color meet at every crossroad.
+ 
+Only three streets leave the city. Prove, that the streets leaving the city all have different colors! 
+
+
+\textbf{Solution - counting ends, double counting}
+
+Name the colors $1$, $2$ and $3$ and count the end of the streets. Say, $c_i$ will be the number of $i$-th color streets leaving the city, $n$ will be the number of crossroads in the city. Then number of ends-of-roads are $n+c_1$,  $n+c_2$ and $n+c_3$. All these three numbers have to be even (because each road has two ends) there fore all $c_i$ are of the same parity. 
+But since we are given that $c_1 + c_2 + c_3 = 3$, and they are of same parity, then it has to be that $c_1=c_2=c_3=1$
+
+\end{problem}
+%
+
+%5
+\begin{problem}
+\textit{[Mapping the Empire]}
+
+\textbf{Problem}
+
+Empire consists of many countries. It is known that no country borders with more than $k$ others (that includes possible enclaves). Emperor has ordered such a map of Empire to be produced that no two bordering countries are of the same color (and enclaves are of the same color as countries they belong to). Prove that $k+1$ color is enough for this!
+
+\textbf{Solution - induction}
+
+Transform into a graph, countries are vertices, edges are between countries that are neighbours on the map. Powers of vertices are limited by $k$. Now we need to color the vertices in no more than $k+1$ color so that no edge connects two vertices of the same color.
+
+Do this by induction on number of vertices in graph.
+
+\textbf{Base}
+For one vertice graph property holds.
+
+\textbf{Induction hypothesis }
+The property holds for any graph of size $n$.
+
+\textbf{Induction step}
+Prove that it holds for $n+1$. 
+Take random graph $G$ (with property of having max vertice power of $k$) with number of vertices $n+1$. Take one vertice $A$ from $G$ and temporarily hide it and all edges leaving it. What is left is a graph $G^\prime$ of size $n$ and max vertex power of $k$. By our hypothesis, the property holds in $G^\prime$, so we proceed and color vertices of $G^\prime$ as required.
+Now we unhide $A$ and its edges. By property of the graph, $A$ is connected to no more than $k$ other vertices, so we can always choose a color out of $k+1$ available to color $A$.
+
+
+
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Nightmare Hydra]}
+
+\textbf{Problem}
+
+Hydra consists of only heads and necks (each neck connect exactly two heads). One mighty sword strike can sever all necks that connect any head $A$. Unfortunately, if this is done, new necks immediately grow from $A$ to all heads that $A$ was not previously connected to.
+
+Hydra is considered defeated, if it is divided into two disconnected parts. What is the minimal number of mighty sword swings to defeat Hydra with a hundread necks?
+
+\textbf{Solution}
+
+Answer is $10$.
+
+First, to prove that $10$ swings is enough to kill any $100$ neck Hydra. 
+
+Assume the opposite, that there is a Hydra $H$ such that it can not be killed by $10$ swings. 
+
+Consider its random head $A$. It has to be connected to at least $10+1=11$ other heads, otherwise we could hit all the head it is connected to in $10$ swings and be done with it. There also has to be at least $10$ heads that $A$ is not connected to, because otherwise we could have hit $A$ itself and then the heads it is connected to after inversion. Therefore total number of heads is at least $1+11+10=22$.
+
+Also, if the $H$ can not be killed with $10$ swings, then each head of $H$ has to have at least $11$ necks, so number of necks is at least $\frac{22\times 11}{2}>100$ which is a contradiction, since we only have a $100$ neck Hydra. Therefore, $H$ can be killed by $10$ swings.
+
+Now to show that there exist a $100$ neck Hydra such that it can not be killed by $9$ swings. 
+We draw our Hydra like this - two columns of $10$ heads each, each head from left column is connected to each head in the right column (therefore we have exactly $100$ necks)
+
+How to see that it can not be killed by any $9$ swings? 
+First, note that it makes no sense to hit one head two or more times, since after each second swing we get the same situation we had before. So, we assume that $9$ different heads were hit once each. Each column has $10$ heads, so there will be some heads in each column that were not hit. We call these sets $L_{untouched}$ and $R_{untouched}$, and the heads that were hit in each column we call $L_{touched}$ and $R_{touched}$. One of last two sets can be empty, but that does not impact the following argument:
+
+The Hydra is still connected, because all heads in $L_{untouched}$ is still connected to all heads in $R_{untouched}$, but all heads in all $L_{touched}$ is now connected to all heads in $L_{untouched}$. Same for $R_{untouched}$ and $R_{touched}$.
+\end{problem}
+%
+
+%%7
+%\begin{problem}
+%\textit{[Roads of Otherland]}
+%Otherland has $2014$ castles. Castles are connected with roads so that if any castle $A$ is besiedged (and one can not travel through it), it is still possible to travel between any two castles (except $A$, of course), possibly travelling through other castles. 
+%
+%The King of Otherland does not like cyclic routes. Each year he chooses some cyclic route in his kingdom and builds a new castle, connecting it with direct roads to the castles of the cyclic route. After that roads of that cyclic route are all closed as redundant.
+%
+%After a number of such years there are no cyclic routes left in Otherland. Prove that at that time Otherland has at least $2014$ castles with only $1$ road leaving them!
+%\end{problem}
+%%
+%
+%%8
+%\begin{problem}
+%\textit{[Paradise travel]}
+%Jane and Theodor travel across the archipelago that cosists of 2015 islands, some of which are connected by ferry routes. 
+%
+%They have decided to play a following game: first Jane chooses an island that they fly to. Then they travel by ferries alternatingly choosing next island (Theo starts), but they can not go back to the island that they have visited. One who can not choose next valid island, loses. 
+%
+%Who can win this game?
+%\end{problem}
+%%
+%
+%%9
+%\begin{problem}
+%\textit{[Can't escape the City of Labirinth]}
+%In the city of Labirinth exactly three streets meet at every crossroads. Besides that, all streets are paved in one of the three colors (red, yellow and green) so that streets of every color meet at every crossroad.
+% 
+%Lets call crossroad \textit{positive} if the colors of roads, looking clockwise are \textit{red, yellow, green} and \textit{negative} if the order of colors is inversed.
+%
+%Prove that difference of numbers of positive and negative crossroads is divisible by $4$!
+%\end{problem}
+%%
+
+\end{document}

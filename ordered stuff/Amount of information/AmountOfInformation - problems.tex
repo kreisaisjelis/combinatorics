@@ -1,0 +1,102 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{space}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Amount of information  - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+\DeclarePairedDelimiter\set\{\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Goldsmith ethics]}
+Another Sultan was very fond of children. So much so, that he hired $100$ goldsmiths to work for him for a year and asked them each to make him one toy every day. He also specified that toy should be made of exactly $100$ grams of gold.
+
+Unfotunately, someone started a rumor that there might be a goldsmith that is cheating in a following manner - all her toys weigh $99$ grams instead of required $100$. Sultan has a digital scale that shows him exact weigh of something with a precision of one gram. 
+
+Sultan is also lazy, so - what is the minimum amount of weighings to check if this rumor is true and, if yes, find the offending goldsmith?
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Tricky coins]}
+A goldsmith has three identical looking coins. He knows that two of them are real and identical in weight but one is fake and is either lighter or heavier than the real ones. She needs to find out which is the fake coin and if it is heavier or lighter.
+She has balance scale - it is a scale that has two pans and shows you one of the three results - either contents of one of pans is heavier than other or that the contents are equal.
+
+How many weighings does she need to do to determine the fake coin? What if she knows that fake coin is heavier than real ones?
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Many tricky coins - "hard work", "reduction"]}
+Same goldsmith, same question, but now she has $12$ coins - $11$ real, $1$ fake.
+How many weighings does she need to do to determine the fake coin and whether its heavier or lighter than real? 
+\end{problem}
+%
+
+\end{document}
