@@ -1,9 +1,10 @@
 %!TEX TS-program = XeLaTeX
 
 \input{../FormatGen.tex}
+\input{../FormatProblems.tex}
 \input{../FormatLV.tex}
 
-\fancyhead[C]{{\Large\bf Strategies and tactics - Problems}\\ \date}
+\fancyhead[C]{{\Large\bf Risināšanas stratēģijas un taktikas - Uzdevumi}}
 
 \begin{document}
 %\thispagestyle{fancy}
@@ -13,7 +14,7 @@
 %1
 \begin{problem}
 \textit{[Tilta problēma - "neiespējamības barjera, paplašināšanas metode"]}
-Četri cilvēki tumšā naktī bēg no briesmīgām šausmām un nonāk pie aizas, kurai vienīgais ceļš pāri ir šaurs virvju tilts. Uz tilta vinlaicīgi var atrasties ne vairāk kā divi cilvēki. Tā kā ir tumšs, tad uz tilta nevar atrasties cilvēks bez lukturīša tiešā tuvumā, un lukturītis uz visiem ir viens (bet divi cilvēki var pāriet pāri tiltam ar vienu lukturīti).  
+Četri cilvēki tumšā naktī bēg no briesmīgām šausmām un nonāk pie aizas, kurai vienīgais ceļš pāri ir šaurs virvju tilts. Uz tilta vienlaicīgi var atrasties ne vairāk kā divi cilvēki. Tā kā ir tumšs, tad uz tilta nevar atrasties cilvēks bez lukturīša tiešā tuvumā, un lukturītis uz visiem ir viens (bet divi cilvēki var pāriet pāri tiltam ar vienu lukturīti).  
 Šiem cilvēkiem ir dažāds līmenis bailēm no tumsas un augstuma, līdz ar to viņu pārvietošanās ātrums pa tiltu ir dažāds - $1$, $2$, $5$ un $10$ minūtes, lai pārietu tiltam vienā virzienā. Ja divi cilvēki iet pāri tiltam kopā, viņi kustās lēnākā cilvēka ātrumā.
 Papildus tam visam tilts ir mīnēts un sabruks pēc precīzi $18$ minūtēm,
 
@@ -28,11 +29,11 @@ Vai visi četri cilvēki var veiksmīgi nonākt otrā pusē?
 
 %2
 \begin{problem}
-\textit{[9 dots - "thinking outside the box"]}
-$9$ dots are drawn in a $3 \times 3$ grid on a piece of paper. Can you draw $4$ straight, continuous lines that connect all the dots, without lifting the pencil from the paper?
+\textit{[9 punkti - "domāt ārpus rāmjiem"]}
+Uz papīra uzzīmēti $9$ punkti $3 \times 3$ kvadrātrežģa izkārtojumā. Vai ir iespējams uzzīmēt $4$ taisnus un savienotus nogriežņus, kas noklātu visus punktus, neatraujot zīmuli no papīra?
 \begin{center}
-\includegraphics[width=2cm]{3by3.jpg}
-\captionof{figure}{9 dots}
+\includegraphics[width=1.5cm]{3by3.jpg}
+\captionof{figure}{9 punkti}
 \label{fig:bridge}
 \end{center}
 \end{problem}
@@ -40,36 +41,41 @@ $9$ dots are drawn in a $3 \times 3$ grid on a piece of paper. Can you draw $4$ 
 
 %3
 \begin{problem}
-\textit{[More dots - "reduction","thinking outside the box"]}
-Same as previous problem, but with:
+\textit{[Vēl punkti- "redukcija","domāt ārpus rāmjiem"]}
+Tas pats, kas iepriekšējā uzdevumā, bet:
 \begin{enumerate}
-\item $5 \times 5$ with $8$ lines 
-\item $4 \times 4$ with $6$ lines
-\item $3 \times 4$ with $5$ lines
-\item $4 \times 5$ with $7$ lines
+\begin{multicols}{2}
+\item $5 \times 5$ ar $8$. nogriežņiem 
+\item $4 \times 4$ ar $6$. nogriežņiem
+\item $3 \times 4$ ar $5$. nogriežņiem
+\item $4 \times 5$ ar $7$. nogriežņiem
+\end{multicols}
 \end{enumerate}
 \end{problem}
 %
 
 %4
 \begin{problem}
-\textit{[Sultan's law - "symmetry"]}
-There is equal amount of men and women in Arabia, but, for religious reasons, Sultan would wish it that there would be more women than men. 
+\textit{[Sultāna likums - "simetrija"]}
+Sultanātā ir vienāds skaits sieviešu un vīriešu, bet, reliģiskas pārliecības vadīts, Sultāns gribētu, lai sieviešu būtu vairāk nekā vīriešu.
+Viņam ir padomā sekojošs likums - katrai sievietei jādzemdē bērni līdz viņa piedzemdē pirmo dēlu, bet pēc tam vairāk bērnus dzemdēt nedrīkst.
 
-He decides on the following law: each couple has to keep having children until a first son is born and then stop having children. How well would this law work? What would be the average size of family with this law?
+Vai šāds likums panāktu to, ka sieviešu ir vairāk nekā vīriešu? Un kas notiktu ar vidējo bērnu skaitu katrai mātei Sultanātā?
 \end{problem}
 %
 
 
 %5
 \begin{problem}
-\textit{[Gambling problem - "symmetry"]}
-Elize and Rudolf were bored during a class and decided to play a gambling game. They have a fair coin, but instead of keeping it simple they decided on a following game: first each of them chose a $3$ event string (for example "heads-heads-tails"). Then they start tossing a coin and write down results until they encounter one of the chosen substrings, which then is the winner. Decide if the game is fair for the following:
+\textit{[Azartspēļu problēma - "simetrija"]}
+Elīzei un Rūdolfam matemātikas stundā kļuva garlaicīgi un viņi izdomāja izklaidēties ar sekojošu azartspēli. Katrs no viņiem sākumā izvēlas trīs notikumu - monēta vai ģerbonis - secību un tad viņi met godīgu monētu līdz šajā metienu sērijā sastopas kāda no izvēlētajām virknēm, un, attiecīgi, tās minētājs arī uzvar. Nosakiet, kurās no šīm spēlēm abiem ir vienāda iespēja uzvarēt:
 \begin{enumerate}
-\item "heads-heads-heads" vs "tails-tails-tails"
-\item "heads-heads-heads" vs "heads-heads-tails"
-\item "tails-tails-heads" vs "heads-heads-tails"
-\item "tails-tails-heads" vs "heads-heads-heads"
+
+\item "cipars-cipars-cipars" pret "ģerbonis-ģerbonis-ģerbonis"
+\item "cipars-cipars-cipars" pret "cipars-cipars-ģerbonis"
+\item "ģerbonis-ģerbonis-cipars" pret "cipars-cipars-ģerbonis"
+\item "ģerbonis-ģerbonis-cipars" pret "cipars-cipars-cipars"
+
 \end{enumerate}
 
 \end{problem}
