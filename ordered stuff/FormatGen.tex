@@ -13,6 +13,7 @@
 \usepackage[font=small,labelfont=bf]{caption}
 
 \usepackage{multicol}
+\usepackage{hyperref}
 
 \renewcommand{\theenumi}{\alph{enumi}}
 
@@ -23,11 +24,15 @@
 \def\R{\mathbb R}
 \def\Z{\mathbb Z}
 \DeclarePairedDelimiter\set\{\}
+\newcommand{\?}{\stackrel{?}{=}}
 
-\def\prob{}
+
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+
 
 \theoremstyle{definition}
 \newtheorem{problem}{\prob}
+\def\prob{}
 
 
 \pagestyle{fancy}

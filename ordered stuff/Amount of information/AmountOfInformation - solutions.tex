@@ -1,6 +1,6 @@
 %!TEX TS-program = XeLaTeX
 \input{../FormatGen.tex}
-\input{../FormatProblems.tex}
+%\input{../FormatProblems.tex}
 %\input{../FormatLV.tex}
 \fancyhead[C]{{\Large\bf Amount of information  - Solutions}}
 
@@ -13,12 +13,34 @@
 \begin{problem}
 \textit{[Goldsmith ethics]}
 
-TODO 
+\paragraph{Problem}
+
 Another Sultan was very fond of children. So much so, that he hired $100$ goldsmiths to work for him for a year and asked them each to make him one toy every day. He also specified that toy should be made of exactly $100$ grams of gold.
 
-Unfotunately, someone started a rumor that there might be a goldsmith that is cheating in a following manner - all her toys weigh $99$ grams instead of required $100$. Sultan has a digital scale that shows him exact weigh of something with a precision of one gram. 
+Unfortunately, someone started a rumour that there might be a goldsmith that is cheating in a following manner - all her toys weigh $99$ grams instead of required $100$. Sultan has a digital scale that shows him exact weigh of something with a precision of one gram. 
 
-Sultan is also lazy, so - what is the minimum amount of weighings to check if this rumor is true and, if yes, find the offending goldsmith?
+Sultan is also lazy, so - what is the minimum amount of weighings to check if this rumour is true and, if yes, find the offending goldsmith?
+
+\paragraph{Solution - Reduction to smaller, amount of information, symmetry}
+
+Try to start with a simpler problem - say there is only one goldsmith. Then it is rather trivial - take any one of his toys, weigh it, if it weighs $99$ grams, then the goldsmith is a cheat.
+
+Now - what if we have two goldsmiths - $A$ and $B$? Two weighings would be similarly trivial, but can we do it with one? Yes and this is the \textit{crux move} - the "heart" of the problem! But to show how to find it, let's introduce the argument through \textit{amount of information}.
+
+If we are using the digital scale as described, the information we get from one weighing is the precise weight in grams - an integer number (in our case, since the scale has no maximum wight - the amount of information we can get in one weighing is unlimited). 
+On other side - how many possible answers does our question have? Its $3$ - either $A$ is a cheat, or $B$ is a cheat or neither of them are cheats. This should tell us that it \textit{could} be possible with one weighing, but this also gives us a hint that in order to do this with one weighing, you have to construct this weighing in such a way that it is possible to get at least three different results! 
+
+Add to that the argument that you have to include at least one toy from each goldsmith - otherwise you cant possibly hope to distinguish cases where the goldsmith we do not weigh toys from is a cheat or not. And add the symmetry argument that weighing can not have the same amount of toys from both goldsmiths - because, by symmetry, you wont be able to tell which of them is a cheat. 
+
+What we are left with yields a simple solution - take one toy from $A$ and two toys from $B$. Possible outcomes - results of weighing - are:
+\begin{itemize}
+\item $300$ grams - means all three toys weigh $100$ grams and there are no cheats
+\item $299$ grams - means that one toy was $99$ and since we know that if a goldsmith cheats, she cheats in all the toys, then the cheating goldsmith is $A$
+\item $298$ grams - means that $B$ is a cheat with similar argument
+\end{itemize}
+
+Finally going back to $100$ goldsmiths is straightforward - take one toy from first, two from second, three from third etc. and $100$ toys from the last goldsmith (here we use the fact that a year has more than $100$ days). If the scale shows $X$ grams less than $100\times100$, then $X$ is also the number of goldsmith who is a cheat.
+
 \end{problem}
 %
 
@@ -26,12 +48,18 @@ Sultan is also lazy, so - what is the minimum amount of weighings to check if th
 \begin{problem}
 \textit{[Tricky coins]}
 
-TODO
+\paragraph{Problem}
 
 A goldsmith has three identical looking coins. He knows that two of them are real and identical in weight but one is fake and is either lighter or heavier than the real ones. She needs to find out which is the fake coin and if it is heavier or lighter.
 She has balance scale - it is a scale that has two pans and shows you one of the three results - either contents of one of pans is heavier than other or that the contents are equal.
 
 How many weighings does she need to do to determine the fake coin? What if she knows that fake coin is heavier than real ones?
+
+
+\paragraph{Solution - Amount of information}
+
+Again we look at \textit{amount of information} argument. 
+
 \end{problem}
 %
 

@@ -19,15 +19,6 @@ p graphs 3
 ps miscellaneous
 
 
-
-
-
-
-
-
-
-
-
 p pascals triangle - skip?
 	+ http://problems.ru/view_problem_details_new.php?id=60581
 
@@ -39,8 +30,10 @@ p recurrences
 	+ planes http://problems.ru/view_problem_details_new.php?id=76447
 p graphs 3
 
+
+
 pidgeonhole 3?
-games&processes/ Invariants 2
+games&processes/algorithms/ Invariants 2
 mirror neurons/game theory
 	- http://problems.ru/view_problem_details_new.php?id=60912
 	- http://problems.ru/view_problem_details_new.php?id=79367 ?
