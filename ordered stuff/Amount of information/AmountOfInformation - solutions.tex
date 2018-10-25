@@ -2,6 +2,7 @@
 \input{../FormatGen.tex}
 %\input{../FormatProblems.tex}
 %\input{../FormatLV.tex}
+\usepackage{enumitem}
 \fancyhead[C]{{\Large\bf Amount of information  - Solutions}}
 
 \begin{document}
@@ -126,7 +127,45 @@ Lets introduce some more notation!
 
 So, we can use this new notation (or combination of both), that by using weighing $1,2,3,4$ vs $5,6,7,8$ we reduce $12^?_?$ to $4^?_?$ and $8^?_!$. What is left to show how to do $4^?_?$ and $8^?_!$ with two weighings that are left to us. Also note, that starting from the second weighing we have some extra resource - \textit{reference} coins that are known to be real. We might need them...
 
-Lets start with $4^?_?$. Again, lets denote $m$ the amount of coins that are not weighed in the first of the two weighings of this sub-problem. Clearly, $m<2$, because $2^?_?$ would still have $5$ possible outcomes, so, by amount of information argument, it can not be solved by one remaining weighing.  On other hand, if $k=0$, that means that all $4$ coins took part in first weighing
+Lets start with $4^?_?$. Again, lets denote $m$ the amount of coins that are not weighed in the first of the two weighings of this sub-problem. Clearly, $m<2$, because $2^?_?$ would still have $5$ possible outcomes, so, by amount of information argument, it can not be solved by one remaining weighing.  On other hand, if $k=0$, that means that in either case of dis-equilibrium we will have reduced this subproblem to $4^!_!$ which has $4$ possible answers, but we will have only one weighing left, which would be impossible. Therefore we know that $m=1$, and in the first weighing we need to include $3$ coins.  Having to use odd number of coins in single weighing mandates that we need to use some reference coins (luckily we have some in this subproblem). For example we can do $1,2$ vs $3,X$ (where $X$ denotes reference coin). If we do this, we have reduced $4^?_?$ to $1^?_?$ (which is solvable in one weighing trivially) and $3^!_!$ with a $2:1$ forgery pattern.
+
+Can $3^!_!$ be solved in one weighing? Yes! In any pattern, two of the coins have the same forgery pattern - say $1,2$ are heavier. Then we can weigh $1$ vs $2$ and, whichever is heavier is fake. If they are equal, then the fake is $3$ and is lighter or heavier according to (known) forgery pattern.
+
+Lets also look at the problem $2^!_!$. If the pattern for this is $2:0$ (say, both potentially heavier), then it is trivial, just weight them and whichever is heavier is fake. If the pattern is $1:1$, though, then we need help from reference coins - weigh one of the suspect coins with the reference one, if they are equal, then the second coin is fake. 
+
+So lets, write down some results so far:
+\begin{description}
+\item[$1^?_?=1$]
+\item[$2^!_!=1^{+1}$] - by $X^{+Y}$ we denote that we require $X$ weighings and $Y$ reference coins
+\item[$3^!_!=1$]
+\item[$4^!_!>1$] - by amount of information argument
+\item[$4^?_?=2^{+1}$] - by reducing to $1^?_?$ and $3^!_!$. \end{description}
+
+We still have left to prove that $8_!^!$ can be done with $2$ weighings with up to $4$ reference coins. We also know that we are only interested in a $4:4$ pattern of $8_!^!$, since in our $12^?_?$ first weighing we got that some $1,2,3,4<5,6,7,8$. We know that we can leave $3$ coins out of the first weighing of this subproblem, since $3^!_!=1$. We also know that we can't leave more than $3$ out, since $4^!_!>1$. So, we have to take $5$ coins in the first weighing, meaning we will need to add at least one reference coin. From here, straightforward checking the possible methods should yield one of the several possible solutions, for example, this one: $1,2,5$ vs $3,6,X$ (and $4,7,8$ stays out of first weighing):
+\begin{itemize}
+\item $1,2,5 > 3,6,X$ - then the suspect coins are $1,2$ (heavier) or $6$ (lighter) and we have reduced to a $3^!_!=1$
+\item $1,2,5 < 3,6,X$ - then the suspect coins are $3$ (heavier) or $5$ (lighter) and its a $2^!_!=1^{+1}$
+\item $1,2,5 = 3,6,X$ - then the suspect coins are the ones that did not participate: $4$ (heavier) or $7,8$ (lighter) and its a $3^!_!=1$
+\end{itemize}
+
+We are done. 
+
+To recap, here we discussed the way to construct the algorithm, but the algorithm itself is relatively easy to present:
+
+$1.$ weighing: $1,2,3,4$ vs $5,6,7,8$ with $9,10,11,12$ set aside 
+\begin{itemize}
+\item $1,2,3,4 > 5,6,7,8$: we now weigh $1,2,5$ vs $3,6,10$:
+	\begin{itemize}
+		\item $1,2,5 > 3,6,10$: we finally weigh $1$ vs $2$:
+			\begin{itemize}
+				\item aa
+			\end{itemize}
+		\item $1,2,5 < 3,6,10$
+		\item $1,2,5 = 3,6,10$
+	\end{itemize} 
+\item $1,2,3,4 < 5,6,7,8$ 
+\item $1,2,3,4 = 5,6,7,8$ 
+\end{itemize}
 
 \end{problem}
 %
