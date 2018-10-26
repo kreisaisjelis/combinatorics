@@ -2,7 +2,7 @@
 \input{../FormatGen.tex}
 %\input{../FormatProblems.tex}
 %\input{../FormatLV.tex}
-\usepackage{enumitem}
+
 \fancyhead[C]{{\Large\bf Amount of information  - Solutions}}
 
 \begin{document}
@@ -101,9 +101,85 @@ How many weighings does she need to do to determine the fake coin if it exists a
 
 \textbf{Solution}
 
+\textbf{TLDR}:
+$3$ weighings. 
+
 First, the lower bound. In previous problem we already figured out (but did not explicitly state) that in $n$ weighings we can distinguish between maximum of $3^n$ outcomes. In this problem the question has $12\times 2 +1 = 25$ possible answers. Therefore we immediately can establish that two weighings will not be enough - because $3^2=9 <25$
 
-To prove the upper bound - show how to do it with $3$ weighings - is simply to show the algorithm how to do it. But constructing this algorithm is not a trivial matter, however. Lets do this by using \textit{hard work} and \textit{useful notation} tactics! 
+Upper bound is proven by giving an example of algorithm that accomplishes this with $3$ weighings:
+
+Start by weighing: $1,2,3,4$ vs $5,6,7,8$ with $9,10,11,12$ set aside 
+\begin{itemize}
+\item $1,2,3,4 > 5,6,7,8$: we now weigh $1,2,5$ vs $3,6,10$:
+	\begin{itemize}
+		\item $1,2,5 > 3,6,10$: we finally weigh $1$ vs $2$:
+			\begin{itemize}
+				\item $1>2$: \textbf{$1$ is fake and is heavier}
+				\item $1<2$: \textbf{$2$ is fake and is heavier}
+				\item $1=2$: \textbf{$6$ is fake and is lighter}
+			\end{itemize}
+		\item $1,2,5 < 3,6,10$: weigh $3$ vs $10$:
+			\begin{itemize}
+				\item $3>10$: \textbf{$3$ is fake and is heavier}
+				\item $3<10$: \textbf{unreachable}
+				\item $3=10$: \textbf{$5$ is fake and is lighter}
+			\end{itemize}	
+		\item $1,2,5 = 3,6,10$: weigh $7$ vs $8$:
+			\begin{itemize}
+				\item $7>8$: \textbf{$8$ is fake and is lighter}
+				\item $7<8$: \textbf{$7$ is fake and is lighter}
+				\item $7=8$: \textbf{$4$ is fake and is heavier}
+			\end{itemize}	
+	\end{itemize} 
+\item $1,2,3,4 < 5,6,7,8$: we now weigh $1,2,5$ vs $3,6,10$:
+	\begin{itemize}
+		\item $1,2,5 < 3,6,10$: we finally weigh $1$ vs $2$:
+			\begin{itemize}
+				\item $1<2$: \textbf{$1$ is fake and is lighter}
+				\item $1>2$: \textbf{$2$ is fake and is lighter}
+				\item $1=2$: \textbf{$6$ is fake and is heavier}
+			\end{itemize}
+		\item $1,2,5 > 3,6,10$: weigh $3$ vs $10$:
+			\begin{itemize}
+				\item $3<10$: \textbf{$3$ is fake and is lighter}
+				\item $3>10$: \textbf{unreachable}
+				\item $3=10$: \textbf{$5$ is fake and is heavier}
+			\end{itemize}	
+		\item $1,2,5 = 3,6,10$: weigh $7$ vs $8$:
+			\begin{itemize}
+				\item $7<8$: \textbf{$8$ is fake and is heavier}
+				\item $7>8$: \textbf{$7$ is fake and is heavier}
+				\item $7=8$: \textbf{$4$ is fake and is lighter}
+			\end{itemize}	
+	\end{itemize} 
+\item $1,2,3,4 = 5,6,7,8$: we now weigh $9,10$ vs $11,1$:
+	\begin{itemize}
+		\item $9,10 > 11,1$ we finally weigh $9$ vs $10$:
+			\begin{itemize}
+				\item $9>10$: \textbf{$9$ is fake and is heavier}
+				\item $9<10$: \textbf{$10$ is fake and is heavier}
+				\item $9=10$: \textbf{$11$ is fake and is lighter}
+			\end{itemize}
+		\item $9,10 < 11,1$ we finally weigh $9$ vs $10$:
+			\begin{itemize}
+				\item $9>10$: \textbf{$10$ is fake and is lighter}
+				\item $9<10$: \textbf{$9$ is fake and is lighter}
+				\item $9=10$: \textbf{$11$ is fake and is heavier}
+			\end{itemize}
+		\item $9,10 = 11,1$: weigh $12$ vs $1$:
+			\begin{itemize}
+				\item $12>1$: \textbf{$12$ is fake and is heavier}
+				\item $12<1$: \textbf{$12$ is fake and is lighter}
+				\item $12=1$: \textbf{There is no fake coin}
+			\end{itemize}	
+	\end{itemize} 
+\end{itemize}
+
+This version normally would suffice as a solution in Math Olympiad (maybe with some small comments why it works).
+
+\textbf{Long version}:
+
+Below is my attempt to answer how to find/construct this algorithm. We'll do this by using \textit{hard work} and \textit{useful notation} tactics! 
 
 We can start with a reasoning like this - since our question has $25$ potential answers, and $3$ weighing algorithm gives maximum of $27$ answers, then we know that the algorithm we need to construct should be very \textit{efficient} - for example, all three results of the first weighing (<,>,=) should each still contain close to $9$ possibilities.  
 
@@ -113,21 +189,24 @@ Lets introduce some notations:
 \item[$n^?$] - will mean the number of weighings necessary to determine the fake coin if the fake one may or may not exist between the $n$ coins
 \end{description}
 
-We can now consider, what can be the first weighing of a successful algorithm? More specifically, let's ask ourselves, how many coins can be not put on any of the pans in the first weighing? Say we have $k$ such coins. $k$ has to be even, because $12-k$ has split evenly into two pans.  
+We can now consider, what can be the first weighing of a successful algorithm? More specifically, how many coins can be left out of the first weighing? Say we have $k$ such coins. $k$ has to be even, because $12-k$ has split evenly into two pans.  
 Now, if first weighing results in even pans, then it means that fake coin is between the $k$ coins left out of the first weighing. Since we still do not know whether the fake coin is lighter or heavier, then we have 
 	reduced the $12^?$ to the $k^?$ with one weighing plus we know, from previous argument, that in this branch we still need to be able to discern at least $7$, but not more than $11$ results. From this directly follows, that $k$ has to be $4$ (by amount of information argument presented earlier).
 	
-Now we actually know what the first weighing of any successful algorithm for $12^?$ is - its $1,2,3,4$ vs $5,6,7,8$ and $9,10,11,12$ are left out of first weighing. Equality in this first weighing reduces the problem to $4^?$ and we will come back to that later, but now let's look at inequality, say $1,2,3,4<5,6,7,8$ Its not quite reduction to $8^!$ (which would be impossible with $2$ weighings!) because we know something more about these coins - we know that if $1,2,3$ or $4$ turns out to be fake, they will be lighter that real ones and, conversely, $5,6,7,8$ will be heavier - and the number of possible answers is actually only $8$.
+Now we actually know what the first weighing of any successful algorithm for $12^?$ is - its $1,2,3,4$ vs $5,6,7,8$ and $9,10,11,12$ are left out of first weighing. Equality in this first weighing reduces the problem to $4^?$ and we will come back to that later, but now let's look at inequality, say $1,2,3,4<5,6,7,8$ 
+Its not quite reduction to $8^!$ (which would be impossible with $2$ weighings!) because we know something more about these coins - we know that if $1,2,3$ or $4$ turns out to be fake, they will be lighter that real ones and, conversely, $5,6,7,8$ will be heavier - and the number of possible answers is actually only $8$.
 
 Lets introduce some more notation!
 \begin{description}
-\item[$n_!$] - will mean the number of weighings necessary to determine the fake coin between the $n$ coins, if we know the \textit{forgery pattern} - i.e. if the first coin is fake, then it is heavier, if the second is fake, it is heavier, if the third is fake, it is lighter, $\dots$,  and if the last one is fake, then it is lighter, for example.\footnote{Since we are allowed to rearrange the coins freely, then what really matters in the forgery pattern is the number of coins that, if fake are lighter and heavier (and they are symmetrical)} 
+\item[$n_!$] - will mean the number of weighings necessary to determine the fake coin between the $n$ coins, if we know the \textit{forgery pattern} - for example, if the first coin is fake, then it is heavier, if the second is fake, it is heavier, if the third is fake, it is lighter, $\dots$,  and if the last one is fake, then it is lighter\footnote{Since we are allowed to rearrange the coins freely, then what really matters in the forgery pattern is the number of coins that, if fake are lighter and heavier (and they are symmetrical)} 
 \item[$n_?$] - will mean the number of weighings necessary to determine the fake coin between the $n$ coins, if we do not know the \textit{forgery pattern} - we do not know for all coins that if it is fake then it lighter (or heavier). 
 \end{description}
 
-So, we can use this new notation (or combination of both), that by using weighing $1,2,3,4$ vs $5,6,7,8$ we reduce $12^?_?$ to $4^?_?$ and $8^?_!$. What is left to show how to do $4^?_?$ and $8^?_!$ with two weighings that are left to us. Also note, that starting from the second weighing we have some extra resource - \textit{reference} coins that are known to be real. We might need them...
+So, we can use this new notation (or combination of both), that by using weighing $1,2,3,4$ vs $5,6,7,8$ we reduce $12^?_?$ to $4^?_?$ and $8^!_!$. What is left to show how to do $4^?_?$ and $8^!_!$ with two weighings that are left to us. Also note that starting from the second weighing we have some extra resource - \textit{reference} coins that are known to be real. We might need them...
 
-Lets start with $4^?_?$. Again, lets denote $m$ the amount of coins that are not weighed in the first of the two weighings of this sub-problem. Clearly, $m<2$, because $2^?_?$ would still have $5$ possible outcomes, so, by amount of information argument, it can not be solved by one remaining weighing.  On other hand, if $k=0$, that means that in either case of dis-equilibrium we will have reduced this subproblem to $4^!_!$ which has $4$ possible answers, but we will have only one weighing left, which would be impossible. Therefore we know that $m=1$, and in the first weighing we need to include $3$ coins.  Having to use odd number of coins in single weighing mandates that we need to use some reference coins (luckily we have some in this subproblem). For example we can do $1,2$ vs $3,X$ (where $X$ denotes reference coin). If we do this, we have reduced $4^?_?$ to $1^?_?$ (which is solvable in one weighing trivially) and $3^!_!$ with a $2:1$ forgery pattern.
+Lets start with $4^?_?$. Again, lets denote $m$ the amount of coins that are not weighed in the first of the two weighings of this sub-problem. Clearly, $m<2$, because $2^?_?$ would still have $5$ possible outcomes, so, by amount of information argument, it can not be solved by one remaining weighing.  On other hand, if $m=0$, that means that in either case of equilibrium we immediately have to conclude that there is no fake coin, but that is only one of the $9$ possible answers we have to be able to discern. Now remaining two branches will have to discern $8$ answers, which is impossible. 
+
+Therefore we know that $m=1$, and in the first weighing we need to include $3$ coins.  Having to use odd number of coins in single weighing mandates that we need to use some reference coins (luckily we have some in this subproblem). For example we can do $1,2$ vs $3,X$ (where $X$ denotes reference coin). If we do this, we have reduced $4^?_?$ to $1^?_?$ (which is solvable in one weighing trivially) and $3^!_!$ with a $2:1$ forgery pattern.
 
 Can $3^!_!$ be solved in one weighing? Yes! In any pattern, two of the coins have the same forgery pattern - say $1,2$ are heavier. Then we can weigh $1$ vs $2$ and, whichever is heavier is fake. If they are equal, then the fake is $3$ and is lighter or heavier according to (known) forgery pattern.
 
@@ -149,23 +228,8 @@ We still have left to prove that $8_!^!$ can be done with $2$ weighings with up 
 \end{itemize}
 
 We are done. 
+To recap, here we discussed the way to construct the algorithm, but the algorithm itself is relatively easy to present (see TLDR section)
 
-To recap, here we discussed the way to construct the algorithm, but the algorithm itself is relatively easy to present:
-
-$1.$ weighing: $1,2,3,4$ vs $5,6,7,8$ with $9,10,11,12$ set aside 
-\begin{itemize}
-\item $1,2,3,4 > 5,6,7,8$: we now weigh $1,2,5$ vs $3,6,10$:
-	\begin{itemize}
-		\item $1,2,5 > 3,6,10$: we finally weigh $1$ vs $2$:
-			\begin{itemize}
-				\item aa
-			\end{itemize}
-		\item $1,2,5 < 3,6,10$
-		\item $1,2,5 = 3,6,10$
-	\end{itemize} 
-\item $1,2,3,4 < 5,6,7,8$ 
-\item $1,2,3,4 = 5,6,7,8$ 
-\end{itemize}
 
 \end{problem}
 %
