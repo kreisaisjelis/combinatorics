@@ -1,70 +1,12 @@
 %!TEX TS-program = XeLaTeX
-\documentclass[11pt]{article}
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
 
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amsmath}
-
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
-\usepackage{xltxtra}
-\usepackage[font=small,labelfont=bf]{caption}
-
-%%%%%%%%%%%%%%    Language matters  %%%%
-
-%\usepackage[latvian]{babel}
-%\usepackage[L7x]{fontenc}
-%\usepackage[utf8x]{inputenc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
-%\usepackage{setspace}
-%\renewcommand{\headrulewidth}{1pt}
-%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
-%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
 \fancyhead[C]{{\Large\bf Graphs 1 - Problems}\\ \date}
 
-\renewcommand{\theenumi}{\alph{enumi}}
-%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
-\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
-
-\def\leq{\leqslant}
-\def\geq{\geqslant}
-\def\N{\mathbb N}
-\def\R{\mathbb R}
-\def\Z{\mathbb Z}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% Language name in english %%%%%%%%%
-\def\lang{Latvian}
-
-%\def\lang{Lithuanian}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\def\date{2018. gada 18. jūnijs}
-%\def\notes{}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\prob{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\theoremstyle{definition}
-\newtheorem{problem}{\prob}
-
-\pagestyle{fancy}
-
-
-
 \begin{document}
-%\thispagestyle{fancy}
+
 \noindent 
 %\emph{\notes}
 
@@ -83,7 +25,7 @@ City of Königsberg is located on both sides of the river Pregel and on two isla
 %2
 \begin{problem}
 \textit{[Weird classmates]}
-A student once told James: "We have $35$ students in our class. And imagine - everyone has exactly $11$ friends within the class!". James, being good at Graph Theory, imediately replied that this is not possible. How did he know?
+A student once told James: "We have $35$ students in our class. And imagine - everyone has exactly $11$ friends within the class!". James, being good at Graph Theory, immediately replied that this is not possible. How did he know?
 \end{problem}
 %
 
@@ -99,7 +41,7 @@ In the Kingdom of Wakanda there are $15$ towns and each of these are connected w
 \textit{[Wire cube]}
 Luize has a $120cm$ long piece of wire.
 \begin{enumerate}
-\item Can she make a cube with side lenght $10cm$ without cutting the wire?
+\item Can she make a cube with side length $10cm$ without cutting the wire?
 \item If she does need to cut it, what is the minimum number of pieces?
 \end{enumerate}
 \end{problem}
