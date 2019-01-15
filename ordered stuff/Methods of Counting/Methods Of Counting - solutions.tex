@@ -2,7 +2,7 @@
 \input{../FormatGen.tex}
 \input{../FormatProblems.tex}
 %\input{../FormatLV.tex}
-\fancyhead[C]{{\Large\bf Methods of Counting - Problems}\\ \date}
+\fancyhead[C]{{\Large\bf Methods of Counting - Solutions}\\ \date}
 
 \renewcommand{\theenumi}{\alph{enumi}}
 
@@ -11,46 +11,89 @@
 %\thispagestyle{fancy}
 \noindent 
 %\emph{\notes}
-
+\filbreak
 %1
 \begin{problem}
 \textit{[Christmas problems]}
+
+\textbf{Problem}
+
 For this Christmas Valery has decided to build $5$ distinct cardboard trees and decorate them.
+
 \begin{enumerate}
-\item In how many ways can Valery paint the trees (one tree in one color), if she has three different colors available?
+\item In how many ways can Valery paint the trees (one tree in one color), if she has three different colors available? 
 \item Valery has procured $5$ different decorations. In how many ways can she decorate the trees, if she decorates each tree with one decoration?
 \item How many possibilities are there for end result (color+decoration) for these 5 trees?
 \item What if Valery can put several decorations on one tree and wants to use all of the decorations? What if she is ok with not using all of them?
 \end{enumerate}
+
+
+\textbf{Solution - Classic Combinatorics, Direct Counting, Method of Multiplication, Permutations, Inverting the choice, Empty Option}
+
+\begin{enumerate}
+\item First tree can be painted in $3$ ways. Since painting of the first tree has no impact on the painting of the others, the second can also be painted in $3$ ways and to calculate the total  number of ways, we multiply these. Carrying on, we find that total amount of possibilities is $3\times3\times3\times3\times3 = 3^5$
+\item She can decorate the first tree with any of the decorations, so, in $5$ ways. For the next tree, however, she can only use one of $4$ decorations, since one is already hanging on the first tree. So forth, until finally she has no choice at all about what to use on the last tree - $5\times 4\times 3\times 2\times 1 = 5!$ (this construct - number of orderings of distinct objects - is also known as number of Permutations)
+\item Since painting trees has no impact on choosing decorations (these are independent choices), we can simply multiply these two results to get the answer $3^5\times 5!$
+\item If Valery wants to use all $5$ decorations, but does not limit herself with putting only one per tree, then its easier to \textit{invert} this setup and look at it from perspective of decorations - in how many ways can she use first decoration? On one of the $5$ trees, so - $5$. Choice for second decoration does not depend on the choice of first, then its again $5$. In total, then, for $5$ decorations, the number of ways to use them is $5\times 5\times 5\times 5\times 5=5^5$
+
+If she is ok with possibly not using some (or all) of decorations, then we can use a trick called \textit{empty option} - when Valeria decides where to put each decoration, instead of just considering $5$ trees, she also adds a possibility to not use it at all, so $6$ options in total. Otherwise the choices are still independent and we get $6 \times 6\times 6\times 6\times 6 = 6^5$
+\end{enumerate}
 \end{problem}
 %
-
+\filbreak
 %2
 \begin{problem}
 \textit{[Bad diet]}
+
+\textbf{Problem}
+
 Schools cantina has a constant menu that features $6$ dishes. Romuald has decided to keep following diet: each day eat some of the dishes (maybe none) so that in no two days his selection repeats.
 What is the longest period that Romuald can keep up this diet? What would be the average number of dishes he consumes per day?
+
+\textbf{Solution - Binary Encoding}
+
+Imagine that $6$ dishes are always written in a line and, and if in a given day Romuald chooses to eat particular dish, he writes $1$ under that dish, and if not, he writes $0$ under that dish. Then in each particular day he would write a string of $6$ \textit{binary digits} - $0$s and $1$s, for example $001101$ (This technique is called \textit{encoding} and is surprisingly popular and useful)
+
+Now our question is transformed into: how many different binary strings of length $6$ are there? This is very similar to previous problem first case - we can just use multiplication rule: $2\times2\times2\times2\times2\times2 = 2^6$
+
+The question of average amount of dishes per day is also easy to answer via encoding. Imagine that all these binary strings of length $6$ are written in a table. We would need to count number of $1$s in this table and then divide it by the number of rows which we already calculated to be $2^6$.
+
+Since all the strings are present in this table, then for any given string $A$ there is also an \textit{inverse} string $A^\prime$ such that if in position $i$ $A$ contains $1$ then $B$ in position $i$ contains $0$ and vice-versa. 
+Nice property of this pair $A$ and $A^\prime$ is that $A$ and $A^\prime$ together contain exactly $6$ $1$s. Because we have $2^6$ rows, then we have $\frac{2^6}{2}$ pairs of rows and number of $1$s is $\frac{2^6}{2}\times 6=2^5\times6$
+
+To get the daily average we just divide by number of rows: $\frac{2^5\times6}{2^6}=\frac{6}{2}=3$
 \end{problem}
 %
-
+\filbreak
 %3
 \begin{problem}
 \textit{[Good diet]}
+
+\textbf{Problem}
+
 A cannibal has captured $25$ juicy prisoners.
 \begin{enumerate}
 \item How many possible daily menus ($1$ prisoner for each of three meals, order matters) can cannibal come up with for tomorrow's feast?
 \item In how many ways he can decide to be kind and release three prisoners? (here order does not matter)
 \end{enumerate}
+
+\textbf{Solution - Classic Combinatorics, Overcounting Combinations}
+
+\begin{enumerate}
+\item Using direct reasoning again: $25$ choices for breakfast, $24$ for lunch (since one is used up already), $23$ for dinner, so $23\times24\times25$. If we extent this a little to $N$ prisoners and $K$ meals then we would get $N\times (N-1) \times (N-2) \times \dots \times (N-K+1)$ Using notation of \textit{factorials} we can write this as $\frac{N!}{(N-K)!}$ 
+\item This is a bit tricky, but we can approach it this way - first count the number of ways in which they can be released, if order mattered (we did that in first part) but then realise that we have \textit{overcounted} by factor of number of orderings - permutations - of $3$. 
+\end{enumerate}
+
 \end{problem}
 %
-
+\filbreak
 %4
 \begin{problem}
 \textit{[Problems on the dance floor]}
 If there are $N$ guys and $N$ girls, then in how many ways they can all devide into guy-girl pairs for a dance? What if there is different number of guys and girls? What if we allow people not to dance (if they dont want to)?
 \end{problem}
 %
-
+\filbreak
 
 %5
 \begin{problem}
@@ -64,55 +107,55 @@ In how many ways can following figures be colored if each cell has to be painted
 \end{enumerate}
 \end{problem}
 %
-
+\filbreak
 %6
 \begin{problem}
 \textit{[Phone numbers]}
 How many $8$ digit phone numbers are there if the only limit is that number can not start with $0$?
 \end{problem}
 %
-
+\filbreak
 %7
 \begin{problem}
 \textit{[Limited ordering]}
 In how many way can integers $\set{1..100}$ be ordered so that any two numbers next each other have a difference of $1$ or $-1$?
 \end{problem}
 %
-
+\filbreak
 %8
 \begin{problem}
 \textit{[Even-y numbers]}
 How many $8$ digit numbers are there, the digits\footnote{Here and elsewhere, unless stated otherwise, assume decimal digits} of which all have the same parity?
 \end{problem}
 %
-
+\filbreak
 %9
 \begin{problem}
 \textit{[Uneven numbers]}
 How many integers are there in the interval $(0..999999)$, which have no two repeated digits side-by-side in them?
 \end{problem}
 %
-
+\filbreak
 %10
 \begin{problem}
 \textit{[Descending numbers]}
 How many $6$ digit integers are there, in which the digits are in strictly descending order?
 \end{problem}
 %
-
+\filbreak
 %11
 \begin{problem}
 \textit{[Date confusion]}
 Erika tried to give Jonathan her ($8$ digit) phone number, but she accidentally left out one digit when she wrote it down on a napkin. Next day Jonathan was determined to fix this by trying out all the possible phone numbers she could have. How much time would it take him, assuming $1$ minute per phone number?
 \end{problem}
 %
-
+\filbreak
 %12
 \begin{problem}
 \textit{[Date confusion 2]}
 In United States, dates are written in format MM-DD-YYYY. In Europe - DD-MM-YYYY. How many days are in a year for which you have to know which format is used in order to determine them correctly?
 \end{problem}
-
+\filbreak
 %13
 \begin{problem}
 \textit{[Step walk]}
@@ -123,7 +166,7 @@ Lets call \textit{step walk} any route in a square grid between points $A$ and $
 \item Points $(0,0,0)$ and $(N,M,K)$, if we generalize into 3D?
 \end{enumerate}
 \end{problem}
-
+\filbreak
 %14
 \begin{problem}
 \textit{[Meeting on a step walk]}
@@ -134,21 +177,21 @@ What is the probability to meet for two travellers, who travel between two point
 \item Points $(0,0,0)$ and $(N,M,K)$
 \end{enumerate}
 \end{problem}
-
+\filbreak
 %15
 \begin{problem}
 \textit{[Global problem]}
 Globe is divided by $17$ parallels and $24$ meridians. Into how many parts is the globes surface divided by these lines? 
 \end{problem}
 %
-
+\filbreak
 %16
 \begin{problem}
 \textit{[Problem of belonging]}
 On a square grid of $m \times n$ a cell $(p,q)$ is selected. How many rectagons (with vertices on cells) contain the selected cell?
 \end{problem}
 %
-
+\filbreak
 %17
 \begin{problem}
 \textit{[Kvadratenfrei]}
