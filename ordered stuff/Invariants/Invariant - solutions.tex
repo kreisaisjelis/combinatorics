@@ -1,85 +1,22 @@
 %!TEX TS-program = XeLaTeX
-\documentclass[11pt]{article}
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
 
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{mathtools}
-
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
-\usepackage{xltxtra}
-\usepackage[font=small,labelfont=bf]{caption}
-
-
-\usepackage{hyperref}
-
-
-%%%%%%%%%%%%%%    Language matters  %%%%
-
-%\usepackage[latvian]{babel}
-%\usepackage[L7x]{fontenc}
-%\usepackage[utf8x]{inputenc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
-%\usepackage{setspace}
-%\renewcommand{\headrulewidth}{1pt}
-%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
-%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
 \fancyhead[C]{{\Large\bf Invariant solutions}\\ \date}
-\renewcommand{\theenumi}{\alph{enumi}}
-
-\def\leq{\leqslant}
-\def\geq{\geqslant}
-\def\N{\mathbb N}
-\def\R{\mathbb R}
-\def\Z{\mathbb Z}
-
-\DeclarePairedDelimiter\set\{\}
-\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
-\newcommand{\?}{\stackrel{?}{=}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% Language name in english %%%%%%%%%
-\def\lang{Latvian}
-
-%\def\lang{Lithuanian}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\def\date{2018. gada 18. jūnijs}
-%\def\notes{}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\prob{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\theoremstyle{definition}
-\newtheorem{problem}{\prob}
-
-\pagestyle{fancy}
-
-
 
 \begin{document}
-%\thispagestyle{fancy}
+
 \noindent 
 %\emph{\notes}
+\filbreak
 %1
 \begin{problem}
 \textit{[Blackboard game - \url{http://problems.ru/view_problem_details_new.php?id=60630}]}
 
 \textbf{Invariant value:} the result of multiplication of all numbers on the blackboard does not change with any valid move. 
 
-Since initial result of multiuplication was $-1$, the last number on the blackboard will be $-1$
+Since initial result of multiplication was $-1$, the last number on the blackboard will be $-1$
 \end{problem}
 %
 
