@@ -54,6 +54,7 @@ There are $64$ fields on a chess board, but since the knight is already on one o
 In each move we are decreasing the total amount of stones on the table by $1$ and increasing the number of stone piles by $1$. Therefore...
 
 \textbf{Invariant value} is a sum of stones and piles. 
+Then the contradiction is easy to see, for example, as $3\times n + n = 4n$ stones at the end state means that starting state should be $0$ mod $4$
 \end{problem}
 %
 
@@ -61,7 +62,7 @@ In each move we are decreasing the total amount of stones on the table by $1$ an
 \begin{problem}
 \textit{[Circle game - \url{http://problems.ru/view_problem_details_new.php?id=88309}]}
 
-If you color the numbers in two colors - $A$ and $B$, the coloring in uninterrupted, meaning that any two neighboring numbers will contain one of each color.
+If you color the numbers in two colors - $A$ and $B$, the coloring is uninterrupted, meaning that any two neighboring numbers will contain one of each color.
 
 \textbf{Invariant value} in this case is un/equality of sums of numbers in each color. 
 
