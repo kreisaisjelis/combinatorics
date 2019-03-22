@@ -77,11 +77,11 @@ A cannibal has captured $25$ juicy prisoners.
 \item In how many ways he can decide to be kind and release three prisoners? (here order does not matter)
 \end{enumerate}
 
-\textbf{Solution - Classic Combinatorics, Overcounting Combinations}
+\textbf{Solution - Classic Combinatorics, Over-counting Combinations}
 
 \begin{enumerate}
 \item Using direct reasoning again: $25$ choices for breakfast, $24$ for lunch (since one is used up already), $23$ for dinner, so $23\times24\times25$. If we extent this a little to $N$ prisoners and $K$ meals then we would get $N\times (N-1) \times (N-2) \times \dots \times (N-K+1)$ Using notation of \textit{factorials} we can write this as $\frac{N!}{(N-K)!}$ 
-\item This is a bit tricky, but we can approach it this way - first count the number of ways in which they can be released, if order mattered (we did that in first part) but then realise that we have \textit{overcounted} by factor of number of orderings - permutations - of $3$. 
+\item This is a bit tricky, but we can approach it this way - first count the number of ways in which they can be released, if order mattered (we did that in first part) but then realise that we have \textit{over-counted} by factor of number of orderings - permutations - of $3$. 
 \end{enumerate}
 
 \end{problem}
@@ -90,7 +90,21 @@ A cannibal has captured $25$ juicy prisoners.
 %4
 \begin{problem}
 \textit{[Problems on the dance floor]}
-If there are $N$ guys and $N$ girls, then in how many ways they can all devide into guy-girl pairs for a dance? What if there is different number of guys and girls? What if we allow people not to dance (if they dont want to)?
+
+\textbf{Problem}
+
+If there are $N$ guys and $N$ girls, then in how many ways they can all divide into guy-girl pairs for a dance? What if there is different number of guys and girls? What if we allow people not to dance (if they don't want to)?
+
+
+\textbf{Solution - Pairing problem, Ordering, Bijection}
+
+First problem can be approached like this - we imagine that all the girls stand in one line, say, alphabetically by name. All the guys then form another line. Then they pair off - first guy with first gal and so on. Now it is easy to see, that number of pairings is equal to number of ways how we can order guys, i.e. $N!$ 
+
+For those in doubt, we can think backwards - consider a fixed pairing $K$. We can order these pairs alphabetically by name of the girl and we have a fixed ordering of guys $K^\prime$. Each $K$ maps to exactly one $K^\prime$ and each $K^\prime$ maps to exactly one $K$, therefore there is an equal amount of them! This construct is called a \textit{bijection} and lies at the core of concept of counting. 
+
+Second problem - if there are $N$ girls and $M$ guys and, say, $M>N$. 
+We start the same way - line up girls, line up guys (this gives us $M!$) ways and pair-off first-to-first, second-to-second and so on.  Last $M-N$ guys are left without a dance partner and, for pairing purposes, we do not care, in what order they stand (swapping two of these guys would not result in a different pairing of dancers).  Therefore we divide our result $M!$ by number of orderings of unlucky guys $(M-N)!$. Therefore the number of ways to make dance pairs is $\frac{M!}{(M-N)!}$
+
 \end{problem}
 %
 \filbreak
