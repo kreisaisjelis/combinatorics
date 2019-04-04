@@ -201,7 +201,7 @@ In a company of people some pairs are enemies. A group of people is called \text
 
 Given that there are at most $2015$ unsociable groups, prove that it is possible to partition the company into $11$ parts so that no two enemies are in the same part!
 
-\textbf{Solution - Proper coloring, Chromatic number}
+\textbf{Solution - Proper coloring, Chromatic number, number of odd-sized subsets}
 
 Let $G = (V, E)$ be a graph where $V$ is the set of people in the company and $E$ is the set of the enemy pairs — the edges of the graph. In this language, partitioning into $11$ disjoint enemy-free subsets means properly coloring the vertices of this graph with $11$ colors. We will prove the following more general statement.
 
@@ -231,59 +231,36 @@ Suppose that $G = (V, E)$ is a graph with odd chromatic number $k > 3$, and let 
 $V_1, V_2, \dots, V_k$.
 \end{lemma}
 \begin{proof}
-Let us call a cycle colorful if it visits all color classes. Due to the definition of the chromatic number, $V_1$ is nonempty. Choose an arbitrary vertex $v \in V_1$. We construct a colorful odd cycle that has only one vertex in $V_1$, and this vertex is $v$. 
+Let us call a cycle colorful if it visits all color classes. Due to the definition of the chromatic number, $V_1$ is nonempty. Choose an arbitrary vertex $v \in V_1$. We will construct a colorful odd cycle that has only one vertex in $V_1$, and this vertex is $v$. 
 
-We draw a subgraph of $G$ as follows. Place $v$ in the center, and arrange the sets $V_2, V_3, \dots , V_k$ in counterclockwise circular order around it. For convenience, let $V_{k-1} = V_2$. We will draw arrows to add direction to some edges of $G$, and mark the vertices these arrows point to. First we draw arrows from $v$ to all its neighbors in $V_2$, and mark all those neighbors. If some vertex $u \in V_i$ with $i \in {2, 3, \dots , k}$ is already marked, we draw arrows from $u$ to all its neighbors in $V_{i+1}$ which are not marked yet, and we mark all of them. We proceed doing this as long as it is possible. The process of marking is exemplified in Figure 1.
+We draw a subgraph of $G$ as follows. Place $v$ in the center, and arrange the sets $V_2, V_3, \dots , V_k$ in counterclockwise circular order around it. For convenience, let $V_{k+1} = V_2$. We will draw arrows to add direction to some edges of $G$, and mark the vertices these arrows point to. First we draw arrows from $v$ to all its neighbors in $V_2$, and mark all those neighbors. If some vertex $u \in V_i$ with $i \in {2, 3, \dots , k}$ is already marked, we draw arrows from $u$ to all its neighbors in $V_{i+1}$ which are not marked yet, and we mark all of them. We proceed doing this as long as it is possible. The process of marking is exemplified in Figure 1.
 
-Notice that by the rules of our process, in the final state, marked vertices in Vi cannot have
-unmarked neighbors in Vi`1. Moreover, v is connected to all marked vertices by directed paths.
-Now move each marked vertex to the next color class in circular order (see an example in
-Figure 3). In view of the arguments above, the obtained coloring V1 \ W2 \ ¨ ¨ ¨ \ Wk is proper.
-Notice that v has a neighbor w P W2, because otherwise
-`
-V1 z tvu
-˘
-\
-`
-W2 Y tvu
-˘
-\ W3 \ ¨ ¨ ¨ \ Wk
-would be a proper coloring lexicographically smaller than (1). If w was unmarked, i.e., w was
-an element of V2, then it would be marked at the beginning of the process and thus moved
-to V3, which did not happen. Therefore, w is marked and w P Vk.
-Shortlisted problems – solutions 39
-v
-V2 V3
-V5 V4
-w
-v
-W2 W3
-W5 W4
-w
-−→
-Figure 1 Figure 2
-Since w is marked, there exists a directed path from v to w. This path moves through the
-sets V2, . . . , Vk in circular order, so the number of edges in it is divisible by k ´1 and thus even.
-Closing this path by the edge w Ñ v, we get a colorful odd cycle, as required. l
+Notice that by the rules of our process, in the final state, marked vertices in $V_i$ cannot have unmarked neighbors in $V_{i+1}$. Moreover, $v$ is connected to all marked vertices by directed paths. 
+
+Now move each marked vertex to the next color class in circular order (see an example in Figure 2). In view of the arguments above, the obtained coloring $V_1 \sqcup W2 \sqcup \dots \sqcup W_k$ is proper. Notice that $v$ has to have a neighbor $w \in W_2$, because otherwise
+\begin{equation}
+(V_1  \setminus \set{v}) \sqcup (W_2 \cup \set{v}) \sqcup W_3 \sqcup \dots \sqcup W_k
+\end{equation}
+would be a proper coloring lexicographically smaller than (\ref{propcoloring}). If $w$ was unmarked, i.e., $w$ was an element of $V_2$, then it would be marked at the beginning of the process and thus moved to $V_3$, which did not happen. Therefore, $w$ is marked and $w \in V_k$.
+
+\begin{center}
+\includegraphics[width=18cm]{spider.png}
+%\captionof{figure}{Crossing a narrow bridge}
+\label{fig:spider}
+\end{center}
+
+Since $w$ is marked, there exists a directed path from $v$ to $w$. This path moves through the sets $V_2, \dots , V_k$ in circular order, so the number of edges in it is divisible by $k - 1$ and thus even.
+Closing this path by the edge $w \rightarrow v$, we get a colorful odd cycle, as required.
 \end{proof}
 
-Proof of the claim. Let us choose a leximinimal coloring (1) of G. For every set C Ď t1, 2, . . . , ku
-such that |C| is odd and greater than 1, we will provide an odd cycle visiting exactly those
-color classes whose indices are listed in the set C. This property ensures that we have different
-cycles for different choices of C, and it proves the claim because there are 2k´1 ´ k choices for
-the set C.
-Let VC “
-Ť
-cPC
-Vc, and let GC be the induced subgraph of G on the vertex set VC. We
-also have the induced coloring of VC with |C| colors; this coloring is of course proper. Notice
-further that the induced coloring is leximinimal: if we had a lexicographically smaller coloring
-pWcqcPC of GC, then these classes, together the original color classes Vi
-for i R C, would provide
-a proper coloring which is lexicographically smaller than (1). Hence Lemma 1, applied to the
-subgraph GC and its leximinimal coloring pVcqcPC, provides an odd cycle that visits exactly
-those color classes that are listed in the set C. 
+Proof of the claim. 
+\begin{proof}
+Let us choose a leximinimal coloring (\ref{propcoloring}) of $G$. For every set $C \subseteq  \set{1, 2, \dots, k}$ such that $\abs{C}$ is odd and greater than $1$, we will provide an odd cycle visiting exactly those color classes whose indices are listed in the set $C$. This property ensures that we have different cycles for different choices of $C$, and it proves the claim because there are $2^{k-1} - k$ choices for the set C.
 
+
+Let $V_C = \bigcup_{c \in C}V_c$, and let $G_C$ be the induced subgraph of $G$ on the vertex set $V_C$. We also have the induced coloring of $V_C$ with $\abs{C}$ colors; this coloring is of course proper. Notice further that the induced coloring is leximinimal: if we had a lexicographically smaller coloring  
+$(W_c)_{c \in C}$ of $G_C$, then these classes, together the original color classes $V_i$ for $i \notin C$, would provide a proper coloring which is lexicographically smaller than (\ref{propcoloring}). Hence Lemma \ref{leximinlemma}, applied to the subgraph $G_C$ and its leximinimal coloring $(V_c)_{c \in C}$, provides an odd cycle that visits exactly those color classes that are listed in the set $C$. 
+\end{proof}
 \end{problem}
 %
 \filbreak
