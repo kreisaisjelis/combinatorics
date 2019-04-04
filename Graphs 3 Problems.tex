@@ -1,0 +1,120 @@
+%!TEX TS-program = XeLaTeX
+\documentclass[11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
+\usepackage{xltxtra}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%%%%%%%%%%%%%%    Language matters  %%%%
+
+%\usepackage[latvian]{babel}
+%\usepackage[L7x]{fontenc}
+%\usepackage[utf8x]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
+%\usepackage{setspace}
+%\renewcommand{\headrulewidth}{1pt}
+%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
+%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\fancyhead[C]{{\Large\bf Graphs 3 - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
+\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
+
+\def\leq{\leqslant}
+\def\geq{\geqslant}
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\Z{\mathbb Z}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Language name in english %%%%%%%%%
+\def\lang{Latvian}
+
+%\def\lang{Lithuanian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\def\date{2018. gada 18. jūnijs}
+%\def\notes{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\prob{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\theoremstyle{definition}
+\newtheorem{problem}{\prob}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[BW1994PL19]}
+The Wonder Island Intelligence Service has $16$ spies in Tartu. Each of them watches on some of his colleagues. It is known that if spy $A$ watches on spy $B$, then $B$ does not watch on $A$. Moreover, any $10$ spies can numbered in such a way that the first spy watches on the second, the second watches on the third, $ \dots $, the tenth watches on the first. 
+
+Prove that any $11$ spies can also be numbered is a similar manner!
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[BW2010PL7]}
+There are some cities in a country; one of them is the capital. For any two cities $A$ and $B$ there is a direct flight from $A$ to $B$ and a direct flight from $B$ to $A$, both having the
+same price. Suppose that all round trips with exactly one landing in every city have the same total cost. 
+
+Prove that all round trips that miss the capital and with exactly one landing in every remaining city cost the same!
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[IMO2007PL3]}
+In a mathematical competition some competitors are friends. Friendship is always mutual. Call a group of competitors a \textit{clique} if each two of them are friends. (In particular, any group of fewer than two competitors is a clique.) The number of members of a clique is called its size. 
+
+Given that, in this competition, the largest size of a clique is even, prove that the competitors can be arranged in two rooms such that the largest size of a clique contained in one room is the same as the largest size of a clique contained in the other room!
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[IMO2013SLC3]}
+A crazy physicist discovered a new kind of particle which he called an \textit{imon}, after some of them mysteriously appeared in his lab. Some pairs of imons in the lab can be entangled, and each imon can participate in many entanglement relations. The physicist has found a way to perform the following two kinds of operations with these particles, one operation at a time.
+\begin{enumerate}
+\item If some imon is entangled with an odd number of other imons in the lab, then the physicist
+can destroy it.
+\item At any moment, he may double the whole family of imons in his lab by creating a copy $I^\prime$ of each imon $I$. During this procedure, the two copies $I^\prime$ and $J^\prime$ become entangled if and only if the original imons $I$ and $J$ are entangled, and each copy $I^\prime$ becomes entangled with its original imon $I$; no other entanglements occur or disappear at this moment.
+\end{enumerate}
+Prove that the physicist may apply a sequence of such operations resulting in a family of imons, no two of which are entangled!
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[IMO2015SLC7]}
+In a company of people some pairs are enemies. A group of people is called \textit{unsociable} if the number of members in the group is odd and at least $3$, and it is possible to arrange all its members around a round table so that every two neighbors are enemies. 
+
+Given that there are at most $2015$ unsociable groups, prove that it is possible to partition the company into $11$ parts so that no two enemies are in the same part!
+\end{problem}
+%
+\end{document}
