@@ -24,7 +24,7 @@ The Wonder Island Intelligence Service has $16$ spies in Tartu. Each of them wat
 Prove that any $11$ spies can also be numbered is a similar manner!
 
 
-\textbf{Solution}
+\textbf{Solution - Double counting, two level proof from opposite}
 
 We call spies $A$ and $B$ \textit{neutral} to each other if neither $A$ watches $B$ nor $B$ watches $A$. For each spy $A_1$ denote $a_1$, $b_1$ and $c_1$ the number of spies that watches on $A_i$, the number of spies $A_i$ watches and the number of spies neutral to $A_i$. Clearly we have
 $$
@@ -43,7 +43,7 @@ Now suppose the opposite, that there is a a group of $11$ spies that cannot be n
 
 Can $B$ watch $C_2$? No, because then we could insert $B$ into the cycle, between $C_1$ and $C_2$ and get a cycle with $11$ spies, which we assumed does not exist. So $C_2$ must also watch $B$. But by the same argument, $C_3$ must watch $B$, $C_4$ must watch $B$, $\dots$, $C_{10}$ must watch $B$. Which is impossible, since $a_B \le 8$. 
 
-Therefore one of our assumptions must be false. First assume, that assumption of not having neutrals among $C_i$ is false, but that is equivalent to saying that between any $11$ spies each must have exactly one neutral, which is impossible by parity of vertice powers.
+Therefore one of our assumptions must be false. First assume, that assumption of not having neutrals among $C_i$ is false, but that is equivalent to saying that between any $11$ spies each must have exactly one neutral, which is impossible by parity of vertex powers (you have to imagine "neutral" as another kind of edges to see it).
 
 Therefore our second assumption - that there are such $11$ spies that cannot be ordered in a cycle, exist - is false, and any $11$ can be ordered in a cycle.
 \end{problem}
@@ -67,7 +67,7 @@ Prove that all round trips that miss the capital and with exactly one landing in
 
 
 
-\textbf{Solution}
+\textbf{Solution - combinatorial vs algebraic proof}
 
 
 Let $C$ be the capital and $C_1, C_2, \dots, C_n$ be the remaining cities. Denote by $d(x, y)$
@@ -183,7 +183,7 @@ Let us apply repeatedly operation \textbf{\ref{op1}.} to any appropriate vertice
 
 Now apply the operation \textbf{\ref{op2}.} to this graph. A proper coloring of the resulting graph in $n$ colors still exists: one may preserve the colors of the original vertices and color the vertex $I^\prime$ in a color $k+1 (mod \  n)$ if the vertex $I$ has color $k$. Then two connected original vertices still have different colors, and so do their two connected copies. On the other hand, the vertices $I$ and $I^\prime$ have different colors since $n > 1$.
 
-All the degrees of the vertices in the resulting graph are odd, so one may apply operation \textbf{\ref{op1}.} to delete consecutively all the vertices of color $n$ one by one; no two of them are connected by an edge, so their degrees do not change during the process. Thus, we obtain a graph admitting a proper coloring in $n - 1$ colors, as required. The lemma is proved. 
+All the degrees of the vertices in the resulting graph are odd, so one may apply operation \textbf{\ref{op1}.} to delete consecutively all the vertices of color $k$ one by one; no two of them are connected by an edge, so their degrees do not change during the process. Thus, we obtain a graph admitting a proper coloring in $n - 1$ colors, as required. The lemma is proved. 
 \end{proof}
 
 Now, assume that a graph $G$ has $n$ vertices; then it admits a proper coloring in $n$ colors. Applying repeatedly the lemma we finally obtain a graph admitting a proper coloring in one color, that is -- a graph with no edges, as required.
@@ -211,7 +211,7 @@ Let $G = (V, E)$ be a graph where $V$ is the set of people in the company and $E
 \textit{Chromatic number} of $G$ is the least $k$ such that a proper coloring 
 \begin{equation}
 \label{propcoloring}
-V = V1 \sqcup \dots \sqcup V_k
+V = V_1 \sqcup \dots \sqcup V_k
 \end{equation}
 exists. In view of $2^{11} - 12 > 2015$, the claim implies the problem statement. 
 
@@ -237,7 +237,7 @@ We draw a subgraph of $G$ as follows. Place $v$ in the center, and arrange the s
 
 Notice that by the rules of our process, in the final state, marked vertices in $V_i$ cannot have unmarked neighbors in $V_{i+1}$. Moreover, $v$ is connected to all marked vertices by directed paths. 
 
-Now move each marked vertex to the next color class in circular order (see an example in Figure 2). In view of the arguments above, the obtained coloring $V_1 \sqcup W2 \sqcup \dots \sqcup W_k$ is proper. Notice that $v$ has to have a neighbor $w \in W_2$, because otherwise
+Now move each marked vertex to the next color class in circular order (see an example in Figure 2). In view of the arguments above, the obtained coloring $V_1 \sqcup W_2 \sqcup \dots \sqcup W_k$ is proper. Notice that $v$ has to have a neighbor $w \in W_2$, because otherwise
 \begin{equation}
 (V_1  \setminus \set{v}) \sqcup (W_2 \cup \set{v}) \sqcup W_3 \sqcup \dots \sqcup W_k
 \end{equation}
