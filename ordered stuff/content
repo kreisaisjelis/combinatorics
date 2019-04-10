@@ -31,6 +31,11 @@ mirror neurons/game theory
 	- http://problems.ru/view_problem_details_new.php?id=79367 ?
 generating functions ?
 
+Misc problems:
+	Circle division into areas: https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas - methods of counting, Eulers Formula for Planar Graphs VS recurrences?
+	Ores theorem (Hamiltonean cycle existance) https://en.wikipedia.org/wiki/Ore%27s_theorem - proof from the opposite, graphs
+	Bondy's theorem https://math.stackexchange.com/questions/1490605/why-does-bondys-theorem-work/1490778#1490778 graph proof, trees
+	Ramsay's theorem  https://en.wikipedia.org/wiki/Ramsey%27s_theorem - graph theory, basis of Ramsay's theory, induction on graphs
 
 Legend:
 p - problem set in English

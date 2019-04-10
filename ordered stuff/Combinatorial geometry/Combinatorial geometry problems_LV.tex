@@ -1,63 +1,8 @@
 %!TEX TS-program = XeLaTeX
-\documentclass[11pt]{article}
-
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amsmath}
-
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
-\usepackage{xltxtra}
-
-%%%%%%%%%%%%%%    Language matters  %%%%
-
-%\usepackage[latvian]{babel}
-%\usepackage[L7x]{fontenc}
-%\usepackage[utf8x]{inputenc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
-%\usepackage{setspace}
-%\renewcommand{\headrulewidth}{1pt}
-%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
-%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
-\fancyhead[C]{{\Large\bf Kombinatoriskās ģeometrijas uzdevumi}\\ \date}
-\renewcommand{\theenumi}{\alph{enumi}}
-
-\def\leq{\leqslant}
-\def\geq{\geqslant}
-\def\N{\mathbb N}
-\def\R{\mathbb R}
-\def\Z{\mathbb Z}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% Language name in english %%%%%%%%%
-\def\lang{Latvian}
-
-%\def\lang{Lithuanian}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\date{2018. gada 18. jūnijs}
-%\def\notes{}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\prob{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\theoremstyle{definition}
-\newtheorem{problem}{\prob}
-
-\pagestyle{fancy}
-\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
-
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Kombinatoriskās ģeometrijas uzdevumi}}
 
 \begin{document}
 %\thispagestyle{fancy}
@@ -66,21 +11,41 @@
 
 %1
 \begin{problem}
-$[BW1999]$
-Vai diska ar rādiusu $1$ (ieskaitot aploci) punktus var sadalīt trīs apakškopās tā, lai nevienā apakškopā neatrastos divi punkti, kuru attālums ir tieši $1$?
+\textit{[Kvadrāta sadalīšana]}
+Katra no $9$ taisnēm sadala kvadrātu divos četrstūros, kuru laukumu attiecība ir $2:3$. Pierādiet, ka eksistē punkts, kurā satiekas vismaz trīs no šīm taisnēm!
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Eilera formula daudzskaldņiem]}
+Pierādiet, ka jebkuram izliektam daudzskaldnim izpildās sakarība $V+F-E=2$, kur $V$ - virsotņu skaits, $E$ - šķautņu skaits un $F$ - skaldņu skaits!
 \end{problem}
 
 %3
 \begin{problem}
-$[IMO2013PL2]$
+\textit{[Apļa sadalīšana]}
+Kāds ir lielākais daudzums laukumu, kuros riņķi sadala tajā ierakstīts $n$-stūris un visas tā diagonāles?
+\end{problem}
+
+
+%4
+\begin{problem}
+\textit{[BW1999]}
+Vai diska ar rādiusu $1$ (ieskaitot aploci) punktus var sadalīt trīs apakškopās tā, lai nevienā apakškopā neatrastos divi punkti, kuru attālums ir tieši $1$?
+\end{problem}
+
+%5
+\begin{problem}
+\textit{[IMO2013PL2]}
 $n$ sarkanu un $n+1$ zilu punktu izvietojums plaknē saucas par Kolumbisku, ja nevieni trīs punkti neatrodas uz vienas taisnes. Vairāku taišņu izvietojumu šajā plaknē sauc par pūderainu, ja neviena taisne nesatur nevienu no Kolumbiskā izkārtojuma punktiem un neviens no reģioniem, kuros plakni sadala šīs taisnes, nesatur abu krāsu punktus. 
 
 Atrodiet mazāko $k$, priekš kura katram Kolumbiskam $4027$ punktu izkārtojumam eksistē pūderains $k$ taišņu izvietojums!
 \end{problem}
 
-%5
+%6
 \begin{problem}
-$[IMO2017PL3]$
+\textit{[IMO2017PL3]}
 Medniece un neredzams trusītis spēlē spēli Eiklīda plaknē. Trusīša sākuma atrašanās punkts $A_0$ sakrīt ar mednieces sākuma atrašanās punktu $B_0$. Pēc $n-1$ gājiena, trusītis atrodas punktā $A_{n-1}$ un medniece atrodas punktā $B_{n-1}$. Gājienā numur $n$ secīgi notiek sekojošas lietas.
 \begin{itemize}
 \item[(i)]

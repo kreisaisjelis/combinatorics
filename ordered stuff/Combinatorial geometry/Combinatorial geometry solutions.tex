@@ -10,7 +10,7 @@
 \noindent 
 %\emph{\notes}
 
-%5
+%1
 \begin{problem}
 \textit{[Splitting a square]}
 
@@ -28,7 +28,7 @@ But in a square there are only $4$ points like that, and we have $9$ lines, so o
 \end{problem}
 %
 
-%1
+%2
 \begin{problem}
 $[Eulers formula for polyhedron]$
 
@@ -43,7 +43,72 @@ The stereogeometrical part consists of saying that convex polyhedron is equivale
 For Eulers Graph formula (same thing) see Graphs 2.
 \end{problem}
 
-%2
+\filbreak
+
+%3
+\begin{problem}
+\textit{[Splitting a circle]}
+
+\textbf{Problem}
+
+What is the maximum number of areas that a circle is divided into by an inscribed polygon with $n$ sides and all its diagonals?
+
+\textbf{Solution  - Euler's formula, methods of counting, \url{https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas} }
+
+On geometri'sh fact we are going to use is:
+\begin{lemma}
+When adding a new vertex to an inscribed polygon, it is possible to do it in a way that all newly created diagonals never create a point at which at least three lines meet
+\end{lemma}
+\begin{proof}
+For the opposite to happen, then the new vertex $v$ has to belong to some line that some olde vertex $w$ and some internal point $p$ belongs to. Since the polygon is finite, there are finite combinations of $w$ and $p$, but there are infinitely many points on the circle, so there will always be some free points that we can choose for the location of $v$.
+\end{proof}
+
+From this we can deduce that if the number of regions is maximal, then at every internal crossing exactly two chords intersect.
+
+We can view this figure as a planar graph $G=\set{V,E}$, where all chord intersections are vertices. As G is planar, then Euler's formula $\abs{V}-\abs{E}+\abs{F}=2$ holds. We can use it to calculate 
+\begin{equation}
+\label{euler}
+\abs{F}=\abs{E}-\abs{V} + 2
+\end{equation}
+
+$\abs{V}$ consists of $n$ vertices of the original polygon plus the number of internal points where chords intersect. By Lemma we know that those points are defined by two chords and those, in turn, are uniquely defined by selection of $4$ of the vertices of the original polygon, therefore $\abs{V}=n+\binom{n}{4}$
+
+$\abs{E}$ consists of several types of edges:
+\begin{enumerate}
+\item Arcs between vertices of polygon - there are exactly $n$ of these
+\item Edges between two adjacent vertices of the polygon - there are exactly $n$ of these
+\item \label{interior} Edges connecting two interior vertices
+\item \label{interiorexterior} Edges connecting an interior vertex and a vertex from original polygon
+
+\end{enumerate}
+
+To find the number of type \ref{interior}. and \ref{interiorexterior}. edges, we consider that each interior point is connected to $4$ edges. This yields $4\binom{n}{4}$, but this number contains every \ref{interior}. edge twice but every \ref{interiorexterior}. edge once.
+
+To find a number of type \ref{interiorexterior}. edges, notice that every diagonal of the original polygon contains exactly $2$ such edges. Number of diagonals in $n$ vertex polygon is $\binom{n}{2}-n$ and, therefore, number of edges of type  \ref{interiorexterior}. is $2(\binom{n}{2}-n)$
+
+Therefore $\abs{E} = \frac{4\binom{n}{4}+2(\binom{n}{2}-n)}{2}+n+n= 2\binom{n}{4}+\binom{n}{2}+n$. 
+
+Inserting all this into (\ref{euler}) we get $\abs{F}=\binom{n}{4} + \binom{n}{2} +2$ 
+
+Since Eulers formula includes "external" face, then the number of parts of circle is
+\begin{equation}
+r_G=\binom{n}{4} + \binom{n}{2} +1
+\end{equation}
+
+which yields 
+\begin{equation}
+r_G=\frac{n!}{(n-4)! 4!}+\frac{n!}{(n-2)! 2!}+1
+\end{equation}
+
+which can be solved as
+\begin{equation}
+r_G=\frac{1}{24}n(n^3-6n^2+23n-18)+1
+\end{equation}
+
+\end{problem}
+
+\filbreak
+%4
 \begin{problem}
 $[BW1999]$
 Answer:No
@@ -60,7 +125,7 @@ If the required partitioning exists, then $\set{O}, \set{P_1, P_3, P_5}$  and $\
 
 
 
-%3
+%5
 \begin{problem}
 $[IMO2013PL2]$
 We can start off by imagining the points in their worst configuration. With some trials, we find $2013$ lines to be the answer to the worst cases. We can assume the answer is $2013$. We will now prove it.
@@ -87,7 +152,7 @@ Our proof is done, and we have our final answer: $2013$.
 \end{problem}
 
 
-%4
+%6
 \begin{problem}
 $[IMO2017PL3]$
 
