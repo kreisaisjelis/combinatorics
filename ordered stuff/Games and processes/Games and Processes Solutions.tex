@@ -27,7 +27,7 @@ Consider $2009$ cards, each having one gold side and one black side, lying in a 
 \end{enumerate}
 
 
-\textbf{Solution - binary representation; strong variant; coloring a subset}
+\textbf{Solution - binary representation; strong variant; coloring a subset; analysing whole ws inductuion}
 \begin{enumerate}
 \item If we denote gold cards by $1$, and black by $0$, the entire sequence of cards  corresponds to a number in binary representation. After each of the moves, the number decreases, hence the game has to end.
 \item We will show that second player wins a game no matter how the players play. Consider the cards whose position (counted from the right) is divisible by $50$. There is a total of $40$ such cards, and in each move exactly one of this cards is turned over. In the beginning, all $40$ of these cards are $1$, and in the end all $40$ are $0$, hence the second player must win.
@@ -55,7 +55,7 @@ Prove that there is exactly one town which cannot be swept away by any other one
  
  We prove the problem statement by strong induction on n. The base case $n = 1$ is trivial. 
  
- For the induction step, we ﬁrst observe that the left bulldozer in $T_1$ and the right bulldozer in $T_n$ are completely useless, so we may forget them forever. Among the other $2n-2$ bulldozers, we choose the largest one. Without loss of generality, it is the right bulldozer of some town $T_k$ with $k < n$. Surely, with this large bulldozer $Tk$ can sweep away all the towns to the right of it. Moreover, none of these towns can sweep $T_k$ away; so they also cannot sweep away any town to the left of $T_k$. Thus, if we remove the towns $T_k+1,T_k+2,\dots,T_n$, none of the remaining towns would change its status of being (un)sweepable away by the others. 
+ For the induction step, we ﬁrst observe that the left bulldozer in $T_1$ and the right bulldozer in $T_n$ are completely useless, so we may forget them forever. Among the other $2n-2$ bulldozers, we choose the largest one. Without loss of generality, it is the right bulldozer of some town $T_k$ with $k < n$. Surely, with this large bulldozer $T_k$ can sweep away all the towns to the right of it. Moreover, none of these towns can sweep $T_k$ away; so they also cannot sweep away any town to the left of $T_k$. Thus, if we remove the towns $T_k+1,T_k+2,\dots,T_n$, none of the remaining towns would change its status of being (un)sweepable away by the others. 
  
  Applying the induction hypothesis to the remaining towns, we ﬁnd a unique town among $T_1,T_2,\dots,T_k$ which cannot be swept away. By the above reasons, it is also the unique such town in the initial situation. Thus the induction step is established.
 
@@ -90,7 +90,7 @@ $[IMO2011SLC3]$
 
 Let $S$ be a ﬁnite set of at least two points in the plane. Assume that no three points of $S$ are collinear. By a windmill we mean a process as follows. Start with a line $l$ going through a point $P \in S$. Rotate $l$ clockwise around the pivot $P$ until the line contains another point $Q$ of $S$. The point $Q$ now takes over as the new pivot. This process continues indeﬁnitely, with the pivot always being a point from $S$. Show that for a suitable $P \in S$ and a suitable starting line $l$ containing $P$, the resulting windmill will visit each point of $S$ as a pivot inﬁnitely often.
 
-\textbf{Solution - continuous process, geometry}
+\textbf{Solution - continuous process, geometry, invariant}
 
 Give the rotating line an orientation and distinguish its sides as the \textit{oranje} side and the \textit{blue} side. Notice that whenever the pivot changes from some point $T$ to another point $U$, after the change, $T$ is on the same side as $U$ was before. Therefore, the number of elements of $S$ on the oranje side and the number of those on the blue side remain the same throughout the whole process (except for those moments when the line contains two points).
 
@@ -166,7 +166,7 @@ Six stacks $S_1,\dots,S_6$ of coins are standing in a row. In the beginning ever
  Decide whether it is possible to achieve by a sequence of such moves that the ﬁrst ﬁve stacks are empty, whereas the sixth stack $S_6$ contains exactly $2010^{2010^{2010}}$ coins.
 
 
-\textbf{Solution - complex invariant }
+\textbf{Solution - inductuion }
 
 Denote by $(a_1,a_2,\dots,a_n)  \rightarrow (a_1^\prime,a_2^\prime,\dots,a_n^\prime)$ the following: if some consecutive stacks contain $a_1,\dots,a_n$ coins, then it is possible to perform several allowed moves such that the stacks contain $a_1^\prime,a_2^\prime,\dots,a_n^\prime$ coins respectively, whereas the contents of the other stacks remain unchanged. 
 
