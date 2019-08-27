@@ -174,7 +174,7 @@ Prove that the physicist may apply a sequence of such operations resulting in a 
 Let us consider a graph with the imons as vertices, and two imons being connected if and only if they are entangled. \textit{Proper coloring} of a graph $G$ is a coloring of its vertices in several colors so that every two connected vertices have different colors. 
 
 \begin{lemma}
-Assume that a graph $G$ admits a proper coloring in $n$ colors $(n > 1)$. Then one may perform a sequence of operations resulting in a graph which admits a proper coloring in $n - 1$ colors.
+Assume that a graph $G$ admits a proper coloring in $n$ colors $(n > 1)$. Then one may perform a sequence of operations a. and b. resulting in a graph which admits a proper coloring in $n - 1$ colors.
 \end{lemma}
 
 \begin{proof}
@@ -227,17 +227,21 @@ subject to the previously chosen values of $n_1, \dots , n_{k-2}$.
 The following lemma is the core of the proof.
 \begin{lemma}
 \label{leximinlemma} 
-Suppose that $G = (V, E)$ is a graph with odd chromatic number $k > 3$, and let (\ref{propcoloring}) be one of its leximinimal colorings. Then $G$ contains an odd cycle which visits all color classes
+Suppose that $G = (V, E)$ is a graph with odd chromatic number $k \ge 3$, and let (\ref{propcoloring}) be one of its leximinimal colorings. Then $G$ contains an odd cycle which visits all color classes
 $V_1, V_2, \dots, V_k$.
 \end{lemma}
 \begin{proof}
-Let us call a cycle colorful if it visits all color classes. Due to the definition of the chromatic number, $V_1$ is nonempty. Choose an arbitrary vertex $v \in V_1$. We will construct a colorful odd cycle that has only one vertex in $V_1$, and this vertex is $v$. 
+Let us call a cycle colorful if it visits all color classes. 
+
+Due to the definition of the chromatic number, $V_1$ is nonempty. Choose an arbitrary vertex $v \in V_1$. We will construct a colorful odd cycle that has only one vertex in $V_1$, and this vertex is $v$. 
 
 We draw a subgraph of $G$ as follows. Place $v$ in the center, and arrange the sets $V_2, V_3, \dots , V_k$ in counterclockwise circular order around it. For convenience, let $V_{k+1} = V_2$. We will draw arrows to add direction to some edges of $G$, and mark the vertices these arrows point to. First we draw arrows from $v$ to all its neighbors in $V_2$, and mark all those neighbors. If some vertex $u \in V_i$ with $i \in {2, 3, \dots , k}$ is already marked, we draw arrows from $u$ to all its neighbors in $V_{i+1}$ which are not marked yet, and we mark all of them. We proceed doing this as long as it is possible. The process of marking is exemplified in Figure 1.
 
 Notice that by the rules of our process, in the final state, marked vertices in $V_i$ cannot have unmarked neighbors in $V_{i+1}$. Moreover, $v$ is connected to all marked vertices by directed paths. 
 
-Now move each marked vertex to the next color class in circular order (see an example in Figure 2). In view of the arguments above, the obtained coloring $V_1 \sqcup W_2 \sqcup \dots \sqcup W_k$ is proper. Notice that $v$ has to have a neighbor $w \in W_2$, because otherwise
+Now move each marked vertex to the next color class in circular order (see an example in Figure 2). In view of the arguments above, the obtained coloring $V_1 \sqcup W_2 \sqcup \dots \sqcup W_k$ is proper. 
+
+Notice that $v$ has to have a neighbor $w \in W_2$, because otherwise
 \begin{equation}
 (V_1  \setminus \set{v}) \sqcup (W_2 \cup \set{v}) \sqcup W_3 \sqcup \dots \sqcup W_k
 \end{equation}

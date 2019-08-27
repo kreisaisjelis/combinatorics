@@ -1,0 +1,74 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Games and Processes - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+%1
+\begin{problem}
+\textit{[IMO2009SLC1]}
+Consider $2009$ cards, each having one gold side and one black side, lying in a line on a long table. Initially all cards show their gold sides. Two players, standing by the same long side of the table, play a game with alternating moves. Each move consists of choosing a block of $50$ consecutive cards, the leftmost of which is showing gold, and turning them all over, so those with showed gold now show black and vice versa. The last player who can make a legal move wins.
+\begin{enumerate}
+\item Does the game necessarily end?
+\item Does there exist a winning strategy for the starting player?
+\end{enumerate}
+
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[IMO2015SLC1]}
+ In Lineland there are $n \ge 1$ towns, arranged along a road running from left to right. Each town has a left bulldozer (put to the left of the town and facing left) and a right bulldozer (put to the right of the town and facing right). The sizes of the $2n$ bulldozers are distinct. Every time when a right and a left bulldozer confront each other, the larger bulldozer pushes the smaller one oﬀ the road. On the other hand, the bulldozers are quite unprotected at their rears; so, if a bulldozer reaches the rear-end of another one, the ﬁrst one pushes the second one oﬀ the road, regardless of their sizes. 
+ 
+Let $A$ and $B$ be two towns, with $B$ being to the right of $A$. We say that town $A$ can \textit{sweep town B away} if the right bulldozer of $A$ can move over to $B$ pushing oﬀ all bulldozers it meets. Similarly, $B$ can sweep $A$ away if the left bulldozer of $B$ can move to $A$ pushing oﬀ all bulldozers of all towns on its way. 
+
+Prove that there is exactly one town which cannot be swept away by any other one. 
+
+\end{problem}
+
+%3
+\begin{problem}
+\textit{[IMO2015SLC1]}
+Several positive integers are written in a row. Iteratively, Alice chooses two adjacent numbers $x$ and $y$ such that $x > y$ and $x$ is to the left of $y$, and replaces the pair $(x,y)$ by either $(y + 1,x)$ or $(x − 1,x)$. 
+
+Prove that she can perform only ﬁnitely many such iterations.
+\end{problem}
+
+%4
+\begin{problem}
+$[IMO2011SLC3]$
+Let $S$ be a ﬁnite set of at least two points in the plane. Assume that no three points of $S$ are collinear. By a windmill we mean a process as follows. Start with a line $l$ going through a point $P \in S$. Rotate $l$ clockwise around the pivot $P$ until the line contains another point $Q$ of $S$. The point $Q$ now takes over as the new pivot. This process continues indeﬁnitely, with the pivot always being a point from $S$. Show that for a suitable $P \in S$ and a suitable starting line $l$ containing $P$, the resulting windmill will visit each point of $S$ as a pivot inﬁnitely often.
+
+\end{problem}
+
+%5
+\begin{problem}
+$[IMO2009SLC5]$
+Five identical empty buckets of 2-liter capacity stand at the vertices of a regular pentagon. Cinderella and her wicked Stepmother go through a sequence of rounds: At the beginning of every round, the Stepmother takes one liter of water from the nearby river and distributes it arbitrarily over the ﬁve buckets. Then Cinderella chooses a pair of neighboring buckets, empties them into the river, and puts them back. Then the next round begins. The Stepmother’s goal is to make one of these buckets overﬂow. Cinderella’s goal is to prevent this. 
+
+Can the wicked Stepmother enforce a bucket overﬂow?  *What should be the volume of buckets for answer to change?
+
+\end{problem}
+
+%6
+\begin{problem}
+$[IMO2010SLC4]$
+Six stacks $S_1,\dots,S_6$ of coins are standing in a row. In the beginning every stack contains a single coin. There are two types of allowed moves: 
+\begin{enumerate}
+\item \label{move1} If stack $S_k$ with $1\le k \le 5$ contains at least one coin, you may remove one coin from $S_k$ and add two coins to $S_{k+1}$.
+\item If stack $S_k$ with $1 \le k \le 4$ contains at least one coin, then you may remove one coin from $S_k$ and exchange stacks $S_{k+1}$ and $S_{k+2}$. 
+ \end{enumerate}
+ Decide whether it is possible to achieve by a sequence of such moves that the ﬁrst ﬁve stacks are empty, whereas the sixth stack $S_6$ contains exactly $2010^{2010^{2010}}$ coins.
+
+\end{problem}
+\end{document}

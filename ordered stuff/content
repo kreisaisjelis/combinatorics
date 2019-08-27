@@ -11,7 +11,7 @@ Seniors:
 	p pidgeonhole 2
 	pls invariants (needs more problems)	
 	pls graphs 2 (missing solutions for two problems)
-	pls combinatorial geometry
+	pls combinatorial geometr
 	pls graphs 3
 	pls miscellaneous (missing bonus problem solution)
 	p pascals triangle - skip?
@@ -21,11 +21,11 @@ Seniors:
 		+ Hanoi - http://problems.ru/view_problem_details_new.php?id=60912
 		+ http://problems.ru/view_problem_details_new.php?id=60315
 		+ planes http://problems.ru/view_problem_details_new.php?id=76447
-
+	pls games and processes
 
 Ideas:
 pidgeonhole 3?
-games&processes/algorithms/ Invariants 2
+algorithms/ Invariants 2 (added games and processes for this. any more?)
 mirror neurons/game theory
 	- http://problems.ru/view_problem_details_new.php?id=60912
 	- http://problems.ru/view_problem_details_new.php?id=79367 ?
