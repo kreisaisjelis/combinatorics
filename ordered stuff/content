@@ -23,13 +23,21 @@ Seniors:
 		+ planes http://problems.ru/view_problem_details_new.php?id=76447
 	pls games and processes
 
-Ideas:
+Ideas for topics:
+symmetry games?
 pidgeonhole 3?
 algorithms/ Invariants 2 (added games and processes for this. any more?)
 mirror neurons/game theory
 	- http://problems.ru/view_problem_details_new.php?id=60912
 	- http://problems.ru/view_problem_details_new.php?id=79367 ?
 generating functions ?
+combinatorial equalities ?
+	https://en.wikipedia.org/wiki/Binomial_coefficient ?
+	https://en.wikipedia.org/wiki/Hockey-stick_identity + https://en.wikipedia.org/wiki/Pascal%27s_rule
+		BW2019PL9 (Senior 2 Home assignment 4)
+	https://en.wikipedia.org/wiki/Vandermonde%27s_identity
+Catalan numbers ?
+Twelvefold way https://en.wikipedia.org/wiki/Twelvefold_way ?
 
 Misc problems:
 	Ores theorem (Hamiltonean cycle existance) https://en.wikipedia.org/wiki/Ore%27s_theorem - proof from the opposite, graphs
@@ -38,7 +46,7 @@ Misc problems:
 	Ant path problem https://bmos.ukmt.org.uk/solutions/bmo1-2019/
 
 Home assignments:
-	l Seniors 1
+	ls Seniors 1
 	pls Seniors 2
 Legend:
 p - problem set in English

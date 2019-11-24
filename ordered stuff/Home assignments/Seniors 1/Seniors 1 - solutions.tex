@@ -1,0 +1,105 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senioru mājas uzdevumi 1}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+Alise un Beāte spēlē sekojošu spēli. Viņas ir uzrakstījuši katru no izteiksmēm $x+y$, $x-y$, $x^2+xy+y^2$ un $x^2-xy+y^2$ uz savas kārts. Šīs četras kārtis viņas sajauc un novieto uz galda ar izteiksmēm uz leju. Vienu no šīm kārtīm viņas apgriež, atklājot izteiksmi, pēc kā Alise izvēlas sev jebkuras divas no kārtīm un atlikušās divas dabū Beāte. Tad visas kārtis tiek atklātas. Tagad Alise izvēlas mainīgo $x$ vai $y$ un piešķir tam vērtību. Viņa parāda šo mainīgo un tā vērtību arī Beātei, kura tad piešķir vērtību otram mainīgajam (mainīgo vērtības var būt patvaļīgi reāli skaitļi).
+
+Beigās katra meitene aprēķina savu divu izteiksmju reizinājumu un tad tos salīdzina. Kurai šis reizinājums ir lielāks, tā uzvar.
+Kurai no spēlētājām ir uzvaroša stratēģija (ja kādai tāda vispār ir)?
+
+\textbf{Solution sketch}
+
+Looking at the 6 cases with basic Algebra shows that Alice can win in 5 of 6. Only loosing case is if she gets both first order factors. 
+
+Alice can always get at least one quadratic factor.
+\end{problem}
+
+\begin{problem}
+Atrodiet mazāko naturālo skaitli $k\geq 2$, kuram piemīt sekojoša īpašība:
+jebkurā kopas $\{2,3,\ldots,k\}$ \mbox{sadalījumā} divās daļās vismaz viena no šīm daļām noteikti saturēs
+(ne obligāti dažādus) skaitļus $a$, $b$ un~$c$,
+kuriem $ab=c$.
+
+\textbf{Solution sketch}
+
+Answer is $32$.
+Show that it works - where can the powers of $2$ be - get a contradiction in placing $32$
+
+
+Show that $31$ does not work. All numbers up to $31$ have no more than $4$ prime factors. Put in one set has all numbers with $1$ or $4$ prime factors (with repetitions) - other - $2$ or $3$. Products have a sum of prime factors, so products fo first set will have $2$ or $5$ or $8$, products of the other - $4$, $5$ or $6$.
+\end{problem}
+
+\begin{problem}
+Baltijceļzemē ir $2019$ pilsētas. Dažas no tām ir savienotas ar divvirzienu ceļiem, kuri ārpus pilsētām krustojas ar viaduktiem. (Tas ir grafs, ne obligāti planārs.)  
+Zināms, ka katram pilsētu pārim $A$ un $B$ ir iespējams nokļūt no $A$ uz $B$ braucot pa ne vairāk kā $2$ ceļiem.
+Baltijceļzemē ir $62$ žandarmi un viens razbainieks, kuru žandarmi gribētu notvert.
+Žandarmi un razbainieks jebkurā brīdī zin visu pārējo atrašanās vietu.
+Katru nakti razbainieks var vai nu palikt tajā pilsētā, kurā viņš ir, vai arī pārvietoties uz blakus pilsētu (kas ar to ir savienota ar ceļu).
+Katru dienu katram žandarmam ir šīs pašas iespējas un viņi var savas darbības saskaņot.
+Ja kādā brīdi žandarms un razbainieks atrodas vienā pilsētā, tad razbainieks tiek noķerts.
+Pierādiet, ka žandarmi, prātīgi rīkojoties, vienmēr varēs noķert razbainieku.
+
+\textbf{Solution sketch}
+
+Robber can not go to a vertex with deg < number of active cops.
+
+Cops can systematically \emph{block} - station one cop at -  vertexes with degress larger than remaining active cop number (if avaialble. if not - robber is cought).
+
+Leads to a sum of $64+63+\dots+4+3>2019$ vertices that cops can block. QED
+
+\end{problem}
+
+\begin{problem}
+Dotam naturālam $n$ aplūkosim visas neaugošās funkcijas ${f\colon\,\{1,\ldots,n\}\to\{1,\ldots,n\}}$.
+Dažām no šīm funkcijām ir nekustīgais punkts (eksistē tāds $c$, kuram $f(c)=c$), bet citām --- nav. 
+Nosakiet, par cik viena veida funkciju ir vairāk nekā otra.
+
+\smallskip
+\emph{Piebilde.} Funkcija \emph{$f$} ir \emph{neaugoša}, ja visiem $x \leq y$ izpildās $f(x)\geq f(y)$.
+
+\textbf{Solution - sketch}
+
+View functions as NE lattice paths OR k apples to p people. 
+\url{https://en.wikipedia.org/wiki/Lattice_path}
+\url{https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)}
+
+Count all functions as sum over start points of sums over end points of lattice paths
+
+Then count all fixed point functions as sum over all fixed point locations ...
+OR
+Do the lattice reduction trick (fixed point means that there as to be a E move on diagonal... so we can just dispense with diagonal (i.e. reduce by 1 column)
+
+Sums can be reduced by \url{https://en.wikipedia.org/wiki/Hockey-stick_identity}
+
+Difference can then be simplified by \url{https://en.wikipedia.org/wiki/Pascal%27s_rule}
+ 
+\end{problem}
+
+\begin{problem}
+Plaknē doti $2019$ punkti. Bērnelis vēlas uzzīmēt $k$ (slēgtus) riņķus tā, lai katriem diviem no šiem \mbox{punktiem} būtu riņķis, kurš saturētu tieši vienu no tiem.
+Atrodiet mazāko $k$, pie kura to ir iespējams izdarīt jebkuram punktu izkārtojumam?
+
+\textbf{Solution - sketch}
+
+Answer is $\ceil{\frac{2019}{2}}=1010$
+
+Proof that cant go less - imagine points on a circle. Each \emph{riņķis} can \emph{disconnect} max 2 neighbouring points. But there are $2019$ neighbours, so...
+
+How is it enough:
+imagine one very large \emph{riņķis} - $D_1$ which is indistinguishable from a line an it contains half the points. 
+Then we iteratively find two neighbors $A$ and $B$ on the convex hull such that one is in $D_1$ and other is not and seperate them with another rinkis. Iterate until done.
+\end{problem}
+
+%
+\end{document}
