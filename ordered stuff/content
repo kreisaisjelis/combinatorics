@@ -35,6 +35,7 @@ Misc problems:
 	Ores theorem (Hamiltonean cycle existance) https://en.wikipedia.org/wiki/Ore%27s_theorem - proof from the opposite, graphs
 	Bondy's theorem https://math.stackexchange.com/questions/1490605/why-does-bondys-theorem-work/1490778#1490778 graph proof, trees
 	Ramsay's theorem  https://en.wikipedia.org/wiki/Ramsey%27s_theorem - graph theory, basis of Ramsay's theory, induction on graphs
+	Ant path problem https://bmos.ukmt.org.uk/solutions/bmo1-2019/
 
 Legend:
 p - problem set in English
