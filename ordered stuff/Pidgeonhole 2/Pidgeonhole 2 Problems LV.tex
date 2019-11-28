@@ -1,0 +1,75 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Pidgeonhole 2 - Problems}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Naval Warfare]}
+Battlefield is a $10 \times 10$ squares grid and Admiral needs to position following ships on this grid: one carrier - rectangle of $1 \times 4$ grid squares; two battleships $1\times3$; three cruisers $1\times2$; and four frigates $1\times1$. Ships have to match cells on grid, they may not touch each other, but are allowed to touch sides of the grid. Prove that
+\begin{enumerate}
+\item If Admiral starts with larger ships and proceeds to smaller, it can always be done
+\item If Admiral starts with some smaller ships, before placing larger ones, it can happen that she can not place all the ships on the battlefield
+\end{enumerate}
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Elusive freedom of choice]}
+Johnny had to choose $372$ distinct numbers out of set $\set{1,2,...,1200}$ with a property that no two chosen numbers have a difference of $4,5,$ or $9$. 
+
+Prove that Johnny chose number $600$! 
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Very even tournament]}
+In a football tournament there are $n>4$ teams and every team has to play every other. Victory gives a team $3$ points, tie - $1$ point, loss - $0$ points. At the end of the tournament it happened that all the teams have equal number of points. 
+
+Prove that there exist $4$ teams, which have equal number of wins, ties and losses!
+\end{problem}
+%
+
+%4
+\begin{problem}
+\textit{[Convoluted treasure hunt]}
+Miervaldis and Visvaldis are playing a following game. Large circle is drawn on an Euclidean field (plane). Miervaldis has hidden treasures in $n$ points within the circle. Visvaldis wishes to find all treasures.
+
+One guess for Visvaldis is to choose a point on a field (within or without the circle) and Miervaldis announces distance from this point to the nearest unrecovered treasure or, if this distance is zero, uncovers the treasure. Visvaldis is capable of marking point in this plane, drawing straight lines and even using a (sufficiently large) compass.
+
+Can Visvaldis find all the treasures with no more than $(n+1)^2$ guesses? 
+\end{problem}
+%
+
+%5
+\begin{problem}
+\textit{[Splitting a square]}
+Each of $9$ lines divide a square into two quadrilaterals, whose areas have a proportion of $2:3$ to each other. Prove that there exists a point, where at least three of these lines meet!
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Order out of randomness]}
+Numbers $\set{1,2,3,...,101}$ are written in a line in some random order. Prove, that it is possible to erase $90$ of them so, that remaining $11$ are ordered in either ascending or descending order!
+\end{problem}
+%
+
+%8
+\begin{problem}
+\textit{[Mindblowing triangles]}
+Cells of an infinite grid are all colored in one of three colors each. Prove that it is possible to find a right triangle whose vertices are cells of the same color!
+\end{problem}
+%
+\end{document}
