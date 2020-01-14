@@ -1,0 +1,66 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senior home assignment 3}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+[IMO2019PL5]
+The Bank of Bath issues coins with an $H$ on one side and a $T$ on the other. Harry has $n$ of these coins arranged in a line from left to right. He repeatedly performs the following operation:
+
+If there are exactly $k > 0$ coins showing $H$, then he turns over the $k^{th}$ coin from the left; otherwise, all coins show $T$ and he stops. For example, if $n = 3$ the process starting with the configuration $THT$ would be $THT \rightarrow HHT \rightarrow HTT \rightarrow TTT$, which stops after three operations.
+
+(a) Show that, for each initial configuration, Harry stops after a finite number of operations.
+
+(b) For each initial configuration $C$, let $L(C)$ be the number of operations before Harry stops. For example, $L(THT) = 3$ and $L(TTT) = 0$. Determine the average value of $L(C)$ over all $2^n$ possible initial configurations $C$.
+\end{problem}
+
+\begin{problem}
+[IMO2017PL5]
+An integer $N \ge 2$ is given. A collection of $N(N + 1)$ soccer players, no two of whom are of the same height, stand in a row. Sir Alex wants to remove $N(N - 1)$ players from this row leaving a new row of $2N$ players in which the following $N$ conditions hold:
+
+($1$) no one stands between the two tallest players,
+
+($2$) no one stands between the third and fourth tallest players,
+
+$\;\;\vdots$
+
+($N$) no one stands between the two shortest players.
+
+Show that this is always possible.
+
+\end{problem}
+
+
+\begin{problem}
+[IMO2016PL2]
+Find all integers $n$ for which each cell of $n \times n$ table can be filled with one of the letters $I,M$ and $O$ in such a way that:
+
+in each row and each column, one third of the entries are $I$, one third are $M$ and one third are $O$; and
+in any diagonal, if the number of entries on the diagonal is a multiple of three, then one third of the entries are $I$, one third are $M$ and one third are $O$.
+Note. The rows and columns of an $n \times n$ table are each labelled $1$ to $n$ in a natural order. Thus each cell corresponds to a pair of positive integer $(i,j)$ with $1 \le i,j \le n$. For $n>1$, the table has $4n-2$ diagonals of two types. A diagonal of first type consists all cells $(i,j)$ for which $i+j$ is a constant, and the diagonal of this second type consists all cells $(i,j)$ for which $i-j$ is constant.
+
+\end{problem}
+
+\begin{problem}
+[IMO2014PL2]
+Let $n\ge2$ be an integer. Consider an $n\times n$ chessboard consisting of $n^2$ unit squares. A configuration of $n$ rooks on this board is $\textit{peaceful}$ if every row and every column contains exactly one rook. Find the greatest positive integer $k$ such that, for each peaceful configuration of $n$ rooks, there is a $k\times k$ square which does not contain a rook on any of its $k^2$ squares.
+
+\end{problem}
+
+\begin{problem}
+[IMO2014PL5]
+For each positive integer $n$, the Bank of Cape Town issues coins of denomination $\tfrac{1}{n}$. Given a finite collection of such coins (of not necessarily different denominations) with total value at most $99+\tfrac{1}{2}$, prove that it is possible to split this collection into $100$ or fewer groups, such that each group has total value at most $1$.
+
+\end{problem}
+
+%
+\end{document}

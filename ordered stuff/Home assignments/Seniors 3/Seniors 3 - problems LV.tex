@@ -1,0 +1,68 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senioru mājas uzdevumi 3}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+Bātas Banka izlaiž monētas ar $H$ un $T$ pusēm. Harijam ir sarindojis virknē $n$ šādas monētas. Viņš atkārtoti veic sekojošu darbību:
+
+Ja virknē ir tieši $k>0$ monētas ar $H$ pusi uz augšu, tad viņš $k-to$ monētu (skaitot no kreisās puses) apgriež otrādi. Kad visas monētas ir ar $T$ uz augšu, Harijs procesu beidz. Piemēram, ja $n=3$, procesu var aprakstīt šādi   $THT \rightarrow HHT \rightarrow HTT \rightarrow TTT$ un tas ir pabeidzies ar trim operācijām.
+\begin {enumerate}
+\item Pierādiet, ka jebkurai sākotnējai virknei, Harija process beigsies pēc galīga darbību skaita.
+\item Ar $L(C)$ apzīmēsim gājienu skaitu, kas nepieciešams, lai patvaļīgu konfigurāciju $C$ novestu līdz procesa beigām. Piemēram $L(THT) = 3$ un  $L(TTT) = 0$. Aprēķiniet vidējo $L(C)$ vērtību visām $2^n$ dažādajām konfigurācijām $C$.
+\end {enumerate}
+\end{problem}
+
+\begin{problem}
+Dots vesels skaitlis $N \ge 2$. Komanda no $N(N + 1)$ dažāda auguma futbolistiem stāv ierindā. Sers Alekss grib no ierindas padzīt $N(N - 1)$ spēlētājus tā, lai paliek ierinda ar $2N$ spēlētājiem un izpildās sekojošas $N$ īpašības:
+
+($1$) neviens nestāv starp diviem garākajiem spēlētājiem,
+
+($2$) neviens nestāv starp trešo un ceturto garāko spēlētāju,
+
+$\;\;\vdots$
+
+($N$) neviens nestāv starp diviem īsākajiem spēlētājiem.
+
+Pierādiet, ka tas vienmēr ir iespējams!
+
+
+\end{problem}
+
+
+\begin{problem}
+Atrodiet visus veselos $n$, kuriem katrā $n \times n$ kvadrāta rūtiņā var ierakstīt burtus $I,M$ un $O$ tā, ka izpildās sekojošas īpašības:
+\begin {itemize}
+\item katrā rindā un katrā kolonnā tieši trešdaļa no visiem burtiem ir $I$, trešdaļa ir $M$ un trešdaļa ir $O$
+
+\item katrā diagonālē, kurā rūtiņu skaits dalās ar $3$, tieši viena trešdaļa burtu ir $I$, viena trešdaļa ir $M$ un viena trešdaļa ir $O$.
+\end {itemize}
+
+\textbf{Piezīme:} $n \times n$ kvadrāta rindas un kolonnas ir sanumurētas ar skaitļiem $1$ līdz $n$ . Katru rūtiņu var apzīmēt ar naturālu skaitļu pāri $(i,j)$ kur $1 \le i,j \le n$. Pie $n>1$, kvadrātā ir $4n-2$ diagonāles, pie kam - divu tipu. Pirmā tipa diagonāles sastāv no visām rūtiņām $(i,j)$ kurām $i+j$ ir konstante, un otrā tipa diagonāles sastāv no rūtiņām, kurām $i-j$ ir konstante.
+
+
+\end{problem}
+
+\begin{problem}
+
+Dots vesels skatlis $n\ge2$. Aplūkosim $n\times n$ šaha laukumu. Sauksim $n$ torņu izkārtojumu uz laukuma par \textit{miermīlīgu}, ja katra kolonna un katra rinda satur tieši vienu torni. Atrodiet lielāko veselo $k<n$, kuram katrā $n$ torņu izkārtojumā var atrast $k\times k$ kvadrātu, kurš nesatur nevienu torni.
+
+
+\end{problem}
+
+\begin{problem}
+
+Katram naturālam $n$ Keiptaunas banka izlaiž monētas vērtībā  $\tfrac{1}{n}$. Dota galīga Keiptaunas monētu kolekcija (ar, iespējams, vienādām monētām), kuru kopējā vērtība nepārsniedz $99+\tfrac{1}{2}$. Pierādiet, ka šīs monētas var sadalīt $100$ vai mazāk grupās tā, ka katrā grupā monētu kopējā vērtība nepārsniedz $1$.
+\end{problem}
+
+%
+\end{document}
