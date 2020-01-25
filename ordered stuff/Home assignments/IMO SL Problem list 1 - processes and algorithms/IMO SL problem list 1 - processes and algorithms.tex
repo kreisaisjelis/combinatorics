@@ -1,0 +1,92 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf IMO SL  list 1 - Processes and Algorithms - Problems}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+%2014C2 - easy, variant, AM-GM ineq, 
+%2012C4 - coins in boxes, medium, long winded solution, forcing invariant
+%2015C4 - number choosing game, medium, mirror-like strategy, not quite sure on one detail
+%2010C6 - perl strings. medium-hard, good. Litle induction, insightful focus on values, case-work.
+%2011C5 - ants on chessboard, nice, a bit geometrical, process manipulation for analyses. Medium hard.
+
+\begin{problem}
+%2014C2 - easy, variant, AM-GM ineq, 
+
+We have $2^m$ sheets of paper, with the number $1$ written on each of them. We perform
+the following operation: in every step we choose two distinct sheets; if the numbers on the two
+sheets are $a$ and $b$, then we erase these numbers and write the number $a +  b$ on both sheets.
+
+Prove that after $m2^{m-1}$ steps, the sum of the numbers on all the sheets is at least $4^m$.
+
+\end{problem}
+
+\begin{problem}
+%2012C4 - coins in boxes, medium, long winded solution, forcing invariant
+
+Players $A$ and $B$ play a game with $N \ge 2012$ coins and $2012$ boxes arranged around a circle. 
+Initially $A$ distributes the coins among the boxes so that there is at least $1$ coin in each box. 
+Then the two of them make moves in the order $B, A, B, A, \dots$ by the following rules:
+\begin{itemize}
+\item On every move of his $B$ passes $1$ coin from every box to an adjacent box.
+\item On every move of hers $A$ chooses several coins that were not involved in $B$’s previous move and are in different boxes. She passes every chosen coin to an adjacent box.
+\end{itemize}
+
+Player $A$’s goal is to ensure at least $1$ coin in each box after every move of hers, regardless of how $B$ plays and how many moves are made. Find the least $N$ that enables her to succeed.
+
+
+\end{problem}
+
+
+\begin{problem}
+%2015C4 - number choosing game, medium, mirror-like strategy, not quite sure on one detail
+
+Let $n$ be a positive integer. Two players $A$ and $B$ play a game in which they take turns choosing positive integers $k \le n$. The rules of the game are:
+\begin{itemize}
+\item A player cannot choose a number that has been chosen by either player on any previous turn.
+\item A player cannot choose a number consecutive to any of those \textit{this} player has chosen on any previous turn.
+\item The game is a draw if all numbers have been chosen; otherwise the player who cannot choose a number anymore loses the game.
+\end{itemize}
+The player $A$ takes the first turn. Determine the outcome of the game, assuming that both players use optimal strategies.
+
+\end{problem}
+
+\begin{problem}
+%2010C6 - perl strings. medium-hard, good. Litle induction, insightful focus on values, case-work.
+Given a positive integer $k$ and other two integers $b > w > 1$. 
+There are two strings of pearls, a string of $b$ black pearls and a string of $w$ white pearls. 
+The length of a string is the number of pearls on it.
+One cuts these strings in some steps by the following rules. In each step:
+\begin {itemize}
+\item The strings are ordered by their lengths in a non-increasing order. If there are some strings of equal lengths, then the white ones precede the black ones. Then $k$ first ones (if they
+consist of more than one pearl) are chosen; if there are less than $k$ strings longer than $1$, then one chooses all of them.
+\item Next, one cuts each chosen string into two parts differing in length by at most one.
+\end{itemize}
+(For instance, if there are strings of $5, 4, 4, 2$ black pearls, strings of $8, 4, 3$ white pearls and $k = 4$, then the strings of $8$ white, $5$ black, $4$ white and $4$ black pearls are cut into the parts $(4, 4), (3, 2), (2, 2)$ and $(2, 2)$, respectively.)
+The process stops immediately after the step when a first isolated white pearl appears.
+Prove that at this stage, there will still exist a string of at least two black pearls.
+
+\end{problem}
+
+\begin{problem}
+%2011C5 - ants on chessboard, nice, a bit geometrical, process manipulation for analyses. Medium hard.
+Let $m$ be a positive integer and consider a checkerboard consisting of $m$ by $m$ unit squares.
+At the midpoints of some of these unit squares there is an ant. At time $0$, each ant starts
+moving with speed $1$ parallel to some edge of the checkerboard. When two ants moving in
+opposite directions meet, they both turn $90 \degree$ clockwise and continue moving with speed $1$.
+When more than two ants meet, or when two ants moving in perpendicular directions meet, the ants continue moving in the same direction as before they met. 
+When an ant reaches one of the edges of the checkerboard, it falls off and will not re-appear.
+Considering all possible starting positions, determine the latest possible moment at which the last ant falls off the checkerboard or prove that such a moment does not necessarily exist.
+
+\end{problem}
+
+%
+\end{document}
