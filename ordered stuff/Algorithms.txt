@@ -1,0 +1,37 @@
+Algorithms
+
+nope - 2009C8* - hard?
+
+2014C2 - easy, variant, AM-GM ineq, 
+2012C4 - coins in boxes, medium, long winded solution, forcing invariant
+2015C4 - number choosing game, medium, mirror-like strategy, not quite sure on one detail
+2010C6 - perl strings. medium-hard, good. Litle induction, insightful focus on values, case-work.
+2011C5 - ants on chessboard, nice, a bit geometrical, process manipulation for analyses. Medium hard.
+
+
+2012C6 - liers game. too hard? process analyses
+2013C8 - hard?
+2014C2 - seen?
+2014C6 - hard?
+2014C8 - hard?
+
+2015C6 - ?
+2017C2
+2017C8
+2018C2
+2018C3
+2018C6
+
+Comb. geometry:
+	2010C3 - maybe?
+	2011C7 - algorithmical?
+	2014C1
+	2014C7 -?
+	2014C9 - hard?
+	2016C3
+	2017C1
+	2018C7
+
+
+
+2012C5 - hard graph?
