@@ -1,0 +1,48 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf IMO SL list Misc - Problems}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+%2014C2 - easy, variant, AM-GM ineq, 
+%2012C4 - coins in boxes, medium, long winded solution, forcing invariant
+%2015C4 - number choosing game, medium, mirror-like strategy, not quite sure on one detail
+%2010C6 - perl strings. medium-hard, good. Litle induction, insightful focus on values, case-work.
+%2011C5 - ants on chessboard, nice, a bit geometrical, process manipulation for analyses. Medium hard.
+
+
+
+\begin{problem}
+%2010C6 - perl strings. medium-hard, good. Litle induction, insightful focus on values, case-work.
+Given a positive integer $k$ and other two integers $b > w > 1$. 
+There are two strings of pearls, a string of $b$ black pearls and a string of $w$ white pearls. 
+The length of a string is the number of pearls on it.
+One cuts these strings in some steps by the following rules. In each step:
+\begin {itemize}
+\item The strings are ordered by their lengths in a non-increasing order. If there are some strings of equal lengths, then the white ones precede the black ones. Then $k$ first ones (if they
+consist of more than one pearl) are chosen; if there are less than $k$ strings longer than $1$, then one chooses all of them.
+\item Next, one cuts each chosen string into two parts differing in length by at most one.
+\end{itemize}
+(For instance, if there are strings of $5, 4, 4, 2$ black pearls, strings of $8, 4, 3$ white pearls and $k = 4$, then the strings of $8$ white, $5$ black, $4$ white and $4$ black pearls are cut into the parts $(4, 4), (3, 2), (2, 2)$ and $(2, 2)$, respectively.)
+The process stops immediately after the step when a first isolated white pearl appears.
+Prove that at this stage, there will still exist a string of at least two black pearls.
+
+\end{problem}
+
+\begin{problem}
+%2011C7 - ok, hardish
+On a square table of $2011$ by $2011$ cells we place a finite number of napkins that each cover a square of $52$ by $52$ cells. In each cell we write the number of napkins covering it, and we record the maximal number $k$ of cells that all contain the same nonzero number. Considering all possible napkin configurations, what is the largest value of $k$?
+
+\end{problem}
+
+
+%
+\end{document}

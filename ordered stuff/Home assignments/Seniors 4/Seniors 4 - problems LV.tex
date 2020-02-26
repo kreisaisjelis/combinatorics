@@ -1,0 +1,63 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senioru mājas uzdevumi 4}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+Par \textit{anti-Paskāla} trīsstūri sauksim skaitļu izkārtojumu vienādsānu trisstūrī, kurā katrs skaitlis, izņemot apakšējā rindā esošos, ir divu skaitļu, kas atrodas tieši zem tā, starpības absolūtā vērtība. Piemēram, šeit attēlots anti-Paskāla trīsstūris ar četrām rindām, kurš satur visus naturālos skaitļus intervālā $[1;10]$
+
+\[4\]
+\[2\quad 6\]
+\[5\quad 7 \quad 1\]
+\[8\quad 3 \quad 10 \quad 9\]
+
+Vai eksistē anti-Paskāla trīsstūris ar $2018$ rindām, kurš satur visus naturālus skaitļus no $1$ līdz $1 + 2 + 3 + \dots + 2018$?
+
+\end{problem}
+
+
+\begin{problem}
+Kādā sociālā tīklā ir $2019$ lietotāju, daži lietotāji savā starpā draudzējas (draudzības vienmēr ir abpusējas).
+
+Šajā tīklā var notikt sekojošs notikums: Trīs lietotāji $A$, $B$ un $C$ ar īpašību, ka $A$ draudzējas ar $B$, $A$ draudzējas ar $C$ un $B$ \textit{nedraudzējas} ar $C$, vienlaicīgi nomaina savas attiecības tā, ka $B$ tagad draudzējas ar $C$, bet $A$ vairs nedraudzējas nedz ar $B$ nedz ar $C$. Visas pārējās attiecības tīklā paliek nemainīgas.
+
+Sākumā šajā tīklā katram no $1010$ lietotājiem bija tieši $1009$ draugi, un katram no atlikušajiem $1009$ lietotājiem ir tieši $1010$ draugu.
+
+Pierādiet, ka iespējama tāda šādu notikumu vikne, ka beigās nevienam lietotājam nav vairāk par vienu draugu.
+
+\end{problem}
+
+\begin{problem}
+\textit{Meļu minēšanas spēli} spēlē divi spēlētāji - $A$ un $B$. Spēles noteikumi izmanto divus naturālus skaitļus $k$ un $n$, kuri ir zināmi abiem spēlētājiem.
+
+Spēles sākumā $A$ izvēlas naturālus skaitļus $x$ un $N$, ka  $1 \le x \le N$. Spēlētājs $A$ skaitļi $x$ tur noslēpumā, bet skaitli $N$ godīgi pastāsta spēlētājam $B$. 
+Tagad spēlētājs $B$ mēģina iegūt informāciju par $x$ uzdodot $A$ jautājumus sekojošā veidā: katrā jautājumā $B$ norāda kādu naturālu skaitļu kopu $S$ (kura var atkārtoties starp jautājumiem) un jautā $A$, vai $x$ pieder kopai $S$. Spēlētāja $B$ jautājumu skaits nav ierobežots. Pēc katra jautājuma $A$ uzreiz atbild ar \textit{jā} vai \textit{nē}, bet viņš drīkst melot. Vienīgais ierobežojums ir, ka starp jebkurām $k+1$ pēc kārtas ejošām atbildēm vismaz vienai ir jābūt patiesai.
+
+Pēc tam, kad $B$ ir uzdevis visus jautājumus, viņam ir jānorāda kopa $X$, kura sastāv no ne vairāk kā $n$ naturāliem skaitļiem. Ja $x \in X$, tad $B$ uzvar, ja nē - zaudē. Pierādiet, ka:
+
+(a) Ja  $n \ge 2^k$, tad $B$ ir uzvaroša stratēģija.
+
+(b) Eksistē tāds naturāls $k_0$, kuram ir spēkā, ka katram $k \ge k_0$ eksistē naturāls skaitlis  $n \ge 1.99^k$, kuram $B$ nevar garantēt uzvaru.
+
+\end{problem}
+
+\begin{problem}
+Plaknē ir doti $n\ge 2$ nogriežņi, no kuriem katri divi krustojas, bet nevieni trīs nekrustojas vienā punktā. Džefam jāizvēlas katra nogriežņa vienu galapunktu un jānovieto tajā vardīte ar seju uz otru nogriežņa gala punktu. Pēc tam viņš sit plaukstas $n-1$ reizi. Katru reizi, kad Džefs sasit plaukstas, katra vardīte lec uz priekšu uz nākošo krustpunktu uz tās nogriežņa. Vardītes nekad nemaina savu lēkšanas virzienu. Džefs vēlētos izvietot vardītes tā, ka nekuras divas no tām nekad nesatiktos kādā punktā. 
+
+(a) Pierādiet, ka Džefs noteikti var to panākt, ja $n$ ir nepāra.
+
+(b) Pierādiet, ka Džefs to nevar panākt, ja $n$ ir pāra.
+\end{problem}
+
+
+%
+\end{document}
