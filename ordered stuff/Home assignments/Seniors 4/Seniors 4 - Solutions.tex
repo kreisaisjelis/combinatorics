@@ -1,0 +1,107 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senior home assignment 4 - Solutions}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+[IMO2018PL3]
+
+
+\textbf{Problem}
+
+
+An anti-Pascal triangle is an equilateral triangular array of numbers such that, except for the numbers in the bottom row, each number is the absolute value of the difference of the two numbers immediately below it. For example, the following is an anti-Pascal triangle with four rows which contains every integer from $1$ to $10$
+
+\[4\]
+\[2\quad 6\]
+\[5\quad 7 \quad 1\]
+\[8\quad 3 \quad 10 \quad 9\]
+
+Does there exist an anti-Pascal triangle with $2018$ rows which contains every integer from $1$ to $1 + 2 + 3 + \dots + 2018$?
+
+\textbf{Solution}
+
+Trivially it is required that every positive integer from $1$ to $1+2+3+\cdots+2018$ appears exactly once.
+
+Let $M_n$ denote the maximum number in the $n$th row and let $m_n$ denote the minimum number in the $n$th row.
+
+Now assume $n\leq 2017$ and consider the numbers directly below $M_n$. Call these $a$ and $b$ where w.l.o.g. $a>b$. Then $a-b=M_n$. Since $a\leq M_{n+1}$ and $b\geq m_{n+1}$, we obtain that $M_{n+1}\geq M_n+m_{n+1}$.
+
+Thus, for $1\leq i<j\leq 2018$,\[M_j\geq M_i+\sum_{k=i+1}^j m_i\]
+In particular, since $M_1=m_1$,\[M_{2018}\geq \sum_{k=1}^{2018} m_k\]
+Thus $M_{2018}$ is a sum of 2018 distinct positive integers. However, $M_{2018}\leq 1+2+3+\cdots+2018$. Thus $M_{2018}=1+2+3+\cdots+2018$ and $\{m_1,m_2,m_3,\dots,m_{2018}\}$ is a permutation of $\{1,2,3,\dots,2018\}$. Also, this implies that the other inequalities are also equalities and, for any $1\leq j\leq 2018$,\[M_j=\sum_{k=1}^j m_k\]
+Now let any positive integer $n\leq 2018$ be "small" and let any positive integer $1+2+3+\cdots+2017\leq n\leq 1+2+3+\cdots+2018$ be "large". Since $\{m_1,m_2,m_3,\dots,m_{2018}\}$ is a permutation of $\{1,2,3,\dots,2018\}$, there is exactly one small number in each row.
+
+If $n\leq 1954$, we have\[M_n=\sum_{k=1}^n m_k \leq 2018+2017+2016+\cdots+65\]\[=(1+2+3+\cdots+2018)-(1+2+3+\cdots+64)\]\[=(1+2+3+\cdots+2018)-2080\]\[<1+2+3+\cdots+2017\]so the $n$th row cannot contain any large numbers.
+
+If $1955\leq n\leq 2017$, let $l$ be a large number in the $n$th row. Let the numbers directly below $l$ be $a$ and $b$ where w.l.o.g. $a>b$. We have $b=a-l$ and $a\leq 1+2+3+\cdots+2018$ so, because $l$ is large, $b\leq 2018$ so $b$ is small. Thus $b=m_{n+1}$ so $l$ is directly above $m_{n+1}$. Thus there are at most 2 large numbers in the $n$th row.
+
+Thus there are at most 126 large numbers outside the bottom row. Since there are 2019 large numbers, there are at least 1893 large numbers in the bottom row so at most 125 non-large numbers in the bottom row. Now there are 2017 pairs of adjacent large numbers in the bottom row. We remove the pair directly beneath $m_{2017}$ and at most 250 other pairs containing a non-large number. Thus we can find a pair of adjacent large numbers in the bottom row, not directly beneath $m_{2017}$. However, their difference is small and in the 2017th row but not $m_{2017}$, which is a contradiction. Thus there is no such anti-Pascal triangle.
+\end{problem}
+
+
+\begin{problem}
+[IMO2019PL3]
+\textit{Problem}
+
+
+A social network has $2019$ users, some pairs of whom are friends. Whenever user $A$ is friends with user $B$, user $B$ is also friends with user $A$. Events of the following kind may happen repeatedly, one at a time: Three users $A$, $B$, and $C$ such that $A$ is friends with both $B$ and $C$, but $B$ and $C$ are not friends, change their friendship statuses such that $B$ and $C$ are now friends, but $A$ is no longer friends with $B$, and no longer friends with $C$. All other friendship statuses are unchanged. Initially, $1010$ users have $1009$ friends each, and $1009$ users have $1010$ friends each. Prove that there exists a sequence of such events after which each user is friends with at most one other user.
+
+\textbf{Solution}
+TODO
+\url{https://www.imo2019.uk/wp-content/uploads/2018/07/solutions-r856.pdf}
+\end{problem}
+
+\begin{problem}
+[IMO2016PL3]
+
+\textbf{Problem}
+
+
+Let $P = A_1A_2 \cdots A_k$ be a convex polygon in the plane. The vertices $A_1,A_2,\dots, A_k$ have integral coordinates and lie on a circle. Let $S$ be the area of $P$. An odd positive integer $n$ is given such that the squares of the side lengths of $P$ are integers divisible by $n$. Prove that $2S$ is an integer divisible by $n$.
+
+\textbf{Solution}
+
+
+
+Note that $2S$ is always an integer for any lattice polygon, so it remains to show that it is divisible by $n$. It clearly suffices to prove the problem for when $n=p^m$ is a prime power. We proceed using induction on $k$, with the base case of $k=3$ settled by Heron's formula: If $a,b,c$ are the side lengths of the triangle, then the square of the area is $S^2=\frac{2a^2b^2+2b^2c^2+2c^2a^2-a^4-b^4-c^4}{16}$. As $n\mid a^2,b^2,c^2$, we have that $n^2\mid S^2\implies n\mid S$, as desired.
+
+For the inductive step, we claim that there exists a diagonal whose length squared is also divisible by $n$. Then, we may split $P$ into two polygons with less vertices and areas divisible by $n$ by assumption. Let $3\le i\le k-1$ be such that $v_p(A_1A_i^2)=q$ is minimized. By Ptolemy's Theorem on cyclic quadrilateral $A_1A_{i-1}A_iA_{i+1}$, we have that $\sqrt{A_1A_{i-1}^2\cdot A_iA_{i+1}^2}+\sqrt{A_1A_{i+1}^2\cdot A_iA_{i-1}^2}=\sqrt{A_1A_i^2\cdot A_{i-1}A_{i+1}^2}$, or $\sqrt{\frac{A_1A_{i-1}^2\cdot A_iA_{i+1}^2}{np^q}}+\sqrt{\frac{A_1A_{i+1}^2\cdot A_iA_{i-1}^2}{np^q}}=\sqrt{\frac{A_1A_i^2\cdot A_{i-1}A_{i+1}^2}{np^q}}$. As we have $p^q\mid AA_{i-1}^2,AA_{i+1}^2$ and $n\mid A_iA_{i+1}^2,A_iA_{i-1}^2$, the terms under the square roots on the LHS are integers, so the LHS is an algebraic integer. This implies that the term under the square root on the RHS is also an integer, so $np^q\mid A_1A_i^2\cdot A_{i-1}A_{i+1}^2\implies n\mid A_{i-1}A_{i+1}^2$, as desired.
+\end{problem}
+
+\begin{problem}
+[IMO2016PL6]
+
+\textbf{Problem}
+
+
+There are $n\ge 2$ line segments in the plane such that every two segments cross and no three segments meet at a point. Geoff has to choose an endpoint of each segment and place a frog on it facing the other endpoint. Then he will clap his hands $n-1$ times. Every time he claps,each frog will immediately jump forward to the next intersection point on its segment. Frogs never change the direction of their jumps. Geoff wishes to place the frogs in such a way that no two of them will ever occupy the same intersection point at the same time.
+
+(a) Prove that Geoff can always fulfill his wish if $n$ is odd.
+
+(b) Prove that Geoff can never fulfill his wish if $n$ is even.
+
+\textbf{Solution}
+
+TODO
+\url{https://www.imo-official.org/problems/IMO2016SL.pdf}
+
+\end{problem}
+
+\begin{problem}
+[IMO2013PL6]
+Let $n \ge 3$ be an integer, and consider a circle with $n + 1$ equally spaced points marked on it. Consider all labellings of these points with the numbers $0, 1, ... , n$ such that each label is used exactly once; two such labellings are considered to be the same if one can be obtained from the other by a rotation of the circle. A labelling is called beautiful if, for any four labels $a < b < c < d$ with $a + d = b + c$, the chord joining the points labelled $a$ and $d$ does not intersect the chord joining the points labelled $b$ and $c$.
+
+Let $M$ be the number of beautiful labelings, and let N be the number of ordered pairs $(x, y)$ of positive integers such that $x + y \le n$ and $\gcd(x, y) = 1$. Prove that\[M = N + 1.\]
+\end{problem}
+%
+\end{document}

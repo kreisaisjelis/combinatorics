@@ -1,0 +1,79 @@
+%!TEX TS-program = XeLaTeX
+\input{../../../FormatGen.tex}
+\input{../../../FormatProblems.tex}
+%\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf IMO SL  list 3}}
+%INDUCTION, a bit easyish
+
+
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+%2013C1 -easy induction
+
+Let $n$ be a positive integer. Find the smallest integer $k$ with the following property: Given
+any real numbers $a_1, \dots , a_d$ such that $a_1 + a_2 + \dots + a_d = n$ and $0 \le a_i \le 1$ for $i = 1, 2, \dots , d$, it
+is possible to partition these numbers into $k$ groups (some of which may be empty) such that the
+sum of the numbers in each group is at most $1$.
+
+\end{problem}
+
+\begin{problem}
+%2006C1 - med/easy induction?
+
+We have $n \ge 2$ lamps $L_1, \dots, L_n$ in a row, each of them being either \textit{on} or \textit{off} . Every
+second we simultaneously modify the state of each lamp as follows:
+\begin{itemize}
+\item if the lamp $L_i$ and its neighbours (only one neighbour for $i = 1$ or $i = n$, two neighbours for
+other $i$) are in the same state, then $L_i$
+is switched off;
+\item otherwise, $L_i$ is switched on.
+\end{itemize}
+
+Initially all the lamps are off except the leftmost one which is on.
+\begin{enumerate}
+\item Prove that there are infinitely many integers $n$ for which all the lamps will eventually
+be off.
+\item Prove that there are infinitely many integers $n$ for which the lamps will never be all off.
+\end{enumerate}
+
+
+\end{problem}
+
+
+\begin{problem}
+%2010C2 - med/easy, induction
+On some planet, there are $2^N$ countries $(N \ge 4)$. Each country has a flag $N$ units wide
+and one unit high composed of $N$ fields of size $1\times1$, each field being either yellow or blue. No
+two countries have the same flag.
+
+We say that a set of $N$ flags is diverse if these flags can be arranged into an $N \times N$ square so
+that all $N$ fields on its main diagonal will have the same color. Determine the smallest positive
+integer $M$ such that among any $M$ distinct flags, there exist $N$ flags forming a diverse set.
+
+\end{problem}
+
+
+
+
+\begin{problem}
+%2012C7 -hard graph induction
+
+There are given $2^{500}$ points on a circle labeled $1, 2, \dots , 2^{500}$ in some order. Prove that
+one can choose $100$ pairwise disjoint chords joining some of these points so that the $100$ sums
+of the pairs of numbers at the endpoints of the chosen chords are equal.
+\end{problem}
+
+
+
+
+
+%
+\end{document}

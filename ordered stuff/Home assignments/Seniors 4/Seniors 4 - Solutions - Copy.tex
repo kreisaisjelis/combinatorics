@@ -1,0 +1,134 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senior home assignment 4 - Solutions}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+[IMO2018PL3]
+
+
+\textbf{Problem}
+
+ick's theorem gives a way to find the area of polygons in a plane whose endpoints have integer vertices.
+
+Contents
+Lattice Polygons
+Example Problems
+Sketch of Proof
+Lattice Polygons
+Lattice points are points whose coordinates are both integers, such as (1,2), (-4, 11)(1,2),(−4,11), and (0,5)(0,5). The set of all lattice points forms a grid. A lattice polygon is a shape made of straight lines whose vertices are all lattice points and Pick's theorem gives a formula for the area of a lattice polygon.
+
+First, observe that for any lattice polygon PP, the polygon contains some lattice points on its boundary edges ((including the lattice points that are the vertices of P)P) and may contain some lattice points in its interior (not counting the points on the boundary). Let
+
+\begin{aligned} B(P) &= \mbox{ number of points on the boundary of the polygon}\\ I(P) &= \mbox{ number of points in the interior of the polygon}. \end{aligned}
+B(P)
+I(P)
+​	
+  
+= number of points on the boundary of the polygon
+= number of points in the interior of the polygon.
+​	
+ 
+
+Pick's Theorem
+
+Let PP be a lattice polygon, let B(P)B(P) be the points on the boundary of the polygon, and let I(P)I(P) be the number of points in the interior of the polygon. Then
+
+(\mbox{Area of the polygon } P) = I(P) + \frac{1}{2} B(P) -1.
+(Area of the polygon P)=I(P)+ 
+2
+1
+​	
+ B(P)−1.
+Notice that Pick's theorem applies to any polygon, not only convex polygons.
+
+For a rectangle RR of length ll and height h,h, there are B(R) = 2l + 2hB(R)=2l+2h points along the boundary of the rectangle, and I(R) = (l-1)(h-1) = lh - l - h + 1I(R)=(l−1)(h−1)=lh−l−h+1 points in the interior of the rectangle. Applying Pick's theorem gives
+
+\begin{aligned} \mbox{Area}(R) &= I(R) + \frac{1}{2} B(R) - 1\\ &= lh - l - h + 1 + \frac{1}{2} (2l + 2h) - 1\\ &= lh - l - h + 1 + l + h - 1\\ &= lh. \end{aligned}
+Area(R)
+​	
+  
+=I(R)+ 
+2
+1
+​	
+ B(R)−1
+=lh−l−h+1+ 
+2
+1
+​	
+ (2l+2h)−1
+=lh−l−h+1+l+h−1
+=lh.
+​	
+ 
+Without Pick's theorem, we might calculate the area of a lattice polygon by decomposing the lattice polygon into triangles, computing the area of each triangle using the sine rule, and then summing the resulting triangle areas to obtain the area of the lattice polygon. As a powerful tool, the Shoelace theorem works side by side finding the area of any figure given the coordinates. Pick's theorem gives a way to find the area of a lattice polygon without performing all of these calculations. Pick's theorem also implies the following interesting corollaries:
+
+The area of a lattice polygon is always an integer or half an integer.
+
+Proof: By Pick's theorem, the area of a lattice polygon PP is given by \mbox{Area}(P) = I(P) + \frac{1}{2} B(P) - 1.Area(P)=I(P)+ 
+2
+1
+​	
+ B(P)−1. In a lattice polygon, the number of points in the interior of PP and the number of points on the boundary of PP are both integers. Then \mbox{Area}(P) = I(P) + \frac{1}{2} B(P) - 1Area(P)=I(P)+ 
+2
+1
+​	
+ B(P)−1 is an integer if B(P)B(P) is even and is half an integer if B(P)B(P) is odd. _\square 
+□
+​	
+ 
+
+It is impossible to draw an equilateral triangle as a lattice polygon.
+
+Proof: Suppose we could draw an equilateral triangle as a lattice polygon with lattice vertices AA, BB and CC with side length ss. By distance formula and Pythagorean theorem, s^2s 
+2
+  represents the square of distance between any of these 2 vertices, and must be an integer. Also note that the area of an equilateral triangle can be expressed as \text{Area} = \frac{s^2 \sqrt3}4Area= 
+4
+s 
+2
+  
+3
+​	
+ 
+​	
+ , thus the area must be irrational.
+
+On the other hand, the area of \triangle ABC△ABC must be an integer or half an integer by the previous theorem, which means the area must be rational, a contradiction. Therefore, it is impossible to draw an equilateral triangle as a lattice polygon. _\square 
+□
+​	
+ 
+
+Example Problems
+Submit your answer
+An integer lattice point is a point with coordinates (n, m)(n,m), where nn and mm are integers. As NN ranges from 1 to 905, what is the maximum number of integer lattice points in the interior of a triangle with vertices (0,0),(0,0), (N, 907-N),(N,907−N), and (N+1, 907-N-1)?(N+1,907−N−1)?
+
+Note: The point (0,0)(0,0) is not in the interior of any of the triangles described above.
+
+Sketch of Proof
+We can prove this using the following sequence of steps:
+
+It is true for rectangles whose sides are parallel to the axes: This is obvious. An a \times ba×b rectangle has 2a+2b2a+2b points on the boundary, (a-1)(b-1)(a−1)(b−1) points in the interior, and an area of (a-1)(b-1) + \frac{1}{2} (2a+2b) - 1 = ab(a−1)(b−1)+ 
+2
+1
+​	
+ (2a+2b)−1=ab.
+It is true for right triangles whose bases are parallel to the axes: We can double the triangle to form a rectangle and track the points that lie on the hypotenuse.
+It is true for an arbitrary triangle: We take the rectangle whose sides are parallel to the axes that contains this triangle and then subtract off the right triangles whose bases are parallel to the axes.
+It is true for any polygon: We triangulate the polygon.
+The main idea here is to show that the sum and difference of polygons still obey Pick's theorem, which is what allows us to glue/detach triangles.
+
+Cite as: Pick's Theorem. Brilliant.org. Retrieved 23:57, February 28, 2020, from https://brilliant.org/wiki/picks-theorem/
+Get more Brilliant. Sign up
+\end{problem}
+%
+\end{document}

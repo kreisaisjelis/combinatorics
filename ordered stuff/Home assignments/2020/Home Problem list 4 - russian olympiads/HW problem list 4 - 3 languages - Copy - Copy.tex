@@ -1,0 +1,78 @@
+%!TEX TS-program = XeLaTeX
+\input{../../../FormatGen.tex}
+\input{../../../FormatProblems.tex}
+%\input{../../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Homework  list 4}}
+%INDUCTION, a bit easyish
+
+
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+
+\begin{problem}
+%https://www.problems.ru/view_problem_details_new.php?id=65883
+
+Uz horizontālas taisnes dažādos punktos ar veselām koordinātēm sēž galīgs skaits vardīšu. Katrā gājienā viena vardīte lec $1$ vienību uz labo pusi, pie kam tikai tad, ja piezemējoties tā neuzskrien citai vardītei. Mēs esam saskaitījuši, cik dažādos veidos vardītes var veikt $n$ gājienus (kādai fiksētai sākotnējai vardīu konfigurācijai). Pierādiet, ka, ja nomainīt spēles noteikumus un ļaut vardītēm lēkt pa kreisi, nevis pa labi, tad $n$ gājienus varēs izdarīt tieši tikpat dažādos veidos!  
+
+
+A finite number of frogs sit on a points with integer coordiantes of a horizontal line so that no two frogs sit on a same point. At each move one frog jumps distance of $1$ to the right, but only if it does not collide with another frog. We have calclulated the number of different ways in which these frogs can do $n$ moves (for some initial configuration of frogs). Prove that if we change the rules of the game and allow them to jump to the left instead of jumping to the right, the number of different ways to make $n$ moves will be the same! 
+ 
+ 
+На прямой сидит конечное число лягушек в различных целых точках. За ход ровно одна лягушка прыгает на 1 вправо, причём они по-прежнему должны быть в различных точках. Мы вычислили, сколькими способами лягушки могут сделать n ходов (для некоторого начального расположения лягушек). Докажите, что если бы мы разрешили тем же лягушкам прыгать влево, запретив прыгать вправо, то способов сделать n ходов было бы столько же.
+
+\end{problem}
+
+\begin{problem}
+%https://www.problems.ru/view_problem_details_new.php?id=66122
+Čikāgā dzīvo $36$ gangsteri, daži no kuriem naidojas savā starpā naidojas. Katrs gangsteris sastāv vienā vai vairākās bandās, pie kam nav divu bandu, kurām precīzi sakristu to sastāvs. Ja gangsteri ir vienā bandā, tad tie savā starpā nenaidojas, taču, ja gangsteris nesastāv kādā bandā, tad viņa noteikti naidojas ar kādu šīs bandas dalībnieku.
+Kāds ir lielākais skaits bandu, kas var būt Čikāgā? 
+
+$36$ gangsters reside in Chicago and some of them are enemies. Each gangster belongs to some gangs and there are no two gangs with identical member rosters. Gangsters of the same gang are never enemies, but, if a gangster does not belong to some gang, then she always has an enemy in that gang. What is the maximum number of gangs in Chicago?
+
+
+В Чикаго живут 36 гангстеров, некоторые из которых враждуют между собой. Каждый гангстер состоит в нескольких бандах, причём нет двух банд с совпадающим составом. Оказалось, что гангстеры, состоящие в одной банде, не враждуют, но если гангстер не состоит в какой-то банде, то он враждует хотя бы с одним её участником. Какое наибольшее число банд могло быть в Чикаго?.
+
+\end{problem}
+
+
+
+\begin{problem}
+%https://www.problems.ru/view_problem_details_new.php?id=105192
+Apkārt riņķveida sienai ar garumu $1$ staigā divi punktveida sargi, pie kam viens no viņiem pārvietojas divreiz ātrāk nekā otrs. Šajā sienā ir logi. Logu izvietojumu sauc par \textit{drošu}, ja katrā brīdī vismaz viens sargs atrodas pie kāda loga, priekš kādas sākotnējās sargu atrašanās vietas. 
+\begin {enumerate}
+\item Ja logu sistēma sastāv tikai no viena loga un tā ir droša, kādam ir jābūt šī loga garumam?
+\item Pierādiet, ka jebkuras drošas logu sistēmas summārais logu garums pārsniedz $\frac{1}{2}$
+\item Pierādiet, ka jebkuram skaitlim $s>\frac{1}{2}$ eksistē droša logu sistēma ar summāro logu garumu, kas ir mazāks par $s$
+\end {enumerate}
+
+Two guards patrol around a circular wall and one of them walks twice as fast as the other one. The wall, which has a length of $1$, also has some windows in it. A configuration of windows is considered \textit{secure}, if at any moment at least one of the guards is at some window for some initial position of the guards.
+\begin {enumerate}
+\item If a secure system of windows consist of a single window, what is the minimum length that this sole window must have?
+\item Prove that any secure system must have a total length of windows of more than $\frac{1}{2}$
+\item Prove that for any $s>\frac{1}{2}$ there exists a secure configuration that has total length of windows less than $s$
+\end {enumerate}
+
+
+
+
+Вдоль стены круглой башни по часовой стрелке ходят два стражника, причём первый из них — вдвое быстрее второго. В этой стене, имеющей длину 1, проделаны бойницы. Система бойниц называется надёжной, если в каждый момент времени хотя бы один из стражников находится возле бойницы.
+
+а) Какую наименьшую длину может иметь бойница, если система, состоящая только из этой бойницы, надежна?
+
+б) Докажите, что суммарная длина бойниц любой надёжной системы больше 1/2.
+
+в) Докажите, что для любого числа s>1/2 существует надёжная система бойниц с суммарной длиной, меньшей s.
+
+\end{problem}
+
+
+
+%
+\end{document}

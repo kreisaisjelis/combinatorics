@@ -1,0 +1,121 @@
+%!TEX TS-program = XeLaTeX
+\input{../../FormatGen.tex}
+\input{../../FormatProblems.tex}
+\input{../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senior home assignment 2}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+
+\textbf{Problem}
+\textit{[IMO1972PL1SLC?]}
+
+
+Prove that from a set of ten distinct two-digit numbers (in the decimal system), it is possible to select two disjoint subsets whose members have the same sum.
+
+\textbf{Solution}
+
+Note that there are $2^{10}-2=1022$ distinct subsets of our set of 10 two-digit numbers. Also note that the sum of the elements of any subset of our set of 10 two-digit numbers must be between 10 and $91+92+93+94+95+96+97+98+99$, which is less than $100+100+100+100+100+100+100+100+100=1000 < 1022$. There are even less attainable sums. The Pigeonhole Principle then implies that there are two distinct subsets whose members have the same sum. Let these sets be $A$ and $B$. Note that $A- (A\cap B)$ and $B- (A\cap B)$ are two distinct sets whose members have the same sum. These two sets are subsets of our set of 10 distinct two-digit numbers, so this proves the claim. $\square$
+
+\end{problem}
+\filbreak
+\begin{problem}
+
+
+\textbf{Problem}
+\textit{[IMO2003PL1SLC1]}
+
+
+$S$ is the set $\set{1, 2, 3, \dots ,1000000}$. Show that for any subset $A$ of $S$ with $101$ elements we can find $100$ distinct elements $x_i$ of $S$, such that the sets $\set{a + x_i \mid a \in A}$ are all pairwise disjoint.
+
+\textbf{Solution}
+
+
+Consider the set $D = \set{x − y \mid x, y \in A}$. There are at most $101 \times 100 + 1 =
+10101$ elements in $D$. Two sets $A + t_i$ and $A + t_j$ have nonempty intersection if and only if
+$t_i − t_j$
+is in $D$. So we need to choose the $100$ elements in such a way that we do not use a
+difference from $D$.
+Now select these elements by induction. Choose one element arbitrarily. Assume that
+$k$ elements, $k \leq 99$, are already chosen. An element $x$ that is already chosen prevents us
+from selecting any element from the set $x + D$. Thus after $k$ elements are chosen, at most
+$10101k \leq 999999$ elements are forbidden. Hence we can select one more element.
+
+\end{problem}
+\filbreak
+
+\begin{problem}
+
+
+\textbf{Problem}
+\textit{[IMO2018PL4SLC?]}
+
+
+A site is any point $(x, y)$ in the plane such that $x$ and $y$ are both positive integers less than or equal to 20. Initially, each of the 400 sites is unoccupied. Amy and Ben take turns placing stones with Amy going first. On her turn, Amy places a new red stone on an unoccupied site such that the distance between any two sites occupied by red stones is not equal to $\sqrt{5}$. On his turn, Ben places a new blue stone on any unoccupied site. (A site occupied by a blue stone is allowed to be at any distance from any other occupied site.) They stop as soon as a player cannot place a stone. Find the greatest $K$ such that Amy can ensure that she places at least $K$ red stones, no matter how Ben places his blue stones.
+
+\textbf{Solution}
+
+The maximal K is 100. Amy can reach at least 100 by playing only on sites for which x+y is even. There are 200 such sites, none are of distance $\sqrt{5}$ from each other and Ben can occupy at most half of them. 
+
+On the other hand Ben can prevent Amy from reaching more than 100 using the following strategy: Picture the sites as a 20 by 20 board and divide it into 25 non overlapping 4-by-4 squares. We label each site in the square as follows:\[1, 2, 3, 4\]\[5, 6, 7, 8\]\[8, 7, 6, 5\]\[4, 3, 2, 1\]
+Whenever Amy plays in a square Ben plays in the same square and in the site with the same label. In each square Amy can place at most 2 stones in sites labeled 1,4,6,7 (no three sites with labels from this set are free from distance $\sqrt{5}$ and Amy can play one stone on each label since Ben plays the other). Likewise for the sites labeled 2,3,5,8. So in total Amy can place at most 4 stones in each of the 25 squares for a total of 100 stones.
+\end{problem}
+\filbreak
+\begin{problem}
+
+
+
+\textbf{Problem}
+\textit{[IMO2011PL4SLC?]}
+
+
+Let $n > 0$ be an integer. We are given a balance and $n$ weights of weight $2^0,2^1, \cdots ,2^{n-1}$. We are to place each of the $n$ weights on the balance, one after another, in such a way that the right pan is never heavier than the left pan. At each step we choose one of the weights that has not yet been placed on the balance, and place it on either the left pan or the right pan, until all of the weights have been placed. Determine the number of ways in which this can be done.
+
+\textbf{Solution}
+
+Call our answer $W(n)$. We proceed to prove $W(n)=(2n-1)!!$.
+
+It is evident $W(1)=1$.
+
+Now, the key observation is that smaller weights can never add up to the weight of a larger weight, ie which side is heavier is determined completely by the heaviest weight currently placed. It follows, therefore, that the number of ways to place $n$ weights on the balance according to the rule is the same no matter which $n$ distinct powers of two are the weights, as each weight completely overpowers any smaller weight and is completely overpowered by any larger weight. That is, there is the 1st heaviest weight, the 2nd heaviest, the 3rd, ..., the n-th heaviest, and each weight is negligible compared to any heavier weight. Thus, any valid placement of $n$ weights of weight $2^0,2^1, \cdots ,2^{n-1}$ can changed by replacing $2^i$ with the $(n-i)$-th heaviest weight in the set ${2^{a_k}}$, where $a_k \in \mathbb{Z}$, and vice versa, forming a $1:1$ relation. With this in mind, we use recursion upon the last weight placement. There are $2n-1$ choices; namely, you can put any weight on either side except for the heaviest weight on the right. For the first $n-1$ weight placements, the answer reduces to $W(n-1)$. We can reduce $W(n-1)$ in the same way.
+
+$W(n)=(2n-1)W(n-1)=(2n-1)(2n-3)W(n-2)=...=(2n-1)!!W(1)=(2n-1)!!$
+
+
+$\text{QED}$
+\end{problem}
+\filbreak
+\begin{problem}
+
+
+
+\textbf{Problem}
+\textit{[IMO2015PL1SLC2]}
+
+
+We say that a finite set $\mathcal{S}$ in the plane is balanced if, for any two different points $A$, $B$ in $\mathcal{S}$, there is a point $C$ in $\mathcal{S}$ such that $AC=BC$. We say that $\mathcal{S}$ is centre-free if for any three points $A$, $B$, $C$ in $\mathcal{S}$, there is no point $P$ in $\mathcal{S}$ such that $PA=PB=PC$.
+
+Show that for all integers $n\geq 3$, there exists a balanced set consisting of $n$ points.
+Determine all integers $n\geq 3$ for which there exists a balanced centre-free set consisting of $n$ points.
+
+\textbf{Solution}
+
+\textbf{Part (a)}: We explicitly construct the sets $\mathcal{S}$. For odd $n$, $\mathcal{S}$ can be taken to be the vertices of regular polygons $P_n$ with $n$ sides: given any two vertices $A$ and $B$, one of the two open half-spaces into which $AB$ divides $P_n$ contains an odd number of $k$ of vertices of $P_n$. The $((k+1)/2)^{th}$ vertex encountered while moving from $A$ to $B$ along the circumcircle of $P_n$ is therefore equidistant from $A$ and $B$.
+
+If $n \geq 4$ is even, choose $m\geq 0$ to be the largest integer such that\[x:=(n-2)(\pi/3)/2^m \geq 2\pi/3.\]Hence $x < 4\pi/3 < 2\pi$. Consider a circle $K$ with centre $O$, and let $A_1, \ldots, A_{n-1}$ be distinct points placed counterclockwise (say) on $K$ such that $\angle A_iOA_{i+1}=\pi/3/2^m$ (for $i=1,\ldots,n-2$). Hence for any line $OA_i$, there is a line $OA_j$ such that $\angle A_iOA_j=\pi/3$ (using the facts that $2\pi > x=\angle A_1OA_{n-1} \geq 2\pi/3$, and $n-1$ odd). Thus $O$, $A_i$ and $A_j$ form an equilateral triangle. In other words, for arbitrary $A_i$, there exists $A_j$ equidistant to $O$ and $A_i$. Also given any $i,j$ such that $1 \leq i, j \leq n-1$, $O$ is equidistant to $A_i$ and $A_j$. Hence the $n$ points $O, A_1, \ldots, A_{n-1}$ form a balanced set.
+
+\textbf{Part (b)}: Note that if $n$ is odd, the set $\mathcal{S}$ of vertices of a regular polygon $P_n$ of $n$ sides forms a balanced set (as above) and a centre-free set (trivially, since the centre of the circumscribing circle of $P_n$ does not belong to $\mathcal{S}$).
+
+For $n$ even, we prove that a balanced, centre free set consisting of $n$ points does not exist. Assume that $\mathcal{S}=\{A_i: 1\leq i \leq n\}$ is centre-free. Pick an arbitrary $A_i \in \mathcal{S}$, and let $n_i$ be the number of distinct non-ordered pairs of points $(A_j,A_k)$ ($j\neq k$) to which $A_i$ is equidistant. Any two such pairs are disjoint (for, if there were two such pairs $(A_r,A_s)$ and $(A_r, A_t)$ with $r, s, t$ distinct, then $A_i$ would be equidistant to $A_r$, $A_s$, and $A_t$, violating the centre-free property). Hence $n_i \leq (n-2)/2$ (we use the fact that $n$ is even here), which means $\sum_i n_i \leq n(n-2)/2 = n(n-1)/2 -n/2$. Hence there are at least $n/2$ non-ordered pairs $(A_j, A_k)$ such that no point in $\mathcal{S}$ is equidistant to $A_j$ and $A_k$.
+
+\end{problem}
+
+%
+\end{document}

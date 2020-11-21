@@ -1,0 +1,67 @@
+%!TEX TS-program = XeLaTeX
+\input{../../../FormatGen.tex}
+\input{../../../FormatProblems.tex}
+\input{../../../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Senioru mājas uzdevumi 3}}
+%INDUCTION, a bit easyish
+
+
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+
+\noindent
+ 
+\filbreak
+
+\begin{problem}
+%2013C1 -easy induction
+Dots naturāls $n$. Atrodiet mazāko  $k$ ar sekojošu īpašību: ja doti reāli skaitļi $a_1, \dots , a_d$ kuriem $a_1 + a_2 + \dots + a_d = n$ un $0 \le a_i \le 1$, kur $i = 1, 2, \dots , d$, ir iespējams tos sadalīt $k$ grupās (dažas no tām var būt tukšas) tā, ka katras grupas skaitļu summa nepārsniedz $1$.
+
+\end{problem}
+
+\begin{problem}
+%2006C1 - med/easy induction?
+
+$n \ge 2$ lampas $L_1, \dots, L_n$ ir sakārtotas rindā, un katra no tām ir vai nu \textit{ieslēgta} vai \textit{izslēgta}. Katru sekundi visas lampas vienlaicīgi nomaina savu stāvokli sekojošā veidā:
+\begin{itemize}
+\item ja lampa $L_i$ un tās kaimiņi (pie $i = 1$ un $i = n$ lampai ir viens kaimiņš, citiem $i$ - divi kaimiņi) ir vienādā stāvoklī, tad $L_i$
+izslēdzas;
+\item citos gadījumos $L_i$ ieslēdzas.
+\end{itemize}
+
+Sākumā lampa $L_1$ ir ieslēgta, bet visas pārējās - izslēgtas.
+\begin{enumerate}
+\item Pierādiet, ka ir bezgalīgi daudz skaitļu $n$, kuriem kādā brīdī visas lampas ir izslēgtas.
+\item Pierādiet, ka ir bezgalīgi daudz skaitļu $n$, kuriem nekad nepienāks brīdis, kad visas lampas ir izslēgtas.
+\end{enumerate}
+
+
+\end{problem}
+
+
+\begin{problem}
+%2010C2 - med/easy, induction
+Uz kādas planētas ir $2^N$ valstis $(N \ge 4)$. Katrai valstij ir karogs $N$ vienību platumā un vienu vienību augstumā, kurš sastāv no $N$ rūtiņām $1\times1$, un katra rūtiņa ir vai nu zila vai dzeltena. Nevienām divām valstīm nav vienādu karogu.
+
+Sauksim $N$ karogu kopu par \textit{diversificētu}, ja šos karogus var sakārtot $N \times N$ kvadrātā tā, ka visas $N$ rūtiņas uz kvadrāta galvenās diagonāles ir vienādā krāsā. Atrodiet mazāko naturālo $M$ tādu, ka starp jebkuriem dažādiem $M$ karogiem, var atrast $N$ karogus, kas veido diversificētu kopu.
+
+
+\end{problem}
+
+
+
+
+\begin{problem}
+%2012C7 -hard graph induction
+Uz riņķa līnijas atzīmēti $2^{500}$ punkti, kuriem piekārtoti skaitļi $1, 2, \dots , 2^{500}$ kaut kādā secībā. Pierādiet, ka iespējams izvēlēties $100$ savstarpēji nekrustojošas hordas, kas savieno kādus no šiem punktiem tā, ka $100$ summas no skaitļu pāriem, kuri piekārtoti hordas galapunktiem, ir vienādas.
+
+\end{problem}
+
+
+
+
+
+%
+\end{document}

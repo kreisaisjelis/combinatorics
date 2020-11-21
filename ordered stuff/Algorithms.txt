@@ -23,9 +23,15 @@ nope - 2009C8* - hard?
 2018C6
 
 Comb. geometry:
-	2010C3 - maybe?
-	2011C7 - algorithmical?
-	2014C1
+	2014C1 - nice and easy, points within rectangle
+	2010C3 - ok, chess king positioning
+	2014C4 - easyish tetraminos
+	2014C5 - nice, line coloring
+	2011C7 - ok, hardish
+
+
+
+	
 	2014C7 -?
 	2014C9 - hard?
 	2016C3
