@@ -1,69 +1,11 @@
+
 %!TEX TS-program = XeLaTeX
-\documentclass[11pt]{article}
-
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{mathtools}
-
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage[top=3cm, left=2cm, right=2cm, headheight = 90pt]{geometry}
-\usepackage{xltxtra}
-\usepackage[font=small,labelfont=bf]{caption}
-
-%%%%%%%%%%%%%%    Language matters  %%%%
-
-%\usepackage[latvian]{babel}
-%\usepackage[L7x]{fontenc}
-%\usepackage[utf8x]{inputenc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%7%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%       DO NOT EDIT         %%%%%%%%%%%%%%%%%%
-%\usepackage{space}
-%\renewcommand{\headrulewidth}{1pt}
-%\fancyhead[L]{\includegraphics[width=3cm]{pictures/logo}}
-%\fancyhead[R]{\raisebox{3ex}{\fbox{Language: \bf \lang}}}
+\input{../FormatGen.tex}
+%\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
 \fancyhead[C]{{\Large\bf Strategies and tactics - Solutions}\\ \date}
 
 \renewcommand{\theenumi}{\alph{enumi}}
-%\newcommand{\problem}[1]{\paragraph{Problem #1.}}%<--------------- TRANSLATE THE WORD "Problem".
-%\fancyfoot[CE,CO]{}  % this is to remove page numbers (as you might want for single page docs)
-
-\def\leq{\leqslant}
-\def\geq{\geqslant}
-\def\N{\mathbb N}
-\def\R{\mathbb R}
-\def\Z{\mathbb Z}
-\DeclarePairedDelimiter\set\{\}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% Language name in english %%%%%%%%%
-\def\lang{Latvian}
-
-%\def\lang{Lithuanian}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TRANSLATE HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\def\date{2018. gada 18. jūnijs}
-%\def\notes{}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\prob{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\theoremstyle{definition}
-\newtheorem{problem}{\prob}
-
-\pagestyle{fancy}
-
-
 
 \begin{document}
 %\thispagestyle{fancy}
@@ -169,6 +111,7 @@ But, if "heads-heads" happens, player, who betted on "heads-heads-heads" might s
 However if the "tails-tails" happens, the player who betted on "tails-tails-heads" can not loose anymore (there is no way to go from "tails-tails" to "heads-heads-heads" without going through "tails-tails-heads"
 \end{enumerate}
 
+Here is a VSouce2 video about this problem: \url{https://www.youtube.com/watch?v=s4tyO4V2im8&list=PLVQ8GqrsK7VDLX9Zau9bN7BiT-GIHpwGT&index=10}
 \end{problem}
 %
 \end{document}
