@@ -1,0 +1,115 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Grafi 2 - Uzdevumi}\\ \date}
+
+\begin{document}
+
+\noindent 
+%\emph{\notes}
+
+
+%1
+\begin{problem}
+\textit{[Satiksme Emirātos]}
+Emirātā ir $8$ pilsētas. Sultāns grib izbūvēt tādu ceļu\footnote{Šeit un citur ar uzskatīsim, ka katrs ceļš savieno divas pilsētas un, krustojoties ārpus pilsētām, ceļi nav savienoti (tiem ir viadukti)} sistēmu, ka no katras pilsētas var nonākt citā, braucot cauri ne vairāk kā vienai citai pilsētai, un lai no katras pilsētas izietu ne vairāk kā $k$ ceļi. 
+
+Kads ir mazakais $k$, kuram tas vienmēr ir iespējams?
+
+\end{problem}
+%
+
+%2
+\begin{problem}
+\textit{[Kliķes atgriežas]}
+Pierādiet, ka katrā grupā no $6$ cilvēkiem vienmēr eksistēs vismaz divas kliķes ar izmēru $3$ ($3$ cilvēku kliķe ir grupa no $3$ cilvēkiem, kas vai nu visi viens otru pazīst, vai nu visi viens otru nepazīst)!
+\end{problem}
+%
+
+%3
+\begin{problem}
+\textit{[Eilera formula planāriem grafiem]}
+Grafs ir planārs, ja to var uzzīmēt uz papīra tā, ka šķautnes nekrustojas ārpus virsotnēm. 
+
+Pierādiet, ka jebkuram planāram grafam izpildās sakarība $V+F-E=2$, kur $V$ - virsotņu skaits, $E$ - šķautņu skaits un $F$ - grafa skaldņu skaits (grafa skaldne ir plaknes daļa, kuru norobežo grafa šķautnes, ieskaitot bezgalīgo plaknes daļu, kas atrodas grafa ārpusē, kad tas ir uzzīmēts vienā plaknē)!
+\end{problem}
+
+%4
+\begin{problem}
+%https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture6.pdf
+\textit{[Holl'a precību teorēma, divdaļīgi grafi (bipartite graphs), atbilstības (matching) grafos]}
+
+Kādā ballē izrādījās, ka katrai meiteņu grupiņai (apakškopai) $S$ pa visām kopā patīk vismaz $|S|$ dažādi puiši. 
+\begin {enumerate}
+\item Pierādīet, ka ballē visas meitenes var izvēlēties sev patīkamus puišus vienlaicīgai dejai!
+
+\item Pierādiet, ka meitenes var šādi izvēlēties puišus tikai tad, ja izpildās uzdevuma nosacījums!
+\end {enumerate}
+\end{problem}
+
+%5
+\begin{problem}
+\textit{[Labirinta pilsēta]}
+Labirinta pilsētā katrā krustojumā satiekas tieši trīs ielas. Ielas ir izkrāsotas trīs krāsās tā, ka katrā krustojumā satiekas trīs dažādu krāsu ielas. No pilsētas ārā iet tikai trīs ielas. 
+
+Pierādiet, ka šīs trīs ielas ir dažādās krāsās!
+\end{problem}
+%
+
+%6
+\begin{problem}
+\textit{[Impērijas kartēšana]}
+Impērija sastāv no daudzām valstīm. Ir zināms, ka neviena valsts nerobežojas ar vairāk kā $k$ citām valstīm (ieskaitot anklāvus). Imperators ir pavēlējis uzzīmēt tādu Impērijas karti, kurā katra valsts ir izkrāsota kādā no $k+1$ krāsām (anklāvi ir tādā pat krāsā, kā valsts, kurai tie pieder) un nevienas divas valstis, kurām ir kopēja robeža, nav izkrāsotas vienādā krāsā. 
+
+Pierādiet, ka tas vienmēr ir iespējams!
+
+\end{problem}
+%
+
+%7
+\begin{problem}
+\textit{[Antiņš un Hidra]}
+Hidra sastāv no kakliem un galvām (katrs kakls savieno tieši divas galvas). Ar vienu zobena cirtienu var pārcirst visus kaklus, kas iziet no vienas Hidras galvas $A$. Taču, tā izdarot, tūliņ izaug jauni kakli no galvas $A$ uz visām galvām, ar kurām iepriekš $A$ nebija tiešā veidā savienota ar kakliem. 
+Skaitās, ka Antiņš ir uzveicis Hidru, ja viņam to izdodas sadalīt divās nesavienotās daļās. 
+
+Ar kādu mazāko skaitu cirtienu Antiņš var uzveikt simtkaklainu Hidru?
+
+\end{problem}
+%
+
+%8
+\begin{problem}
+\textit{[Bonus uzdevums - Citurzemes ceļi]}
+Citurzemē bija $2014$ pilsētas. Tās bija savienotas ar ceļiem tā, ka aizliedzot iebraukt un izbraukt jebkurā vienā pilsētā, joprojām bija iespējams nonākt no jebkuras pilsētas jebkurā citā (izņemot aizliegto, protams). 
+Citurzemes ķēniņam nepatīk cikliski maršruti. Katru gadu viņš izvēlas kādu ciklisku maršrutu savā karaļvalstī un uzbūvē jaunu pilsētu, ar tiešiem ceļiem savienojot to ar visām izvēlētā maršruta 
+pilsētām. Pēc tam cikliskā maršruta ceļus slēdz, jo tie nav ķēniņam tīkami.
+
+Pēc vairākiem šādiem gadiem Citurzemē nav palicis neviens ciklisks maršruts. Pierādiet, ka Citurzemē tagad ir vismaz $2014$ pilsētas, no kurām iziet tieši viens ceļš!
+
+\end{problem}
+%
+
+%%8
+%\begin{problem}
+%\textit{[Paradise travel]}
+%Jane and Theodor travel across the archipelago that cosists of 2015 islands, some of which are connected by ferry routes. 
+%
+%They have decided to play a follwing game: first Jane chooses an island that they fly to. Then they travel by ferries alternatingly choosing next island (Theo starts), but they can not go back to the island that they have visited. One who can not choose next valid island, loses. 
+%
+%Who can win this game?
+%\end{problem}
+%%
+%
+%%9
+%\begin{problem}
+%\textit{[Can't escape the City of Labirinth]}
+%In the city of Labirinth exactly three streets meet at every crossroads. Besides that, all streets are paved in one of the three colors (red, yellow and green) so that streets of every color meet at every crossroad.
+% 
+%Lets call crossroad \textit{positive} if the colors of roads, looking clockwise are \textit{red, yellow, green} and \textit{negative} if the order of colors is inversed.
+%
+%Prove that difference of numbers of positive and negative crossroads is divisible by $4$!
+%\end{problem}
+%%
+
+\end{document}

@@ -21,7 +21,7 @@ An Emirate has 8 cities. Sultan wants to build such a road system, that for any 
 
 \textbf{Solution}
 
-If $k=2$ then, consider some city $A$. One can travel directly to no more than $2$ other cities, call them $B_1, B_2$. From those one can travel further, but to no more than $4$ cities - $C_1,C_2,C_3,C_4$. So we have accounted for $7$ of the $8$ cities and the last city is not reachable from $A$ wiith no more than two edges.
+If $k=2$ then, consider some city $A$. One can travel directly to no more than $2$ other cities, call them $B_1, B_2$. From those one can travel further, but to no more than $4$ cities - $C_1,C_2,C_3,C_4$. So we have accounted for $7$ of the $8$ cities and the last city is not reachable from $A$ with no more than two edges.
 
 If $k=3$ it is doable by drawing an octogon with all long diagonals.
 \end{problem}
@@ -85,6 +85,44 @@ If there is no leaves, the graph must have some cycles. If any faces larger than
 Lastly we continuously apply $c$. until a leaf appears in a graph. Once a leaf appears, we remove it by $a.$ and we are done (we have reduced the graph to size $k-1$ while holding Eulers formula invariant.
 \end{problem}
 
+%4
+\begin{problem}
+
+\textit{[Halls marriadge theorem,bipartite graphs, matching]}
+
+\url{https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture6.pdf}
+
+\textbf{Problem}
+
+In some ball it so happened, that every subset of girls $S$ together like at least  $|S|$ different boys.
+\begin {enumerate}
+\item Prove that girls all choose a boy they like for simulataneous first dance!
+
+\item Prove that this can happen only if the condition of the problem holds!
+\end {enumerate}
+
+\textbf{Solution - induction, bipartite graph, matching, Halls theorem}
+%https://homes.cs.washington.edu/~anuprao/pubs/CSE599sExtremal/lecture6.pdf
+
+Lets call this a bipartite graph with parts $A$ and $B$.
+
+The condition then is that for every subset $S \subseteq A$ its neighborhood in $B$ has a size of at least $|S|$
+
+\textbf{Second part} is easy - if a matching exists, then clearly each subset $S \subseteq A$ has a neighbourhood in $B$ of at least size $|S|$, just by considering the edges in the matching.
+
+We prove \textbf{first part} by induction.
+
+For the general case, pick an arbitrary $x \in A$. $x$ must have at least one neighbor $y \in  B$. We can
+try to match $x$ to $y$ and find a matching of size $|A| − 1$ in the graph induced on $A − \{x\}$, $B − \{y\}$
+by induction. The only case in which this would not work is when there is some set $S \subseteq A − \{x\}$
+that has less than $|S|$ neighbors in $B − \{y\}$. Then $S$ must have exactly $|S|$ neighbors in $B$.
+
+Let $T$ denote the neighbors of $S$. By induction, there is a matching that matches all vertices of
+$S$ to a vertex of $T$. For every set $S' \subseteq A−S$, since $S' \cup S$ has at least $|S'|+|S| = |S'|+|T|$ neighbors in $B$, $S'$ must have at least $|S'|$ neighbors in $B − T$. Thus there is a matching that matches all the
+vertices of $S'$
+to $B − T$.
+
+\end{problem}
 
 
 %4
