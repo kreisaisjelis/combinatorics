@@ -36,32 +36,9 @@ Consider $2009$ cards, each having one gold side and one black side, lying in a 
 %
 
 \filbreak
-%2
-\begin{problem}
-\textit{[IMO2015SLC1]}
 
-\textbf{Problem}
-
- In Lineland there are $n \ge 1$ towns, arranged along a road running from left to right. Each town has a left bulldozer (put to the left of the town and facing left) and a right bulldozer (put to the right of the town and facing right). The sizes of the $2n$ bulldozers are distinct. Every time when a right and a left bulldozer confront each other, the larger bulldozer pushes the smaller one oﬀ the road. On the other hand, the bulldozers are quite unprotected at their rears; so, if a bulldozer reaches the rear-end of another one, the ﬁrst one pushes the second one oﬀ the road, regardless of their sizes. 
- 
-Let $A$ and $B$ be two towns, with $B$ being to the right of $A$. We say that town $A$ can \textit{sweep town B away} if the right bulldozer of $A$ can move over to $B$ pushing oﬀ all bulldozers it meets. Similarly, $B$ can sweep $A$ away if the left bulldozer of $B$ can move to $A$ pushing oﬀ all bulldozers of all towns on its way. 
-
-Prove that there is exactly one town which cannot be swept away by any other one. 
-
-
-\textbf{Solution - Induction}
-
- Let $T_1,T_2,\dots,T_n$ be the towns enumerated from left to right. Observe ﬁrst that, if town $T_i$ can sweep away town $T_j$, then $T_i$ also can sweep away every town located between $T_i$ and $T_j$. 
- 
- We prove the problem statement by strong induction on n. The base case $n = 1$ is trivial. 
- 
- For the induction step, we ﬁrst observe that the left bulldozer in $T_1$ and the right bulldozer in $T_n$ are completely useless, so we may forget them forever. Among the other $2n-2$ bulldozers, we choose the largest one. Without loss of generality, it is the right bulldozer of some town $T_k$ with $k < n$. Surely, with this large bulldozer $T_k$ can sweep away all the towns to the right of it. Moreover, none of these towns can sweep $T_k$ away; so they also cannot sweep away any town to the left of $T_k$. Thus, if we remove the towns $T_k+1,T_k+2,\dots,T_n$, none of the remaining towns would change its status of being (un)sweepable away by the others. 
- 
- Applying the induction hypothesis to the remaining towns, we ﬁnd a unique town among $T_1,T_2,\dots,T_k$ which cannot be swept away. By the above reasons, it is also the unique such town in the initial situation. Thus the induction step is established.
-
-\end{problem}
 \filbreak
-%3
+%2
 \begin{problem}
 \textit{[IMO2015SLC1]}
 
@@ -82,7 +59,7 @@ I.e. if original $v$ consists of $k$ elements $v_1, v_2, \dots, v_k$ then $C = v
 It is easy to see that every allowed operation strictly increases $C$, but on other hand $C$ is upper bound by $M^k-1$, so the process must stop at some point.
 \end{problem}
 \filbreak
-%4
+%3
 \begin{problem}
 $[IMO2011SLC3]$
 
@@ -118,7 +95,7 @@ Now suppose that $|S| = 2n$. Consider a line having $n−1$ and $n$ points on th
 
 \end{problem}
 
-%5
+%4
 \begin{problem}
 $[IMO2009SLC5]$
 
@@ -152,7 +129,7 @@ Can the wicked Stepmother enforce a bucket overﬂow?
 
 \end{problem}
 
-%6
+%5
 \begin{problem}
 $[IMO2010SLC4]$
 
@@ -224,6 +201,49 @@ $$(0,0,0,P_{16},0,0) \rightarrow (0,0,0,P_{16}-1,0,0) \rightarrow (0,0,0,P_{16}-
 
 Finally, apply Move a repeatedly to empty stacks $S_4$ and $S_5$: 
 $$(0,0,0,A/4,0,0) \rightarrow \dots \rightarrow (0,0,0,0,A/2,0) \rightarrow \dots \rightarrow (0,0,0,0,0,A)$$
+
+\end{problem}
+
+%5
+\begin{problem}
+$[IMO2012P3]$
+
+\textbf{Problem}
+
+The liar’s guessing game is a game played between two players A and B. The rules of the game depend on two positive integers $k$ and $n$ which are known to both players.
+
+At the start of the game the player A chooses integers $x$ and $N$ with $1 \le x \le N$. Player A keeps $x$ secret, and truthfully tells $N$ to the player B. The player B now tries to obtain information about $x$ by asking player A questions as follows: each question consists of B specifying an arbitrary set $S$ of positive integers (possibly one specified in some previous question), and asking A whether $x$ belongs to $S$. Player B may ask as many questions as he wishes. After each question, player A must immediately answer it with yes or no, but is allowed to lie as many times as she wants; the only restriction is that, among any $k+1$ consecutive answers, at least one answer must be truthful.
+
+After B has asked as many questions as he wants, he must specify a set $X$ of at most $n$ positive integers. If $x \in X$, then B wins; otherwise, he loses. Prove that:
+
+(a) If $n \ge 2^k$ then B has a winning strategy.
+
+(b) There exists a positive integer $k_0$ such that for every $k \ge k_0$ there exists an integer $n \ge 1.99^k$ for which B cannot guarantee a victory.
+
+
+
+\textbf{Solution - interesting binary search, ... TODO - needs improvement}
+
+\textbf{Solution to Part (a)}
+
+It suffices to show that there is a winning strategy for $n = 2^k-1$, as a winning strategy for any $n \ge 2^k$ easily gives a winning strategy for $n = 2^k-1$.
+
+Player B first divides all integers $1$ through $N$ into $2^k$ nonempty sets $T_s$, where $s$ is some binary string of length $k$. On the $i^{th}$ question for $1 \le i \le k$, player B asks whether the set containing $x$ is labeled with a string that has a $1$ in the $i^{th}$ position. After asking these questions, there is one set that player A must indicate does not contain $x$ at $k$ times in a row; WLOG we may assume this set is $T_{00 \dots 0}$.
+
+On the next question, B asks if $x \in T_{00 \dots 0}$. If A says 'no', then B can rule out $T_{00 \dots 0}$. If A says 'yes', then B asks if $x \in T_{100 \dots 0}$. If A says 'no', then B can rule out $T_{100 \dots 0}$. If A says 'yes', then B asks if $x \in T_{0100 \dots 0}$. If A says 'no', then B can rule out $T_{0100 \dots 0}$, while if A says 'yes', B can rule out $T_{1100 \dots 0}$.
+
+In any case, B can ascertain that $x \not \in T_s$ for some string $s$, thus reducing the number of possibilities for $x$. Player B can repeat this procedure as long as at least $2^k$ elements remain, eventually reducing the number of possible values of $x$ to at most $2^k - 1$.
+
+\textbf{Solution to Part (b)}
+
+Take $k$ sufficiently large so that there is some positive integer $n$ with $n \ge 1.99^k$ but $n+1 \le .001*1.999^{k+1}$.
+
+Player A sets $N=n+1$. Let $f(i,m)$ denote the number of times in a row that A has just indicated that $i \neq x$. In other words, if A indicates on the $m^{th}$ step that $x$ was in a set containing $i$, then $f(i,m)=0$, while if A indicates otherwise, we would have $f(i,m)=f(i,m-1)+1$.
+
+At the $m^{th}$ step, player A makes a decision so as to minimize the sum:\[g(m)=\sum_{i=1}^N 1.999^{f(i,m)}\]I claim that, by using this strategy, A will preserve the invariant that $g(m) < 1.999^{k+1}$. We can prove this by induction on $m$. Note that initially, $g(0)=N<1.999^{k+1}$.
+
+Suppose that $g(m-1) < 1.999^{k+1}$. Note that if B asks if $x \in S$ for some $S \subset \{1,2,\dots,N\}$, then the two possibilities for $g(m)$ are:\[g_\text{in}(m)=N-|S|+1.999\sum_{i \in S} 1.999^{f(i,m-1)}\]and\[g_\text{out}(m)=|S|+1.999\sum_{i \not \in S} 1.999^{f(i,m-1)}\]Note that $g_\text{in}(m)+g_\text{out}(m)=N + 1.999g(m-1)$. Therefore, we have that:\[\min(g_{\text{in}}(m), g_{\text{out}}(m)) \le \frac{g_{\text{in}}(m) + g_{\text{out}}(m)}{2} = \frac{N + 1.999g(m-1)}{2} < \frac{.001*1.999^{k+1} +1.999^{k+2}}{2} = 1.999^{k+1}\]
+This completes the induction. In particular, since $g(m)<1.999^{k+1}$ at all times, A will never indicate that $x\neq i$ more that $k$ times in a row. So player B will never be able to rule out any element of $\{1,2,\dots,N\}$ and submit a set of $n$ integers that are guaranteed to contain $x$.
 
 \end{problem}
 \end{document}

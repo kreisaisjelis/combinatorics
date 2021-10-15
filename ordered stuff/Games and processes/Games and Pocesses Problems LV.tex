@@ -24,23 +24,17 @@ Anna un Beāte spēlē sekojošu spēli. Uz gara galda rindā stāv 2009 kartiņ
 
 \end{problem}
 
+
 %2
 \begin{problem}
 $[IMO2015SLC1]$
-Līnijzemē ir $n>1$ ciemati, visi izkārtoti gar vienu ceļu, kas iet no kreisās uz labo pusi. Katram ciematam ir \textit{kreisais buldozers} (novietots uz ceļa pa kreisi no ciemata un pavērsts uz kreiso pusi) un \textit{labais buldozers} (novietots pa labi no ciemata un pavērts uz labo pusi). Šo $2n$ buldozeru izmēri ir dažādi. Katru reizi, kad kreisais buldozers satiek labo buldozeru, lielākais mazāko nostumj no ceļa. Buldozeri brauc tikai uz priekšu, bet pagriezties un uzbraukt atpakaļ uz ceļa nevar. No aizmugures buldozeri ir pavisam neaizsargāti un, ja kāds pielavās citam no muguras, tad nostumj to no ceļa neatkarīgi no izmēra. Satiekot ne-savu ciematu, buldozers to \textit{izlīdzina}. \\
-Pierādiet, ka eksistē tieši viens ciemats, kuru nav iespējams izlīdzināt!
-\end{problem}
-
-%3
-\begin{problem}
-$[IMO2012SLC1]$
 Virknē sarakstīti vairāki pozitīvi veseli skaitļi. Aija pati ar sevi spēlē sekojošu spēli - katrā gājienā viņa izvēlas divus blakusstāvošus skaitļus $x$ un $y$ tā, ka $x$ atrodas pa kreisi no $y$ un $x>y$, un aizstāj šo pāri ar vai nu pāri $(y+1,x)$ vai pāri $(x-1,x)$. \\
 Pierādiet, ka šī rotaļa nevar turpināties bezgalīgi!\\
 *Cik gājienus šī spēle var ilgt?
 \end{problem}
 
 
-%4
+%3
 \begin{problem}
 $[IMO2011SLC3]$
 Kopa  $S$ satur vismaz divus plaknes punktus. Zināms, ka nekādi trīs no $S$ punktiem neatrodas uz vienas taisnes.\\
@@ -48,7 +42,7 @@ Par \textit{vējdzirnavām} sauksim sekojošu procesu. Sākam ar taisni $l$, kas
 Pierādiet, ka var izvelēties tādus $l$ un $P$, ka vējdzirnavas apmeklēs katru $S$ punktu bezgalīgi daudz reižu!
 \end{problem}
 
-%5
+%4
 \begin{problem}
 $[IMO2009SLC5]$
 Pieci identiski 2-litru spaiņi izkārtoti pa apli. Pelnrušķīte un Pamāte spēlē sekojošu spēli. Pamāte savā gājienā no upes iesmeļ krūkā 1 litru ūdens un sadala šo ūdeni pa spaiņiem. Tad gājiens ir Pelnrušķītei un viņai atļauts no diviem blakusstāvošiem spaiņiem ūdeni izliet atpakaļ upē. Pamātes mērķis ir panākt, ka kāds spainis pārpildās. Pelnrušķītes mērķis ir panākt, lai neviens spainis nepārpildītos.
@@ -58,7 +52,7 @@ Pieci identiski 2-litru spaiņi izkārtoti pa apli. Pelnrušķīte un Pamāte sp
 \end{enumerate}
 \end{problem}
 
-%6
+%5
 \begin{problem}
 $[IMO2010SLC4]$
 Rindā sakārtotas sešas monētu kaudzītes $S_1, S_2 ,.. S_6$. Sākumā katrā kaudzītē ir viena monēta. Ir pieļaujami divi gājienu veidi:
@@ -68,6 +62,23 @@ Rindā sakārtotas sešas monētu kaudzītes $S_1, S_2 ,.. S_6$. Sākumā katrā
 \item Ja kaudzītē $S_k, 1\leq k \leq 4$, ir vismaz viena monēta, to monētu var noņemt un samainīt vietām kaudzītes $S_{k+1}$ un $S_{k+2}$
 \end{enumerate}
 Vai ir iespējams iegūt situāciju, kad pirmās piecas kaudzītes ir tukšas, bet sestā satur $2010^{2010}$ monētas? *Vai tas pats iespējams ar $2010^{2010^{2010}}$ monētām?
+\end{problem}
+\filbreak
+%6
+\begin{problem}
+$[IMO2012P3]$
+Meļu minēšanas spēli spēlē divi spēlētāji A un B. Spēles noteikumi ir parametrizēti ar naturāliem skaitļiem $k$ un $n$, kuri ir zināmi abiem spēlētājiem.
+
+Vispirms A izvēlas naturālus $x$ un $N$ kuriem $1 \le x \le N$. Spēlētājs A skaitli $x$ patur noslēpumā, bet $N$ godīgi pasaka spēlētājam B. Tālāk spēlētāja B mērķis ir iegūt informāciju par $x$, uzdodot A jautājumus sekojošā formā: norāda kādu skaitļu kopu $S$ (tā var neatķirties no iepriekš jautātas) un jautājuma, vai $x$ pieder šai kopai $S$. Spēlētājs A uzreiz atbild ar \textit{jā} vai \textit{nē}, taču A var melot. Vienīgais ierobežojums - starp katrām $k+1$ secīgām atbildēm vismaz vienai atbildei jābūt patiesai.
+
+Spēlētājs B var uzdot neierobežotu skaitu jautājumu, taču kādā brīdī viņam ir jānorāda kopa $X$, kas sastāv no ne vairāk kā $n$ skaitļiem. Ja  $x \in X$, B uzvar, citādi uzvar A. Pierādiet, ka:
+\begin{enumerate}
+\item Ja $n \ge 2^k$ tad B ir uzvaroša stratēģija.
+\item Eksistē tāds naturāls $k_0$ ka katram $k \ge k_0$ eksistē tāds $n \ge 1.99^k$ kuram B nevar garantēti uzvarēt.
+\end{enumerate}
+
+
+
 \end{problem}
 
 \end{document}

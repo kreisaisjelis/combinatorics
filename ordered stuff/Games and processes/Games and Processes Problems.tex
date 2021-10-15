@@ -25,18 +25,9 @@ Consider $2009$ cards, each having one gold side and one black side, lying in a 
 \end{problem}
 %
 
+
+
 %2
-\begin{problem}
-\textit{[IMO2015SLC1]}
- In Lineland there are $n \ge 1$ towns, arranged along a road running from left to right. Each town has a left bulldozer (put to the left of the town and facing left) and a right bulldozer (put to the right of the town and facing right). The sizes of the $2n$ bulldozers are distinct. Every time when a right and a left bulldozer confront each other, the larger bulldozer pushes the smaller one oﬀ the road. On the other hand, the bulldozers are quite unprotected at their rears; so, if a bulldozer reaches the rear-end of another one, the ﬁrst one pushes the second one oﬀ the road, regardless of their sizes. 
- 
-Let $A$ and $B$ be two towns, with $B$ being to the right of $A$. We say that town $A$ can \textit{sweep town B away} if the right bulldozer of $A$ can move over to $B$ pushing oﬀ all bulldozers it meets. Similarly, $B$ can sweep $A$ away if the left bulldozer of $B$ can move to $A$ pushing oﬀ all bulldozers of all towns on its way. 
-
-Prove that there is exactly one town which cannot be swept away by any other one. 
-
-\end{problem}
-
-%3
 \begin{problem}
 \textit{[IMO2015SLC1]}
 Several positive integers are written in a row. Iteratively, Alice chooses two adjacent numbers $x$ and $y$ such that $x > y$ and $x$ is to the left of $y$, and replaces the pair $(x,y)$ by either $(y + 1,x)$ or $(x − 1,x)$. 
@@ -44,14 +35,14 @@ Several positive integers are written in a row. Iteratively, Alice chooses two a
 Prove that she can perform only ﬁnitely many such iterations.
 \end{problem}
 
-%4
+%3
 \begin{problem}
 $[IMO2011SLC3]$
 Let $S$ be a ﬁnite set of at least two points in the plane. Assume that no three points of $S$ are collinear. By a windmill we mean a process as follows. Start with a line $l$ going through a point $P \in S$. Rotate $l$ clockwise around the pivot $P$ until the line contains another point $Q$ of $S$. The point $Q$ now takes over as the new pivot. This process continues indeﬁnitely, with the pivot always being a point from $S$. Show that for a suitable $P \in S$ and a suitable starting line $l$ containing $P$, the resulting windmill will visit each point of $S$ as a pivot inﬁnitely often.
 
 \end{problem}
 
-%5
+%4
 \begin{problem}
 $[IMO2009SLC5]$
 Five identical empty buckets of 2-liter capacity stand at the vertices of a regular pentagon. Cinderella and her wicked Stepmother go through a sequence of rounds: At the beginning of every round, the Stepmother takes one liter of water from the nearby river and distributes it arbitrarily over the ﬁve buckets. Then Cinderella chooses a pair of neighboring buckets, empties them into the river, and puts them back. Then the next round begins. The Stepmother’s goal is to make one of these buckets overﬂow. Cinderella’s goal is to prevent this. 
@@ -60,6 +51,17 @@ Can the wicked Stepmother enforce a bucket overﬂow?  *What should be the volum
 
 \end{problem}
 
+%5
+\begin{problem}
+$[IMO2010SLC4]$
+Six stacks $S_1,\dots,S_6$ of coins are standing in a row. In the beginning every stack contains a single coin. There are two types of allowed moves: 
+\begin{enumerate}
+\item \label{move1} If stack $S_k$ with $1\le k \le 5$ contains at least one coin, you may remove one coin from $S_k$ and add two coins to $S_{k+1}$.
+\item If stack $S_k$ with $1 \le k \le 4$ contains at least one coin, then you may remove one coin from $S_k$ and exchange stacks $S_{k+1}$ and $S_{k+2}$. 
+ \end{enumerate}
+ Decide whether it is possible to achieve by a sequence of such moves that the ﬁrst ﬁve stacks are empty, whereas the sixth stack $S_6$ contains exactly $2010^{2010^{2010}}$ coins.
+
+\end{problem}
 %6
 \begin{problem}
 $[IMO2010SLC4]$
@@ -69,6 +71,23 @@ Six stacks $S_1,\dots,S_6$ of coins are standing in a row. In the beginning ever
 \item If stack $S_k$ with $1 \le k \le 4$ contains at least one coin, then you may remove one coin from $S_k$ and exchange stacks $S_{k+1}$ and $S_{k+2}$. 
  \end{enumerate}
  Decide whether it is possible to achieve by a sequence of such moves that the ﬁrst ﬁve stacks are empty, whereas the sixth stack $S_6$ contains exactly $2010^{2010^{2010}}$ coins.
+
+\end{problem}
+
+
+
+%7
+\begin{problem}
+$[IMO2012P3]$
+The liar’s guessing game is a game played between two players A and B. The rules of the game depend on two positive integers $k$ and $n$ which are known to both players.
+
+At the start of the game the player A chooses integers $x$ and $N$ with $1 \le x \le N$. Player A keeps $x$ secret, and truthfully tells $N$ to the player B. The player B now tries to obtain information about $x$ by asking player A questions as follows: each question consists of B specifying an arbitrary set $S$ of positive integers (possibly one specified in some previous question), and asking A whether $x$ belongs to $S$. Player B may ask as many questions as he wishes. After each question, player A must immediately answer it with yes or no, but is allowed to lie as many times as she wants; the only restriction is that, among any $k+1$ consecutive answers, at least one answer must be truthful.
+
+After B has asked as many questions as he wants, he must specify a set $X$ of at most $n$ positive integers. If $x \in X$, then B wins; otherwise, he loses. Prove that:
+
+(a) If $n \ge 2^k$ then B has a winning strategy.
+
+(b) There exists a positive integer $k_0$ such that for every $k \ge k_0$ there exists an integer $n \ge 1.99^k$ for which B cannot guarantee a victory.
 
 \end{problem}
 \end{document}

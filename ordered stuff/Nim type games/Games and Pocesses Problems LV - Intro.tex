@@ -1,0 +1,97 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+\input{../FormatLV.tex}
+\fancyhead[C]{{\Large\bf Spēles - Ievaduzdevumi par Nim tipa spēlēm}\\ \date}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+
+\begin{document}
+%\thispagestyle{fancy}
+\noindent 
+%\emph{\notes}
+
+%1 - Engel PSS Games, example
+\begin{problem}
+\textit{[Bacheta spēle]}
+
+Uz galda ir $n$ akmentiņi. 
+Spēlē divi spēlētāji A un B, A sāk. 
+Legālā gājienā atļauts paņemt kādu no kopas $M$ skaitu ar akmentiņiem. 
+Uzvar tas, kurš paņem pēdejo akmentiņu.
+Atrodied zaudējo pozīciju kopu $L$, ja:
+\begin{enumerate}
+\item $M=\set{1,2,3,\dots ,k}$
+\item $M=\set{1,2,4,\dots ,2^j, \dots}$ (visas nenegatīvās veselās divnieka pakāpes)
+\item $M=\set{1,2,3,5,7,\dots }$ (1 un visi pirmskaitļi)
+\item $M=\set{p^n}$, kur $p$ ir kāds pirmskaitlis, un $n$ ir patvaļīgs naturāls skaitlis %problem 2
+\item $M=\set{1,3,8}$
+\end{enumerate}
+
+\end{problem}
+
+
+%2 - Engel PSS Games, problem 5
+\begin{problem}
+\textit{[Zirdziņu šahs]}
+
+A un B pamīšus liek katrs savas krāsas (baltus un melnus) zirdziņus uz šaha laukuma. Zirdziņu nevar novietot aizņemtā laukumā, vai laukumā, kuru apdraud pretējās krāsas zirdziņš. 
+
+Vai zirdziņu šahā baltais var uzvarēt, pareizi spēlējot?
+
+\end{problem}
+
+%3 - ffa
+\begin{problem}
+\textit{[Šahs]}
+
+Vai šaha spēlē baltie var uzvarēt vai vismaz garantēt neizšķirtu, pareizi spēlējot?
+
+\end{problem}
+
+%4 - Engel PSS Games, problem 18
+\begin{problem}
+\textit{[Dubultais šahs]}
+
+Dubultajā šahā spēlētāji katrs pēc kārtas veic divus legālus gājienus.
+
+Vai dubultā šaha spēlē baltie var uzvarēt vai vismaz garantēt neizšķirtu, pareizi spēlējot?
+
+\end{problem}
+
+%5 - Engel PSS Games, problem 21
+\begin{problem}
+\textit{[Nauda uz šaha]}
+
+$n \times n$ šaha laukuma stūrī stāv 1 eiro monēta. Spēlētāji A un B pamīšus šo monētu pārvieto uz blakus stāvošu lauciņu ar ierobežojumu, ka monētu nevar likt uz lauciņa, kur tā jau kādreiz ir atradusies. Zaudē tas, kurš nevar izpildīt gājienu. 
+
+Kurš uzvar pareizi spēlējot?
+
+\end{problem}
+
+%5 - Engel PSS Games, problem 1
+\begin{problem}
+\textit{[Wythoff'a spēle]}
+
+Uz galda ir divas kaudzītes ar $x$ un $y$ akmentiņiem. Spēlētāji A un B pamīšus veic sekojošus gājienus: vai nu paņem jebkādu skaitu akmentiņu no vienas kaudzītes, vai nu vienādu skaitu akmentiņu no abām kaudzītēm. Uzvar tas, kurš paņem pēdējo akmentiņu. 
+
+Kurš uzvar, pareizi spēlējot?
+
+\end{problem}
+
+%5 - Simplified IMO2012P3
+\begin{problem}
+\textit{Bonus problem - Vienkāršotā meļu spēle]}
+
+Meļu minēšanas spēli spēlē divi spēlētāji A un B. 
+
+Vispirms A izvēlas naturālu $ x \le 10$ patur to noslēpumā. 
+
+Tālāk spēlētāja B mērķis ir iegūt informāciju par $x$, uzdodot A jautājumus sekojošā formā: norāda kādu skaitļu kopu $S$ (tā var neatķirties no iepriekš jautātas) un jautājuma, vai $x$ pieder šai kopai $S$. Spēlētājs A uzreiz atbild ar \textit{jā} vai \textit{nē}, taču viņš drīkst melot! Vienīgais ierobežojums - starp katrām $2$ secīgām atbildēm vismaz vienai atbildei jābūt patiesai.
+
+Spēlētājs B var uzdot neierobežotu skaitu jautājumu, taču kādā brīdī viņam ir jānorāda kopa $X$, kas sastāv no ne vairāk kā $2$ skaitļiem. Ja  $x \in X$, B uzvar, citādi uzvar A. Pierādiet, ka B var garantēti uzvarēt!
+
+\end{problem}
+
+\end{document}
