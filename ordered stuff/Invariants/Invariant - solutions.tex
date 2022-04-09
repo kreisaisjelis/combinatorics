@@ -116,4 +116,16 @@ Now simply note that in beginning position parity of one color is different from
 \end{problem}
 %
 
+%8
+\begin{problem}
+\textit{[Number pair game - IMO2012 SLC1]}
+
+Note ﬁrst that the allowed operation does not change the maximum $M$ of the initial sequence. Let $a1, a2, \dots , a_n$ be the numbers obtained at some point of the process. Consider the sum
+$$S  =  a_1 + 2a_22 + \dots + na_n$$
+We claim that $S$ increases by a positive integer amount with every operation. Let the operation replace the pair $(a_i, a_{i+1})$ by a pair $(c, a_i)$, where $a_i > a_{i+1}$ and $c = a_{i+1}+1$ or $c = a_i −1$. Then the new and the old value of $S$ diﬀer by $d = (ic+(i+1)a_i)−(ia_i +(i+1)a_{i+1}) = a_i −a_{i+1}+i(c−a_{i+1})$. The integer $d$ is positive since $a_i − a_{i+1} ≥ 1$ and $c − a_{i+1} \ge 0$.
+
+On the other hand $S \le (1 + 2 + \dots + n)M$ as $a_i \le M$ for all $i = 1, \dots , n$. Since $S$ increases by at least $1$ at each step and never exceeds the constant $(1 + 2 + \dots + n)M$ , the process stops after a ﬁnite number of iterations.
+\end{problem}
+%
+
 \end{document}
