@@ -1,0 +1,45 @@
+%!TEX TS-program = XeLaTeX
+\input{../FormatGen.tex}
+\input{../FormatProblems.tex}
+%\input{../FormatLV.tex}
+
+\fancyhead[C]{{\Large\bf Coloring method - Solutions}\\ \date}
+
+\begin{document}
+
+\noindent 
+%\emph{\notes}
+
+%1
+\begin{problem}
+\textit{[Chess knight game]}
+
+\textbf{Problem}
+
+Alice and Bob plays a game:
+
+First Alice places a chess knigth on any square on a chess-board. Then they take turns (starting with Bob) moving the knight according to chess rules, but they are not allowed to move to a square that has already been visited.
+
+Which player has a winning strategy?
+
+\textbf{Solution}
+
+Divide the chessboard into $2 \times 4$ pieces like this
+\begin{center}
+\includegraphics[width=6cm]{division.png}
+\captionof{figure}{Division of chessboard }
+\label{fig:divisionOfChessboard}
+\end{center} 
+
+\begin{center}
+\includegraphics[width=1cm]{coloring.png}
+\captionof{figure}{Coloring}
+\label{fig:coloring}
+\end{center} 
+
+\end{problem}
+%
+
+
+
+\end{document}
