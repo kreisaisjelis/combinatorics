@@ -5,6 +5,7 @@ Juniors:
 	pls pigeonhole 1
 	pls graphs 1
 	pl methods of counting 
+			Unlock codes https://www.youtube.com/watch?v=8vkQ85kTVm4 
 
 Seniors:
 	pls induction (including graphs 1.5)
@@ -23,6 +24,7 @@ Seniors:
 	pls miscellaneous (missing bonus problem solution)
 	p pascals triangle - skip?
 		+ http://problems.ru/view_problem_details_new.php?id=60581
+		https://www.youtube.com/watch?v=XMriWTvPXHI
 	p recurrences 
 		+ http://problems.ru/view_problem_details_new.php?id=35392
 		+ Hanoi - http://problems.ru/view_problem_details_new.php?id=60912
@@ -32,14 +34,15 @@ Seniors:
 	l Nim type games (one problem still in Games)
 		+ BW 2011 P10
 		+IMO2009 SLC1
-	Tiling 
+	Tiling / coloring method
+		Chess knight game (https://www.youtube.com/watch?v=ZGWZM8PcUlY)
 		bw atlase 2021 P6
 		imo2004 p3
 
 
 Ideas for topics:
-coloring method
-	Chess knight game (https://www.youtube.com/watch?v=ZGWZM8PcUlY)
+
+	
 symmetry games?
 pidgeonhole 3?
 algorithms/ Invariants 2 (added games and processes for this. any more?)
@@ -63,6 +66,8 @@ Misc problems:
 	Bondy's theorem https://math.stackexchange.com/questions/1490605/why-does-bondys-theorem-work/1490778#1490778 graph proof, trees
 	Ramsay's theorem  https://en.wikipedia.org/wiki/Ramsey%27s_theorem - graph theory, basis of Ramsay's theory, induction on graphs
 	Ant path problem https://bmos.ukmt.org.uk/solutions/bmo1-2019/
+Brain teasers
+		Cat in 5 boexs problem  https://www.youtube.com/watch?v=yZyx9gHhRXM
 
 Home assignments:
 	ls Seniors 1
