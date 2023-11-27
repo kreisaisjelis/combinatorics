@@ -197,7 +197,7 @@ Now, if first weighing results in even pans, then it means that fake coin is bet
 	reduced the $12^?$ to the $k^?$ with one weighing plus we know, from previous argument, that in this branch we still need to be able to discern at least $7$, but not more than $11$ results. From this directly follows, that $k$ has to be $4$ (by amount of information argument presented earlier).
 	
 Now we actually know what the first weighing of any successful algorithm for $12^?$ is - its $1,2,3,4$ vs $5,6,7,8$ and $9,10,11,12$ are left out of first weighing. Equality in this first weighing reduces the problem to $4^?$ and we will come back to that later, but now let's look at inequality, say $1,2,3,4<5,6,7,8$ 
-Its not quite reduction to $8^!$ (which would be impossible with $2$ weighings!) because we know something more about these coins - we know that if $1,2,3$ or $4$ turns out to be fake, they will be lighter that real ones and, conversely, $5,6,7,8$ will be heavier - and the number of possible answers is actually only $8$.
+Its not quite reduction to $8^!$ (which would be impossible with $2$ weighings!) because we know something more about these coins - we know that if $1,2,3$ or $4$ turns out to be fake, they will be lighter than real ones and, conversely, $5,6,7,8$ will be heavier - and the number of possible answers is actually only $8$.
 
 Lets introduce some more notation!
 \begin{description}
@@ -205,7 +205,7 @@ Lets introduce some more notation!
 \item[$n_?$] - will mean the number of weighings necessary to determine the fake coin between the $n$ coins, if we do not know the \textit{forgery pattern} - we do not know for all coins that if it is fake then it lighter (or heavier). 
 \end{description}
 
-So, we can use this new notation (or combination of both), that by using weighing $1,2,3,4$ vs $5,6,7,8$ we reduce $12^?_?$ to $4^?_?$ and $8^!_!$. What is left to show how to do $4^?_?$ and $8^!_!$ with two weighings that are left to us. Also note that starting from the second weighing we have some extra resource - \textit{reference} coins that are known to be real. We might need them...
+So, we can use this new notation (or combination of both), that by using weighing $1,2,3,4$ vs $5,6,7,8$ we reduce $12^?_?$ to $4^?_?$ and $8^!_!$. What is left to show is how to do $4^?_?$ and $8^!_!$ with two weighings that are left to us. Also note that starting from the second weighing we have some extra resource - \textit{reference} coins that are known to be real. We might need them...
 
 Lets start with $4^?_?$. Again, lets denote $m$ the amount of coins that are not weighed in the first of the two weighings of this sub-problem. Clearly, $m<2$, because $2^?_?$ would still have $5$ possible outcomes, so, by amount of information argument, it can not be solved by one remaining weighing.  On other hand, if $m=0$, that means that in either case of equilibrium we immediately have to conclude that there is no fake coin, but that is only one of the $9$ possible answers we have to be able to discern. Now remaining two branches will have to discern $8$ answers, which is impossible. 
 
